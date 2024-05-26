@@ -1,0 +1,149 @@
+/* || VARIABLES COLOR */
+:root {
+	color-scheme: light dark;
+	--accentMessageStandard: #3B5EDA;
+	--accentMessageNegative: #FC6350;
+	--backgroundContainer: #ECF0FE;
+	--backgroundContainerBorder: #D5DEFD;
+	--backgroundPrimary: #FFFFFF;
+	--backgroundSecondary: #EDF1F5;
+	--buttonPrimaryBackground: #3B5EDA;
+	--buttonPrimaryBackgroundActive: #374D9B;
+	--calloutSectionPositiveSubtleBackground: #F1FBE9;
+	--calloutSectionPositiveLabel: #1D300D;
+	--calloutSectionPositiveAccent: #67C122;
+	--calloutSectionWarningSubtleBackground: #FEF9ED;
+	--calloutSectionWarningSubtleBackgroundLabel: #362C05;
+	--calloutSectionWarningAccent: #DAAC00;
+	--calloutSectionNegativeSubtleBackground: #FEEDEB;
+	--calloutSectionNegativeLabel: #3C0D09;
+	--calloutSectionNegativeAccent: #C72C1E;
+	--headerBackground: #FFFFFF;
+	--inputBackground: #FFFFFF;
+	--inputBackgroundSecondary: #FFFFFF;
+	--primaryAction: #3B5EDA;
+	--primaryActionDestructive: #C72C1E;
+	--primaryActionSuccess: #67C122;
+	--primaryActionDisabled: #D2D8DE;
+	--primaryActionSelected: #374D9B;
+	--primaryButtonBorder: #A5ADB6;
+	--dividerStandard: #D2D8DE;
+	--labelPrimary: #19223C;
+	--labelSecondary: #405163;
+	--labelDarkBackgroundPrimary: #FFFFFF;
+	--labelAction: #3B5EDA;
+	--labelHeading: #2C396A;
+	--labelPositive: #4D9119;
+	--illustrationBackgroundBlurple300: #ACBDFB;
+	--illustrationBackgroundBlurple600: #3B5EDA;
+	--illustrationBackgroundSlime400: #A2E66E;
+}
+/* || RESET */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	color: var(--labelPrimary, #19223c);
+	background-color: var(--backgroundPrimary, #fff);
+	font-family: "Figtree", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+body {
+	line-height: 1.4;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	font: inherit;
+	font-size: 100%;
+}
+
+/* || HEADER */
+.page-wrapper {
+	display: flex;
+	flex-direction: column;
+	flex: 1 0 auto;
+}
+.page-header {
+	height: 3.125rem;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 0 16px;
+	background: var(--headerBackground, #fff);
+	box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+a, a:visited {
+	color: var(--primaryAction, #3b5eda);
+	outline: 0;
+	text-decoration: none;
+}
+.ynab-primary-logo img {
+	width: 100px;
+}
+.page-main {
+	display: flex;
+	justify-content: space-around;
+	margin: 3.125rem 3rem 3rem;
+}
+
+/* || LOGIN SCREEN */
+
+
+
+/* || FOOTER */
+footer {
+	color: #6e7a88;
+	font-family: "Figtree", Helvetica, Arial, sans-serif;
+	font-size: 0.75rem;
+	line-height: 0.9375rem;
+	padding: 2rem 0;
+	margin: auto;
+	width: 640px;
+	flex-shrink: 0;
+	text-align: center;
+}
+footer {
+	display: block;
+}
+footer a, footer a:active, footer a:visited, footer a:focus {
+	color: #6e7a88;
+	margin-right: 1.25rem;
+	text-decoration: none;
+}
+footer .copyright {
+	margin-top: 1rem;
+}
+footer .your-privacy-choices::after {
+	background-image: url(https://app.ynabassets.com/24.35.2/assets/your-privacy-choices-f544a6838302756867faf66421da7e871a7c043ee3935096af05d5fb92bd5295.svg);
+	content: "";
+	display: inline-block;
+	height: 12px;
+	margin-left: 0.2rem;
+	vertical-align: -2px;
+	width: 24px;
+}
+footer .your-privacy-choices {
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: #6E7A88;
+	font-size: 0.75rem;
+	padding: 0;
+}
+footer a:hover,
+.your-privacy-choices:hover {
+	color: var(--primaryAction, #3b5eda);
+}
