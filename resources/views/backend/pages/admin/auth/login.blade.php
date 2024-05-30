@@ -6,7 +6,7 @@
 			<section class="aside-content">
 				<aside>
           <span class="doodle">
-            <img src="https://app.ynabassets.com/24.35.2/assets/doodle-logo-beb0cccc91b52f686dbc684751aa553c11572c5512c3a49a5ee0eb4cec09f3c8.svg">
+            <img src="backend/assets/brand/doodle-logo.svg">
           </span>
 					<p>
 						Create the life you want with YNAB, a money management method that will put you on the path to less money stress.
@@ -21,7 +21,55 @@
 							<p>New to YNAB? <a data-action="login#trackClickedSignUp" href="/users/sign_up">Sign up today</a>.</p>
 						</div>
 						<form id="login-form" class=" form login-form" action="" method="POST">
-						
+							<div data-login-target="identityContainer">
+								<p class="js-form-email">
+									<label for="request_data_email" class="u-sr-only">Email:</label>
+									<input class="required" autofocus="autofocus" spellcheck="false" placeholder="Email address" data-login-target="emailInput" type="email"
+									name="request_data[email]" id="request_data_email">
+									<label class="error" for="request_data_email"></label>
+								</p>
+								<p class="js-form-password">
+									<label class="u-sr-only" for="request_data_password">Password:</label>
+									<span class="password-toggle">
+										<input class="required" placeholder="Password" data-login-target="passwordInput" autocapitalize="none" autocomplete="off"
+										type="password" name="request_data[password]" id="request_data_password">
+										<label><input type="checkbox" id="ckeckboxPass" data-password-toggle="">Show</label></span>
+									<label class="error" for="request_data_password"></label>
+								</p>
+								<p class="remember-me-and-forgot-password">
+									<label for="request_data_remember_me">
+										<input data-login-target="rememberMeInput" type="checkbox" value="1" name="request_data[remember_me]" id="request_data_remember_me">
+										Keep me logged in
+									</label> <a href="/users/password/new">Forgot password?</a>
+								</p>
+								<p>
+								</p>
+								<div>
+									<button name="login" type="submit" id="login" class="button button-primary" data-disable-with="Logging In...">Log In</button>
+								</div>
+							</div>
+							<div data-login-target="ssoButtons">
+								<div class="sso-buttons">
+									<hr class="u-hr-text" data-content="or">
+									<p class="u-sr-only">Or sign up with your Apple or Google account</p>
+									<a class="button-brand button-brand-apple" data-label="Continue with Apple" data-trigger-action="false" data-login-target="appleButton"
+									href="#" onclick="return false;">
+										<span class="button-brand-logo"><img class="provider-logo"
+											src="https://app.ynabassets.com/24.35.2/assets/apple-logo-2c788e8b33e66470099c79c4dd155595d8ebc31822e8e28dd3f44c6235a0991f.svg"></span><span
+										class="button-brand-name">Continue with Apple
+										</span>
+									</a>
+									<p class="apple-error"></p>
+									<div class="button-brand button-brand-google" data-width="288" data-login-target="googleButton">
+										<div class="button-brand-google-inner js-disabled"><span class="button-brand-logo"><img class="provider-logo"
+												src="https://app.ynabassets.com/24.36.1/assets/google-logo-2c0f347e5835e29844bdcd1195338db4fc1445e232c3b72c2b38c15454e14c31.svg"/></span><span
+											class="button-brand-name">Continuar con Google</span></div>
+										<div id="gsi_312426_985296-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div>
+									</div>
+									<p class="google-error"></p>
+								</div>
+							</div>
+							<!---->
 						</form>
 					</div>
 				</div>
@@ -29,3 +77,16 @@
 		</div>
 	</div>
 @endsection
+@push('scripts')
+	<script>
+		const passwordField = document.getElementById('request_data_password');
+		const togglePassword = document.getElementById('ckeckboxPass');
+
+		togglePassword.addEventListener('change', function () {
+			// Toggle the type attribute
+			const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+			passwordField.setAttribute('type', type);
+		});
+	</script>
+@endpush
+

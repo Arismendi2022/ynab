@@ -11,7 +11,7 @@
 	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-	<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+{{-- 	<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"> --}}
 	<link rel="shortcut icon" href="/backend/assets/brand/ynab-tree-logo.svg">
 	{{-- <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
 	<link href="/backend/assets/dist/css/main.css" rel="stylesheet">
@@ -26,7 +26,7 @@
 <div class="page-wrapper">
 	<header class="page-header">
 		<a title="YNAB" class="ynab-primary-logo launch_app_button" href="/"><img alt=""
-				src="https://app.ynabassets.com/24.35.2/assets/ynab-primary-logo-b3fda5184b7d2483dab2bd1a1cb2b67eb481c4e8b4f09ae6bf98709242b8d95f.svg">
+				src="/backend/assets/brand/ynab-primary-logo.svg">
 		</a>
 	</header>
 	<main class="page-main" role="main">
@@ -42,7 +42,7 @@
 	<a rel="noopener noreferrer" target="_blank" href="#" onclick="return false;">Privacy Policy</a>
 	<a rel="noopener noreferrer" target="_blank" href="#" onclick="return false;">California Privacy Policy</a>
 	<button class="your-privacy-choices js-open-preference-center">Your Privacy Choices</button>
-	<div class="copyright">© Copyright 2024 YNAB LLC. All rights reserved.</div>
+	<div class="copyright">© Copyright {{ date('Y') }} YNAB LLC. All rights reserved.</div>
 </footer>
 
 @stack('scripts')

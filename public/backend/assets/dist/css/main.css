@@ -38,21 +38,25 @@
 	--illustrationBackgroundBlurple600: #3B5EDA;
 	--illustrationBackgroundSlime400: #A2E66E;
 }
+/** || FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/helvetica-neue-55");
+
 /* || RESET */
 * {
 	box-sizing: border-box;
 }
 
+/* || GENERAL STYLES */
 body {
 	color: var(--labelPrimary, #19223c);
 	background-color: var(--backgroundPrimary, #fff);
-	font-family: "Figtree", Helvetica, Arial, sans-serif;
+	font-family: "Figtree", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
 }
-
 body {
 	line-height: 1.4;
 }
@@ -100,7 +104,220 @@ a, a:visited {
 }
 
 /* || LOGIN SCREEN */
+section.aside-content {
+	display: flex;
+	margin: 0 auto;
+	max-width: 1024px;
+	padding-top: 3.875rem;
+	text-align: center;
+	width: 46.875rem;
+}
+section.aside-content > aside {
+	font-weight: bold;
+	padding: 0 6rem 0 0.875rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+section.aside-content > aside img {
+	max-width: 300px;
+}
+section.aside-content > aside p {
+	text-align: center;
+	width: 19rem;
+}
+p {
+	margin-top: 1rem;
+	line-height: 1.5rem;
+	color: var(--labelPrimary, #19223c);
+	font-family: "Figtree", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+section.aside-content > div {
+	flex: 1;
+}
+.authentications-container h2 {
+	margin: 0;
+	text-align: center;
+}
+h2 {
+	color: var(--labelHeading, #2c396a);
+	font-family: "Figtree", Helvetica, Arial, sans-serif;
+	font-size: 2.25rem;
+	font-weight: 700;
+	line-height: 2.5625rem;
+	margin-top: 2rem;
+}
 
+/* || FORM */
+.authentications-container form {
+	margin: 0 auto;
+	width: 288px;
+}
+
+/* || EMAIL */
+.form label {
+	color: var(--labelPrimary, #19223c);
+	display: block;
+	font-size: 0.875rem;
+	font-weight: bold;
+	line-height: 1.0625rem;
+	margin: 0;
+}
+.u-sr-only {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+::placeholder {
+	color: #ababab !important;
+}
+.authentications-container input[type="email"] {
+	background: url(https://app.ynabassets.com/24.35.2/assets/icon-mail-11e15acdf5f7fba6d7459d44a4bba0dad084fdceecd21694b11d2af0da30af03.svg) no-repeat 1rem;
+	background-size: 1rem;
+	margin-top: 0;
+}
+.authentications-container .form input {
+	border-radius: 0.25rem;
+	border-color: var(--dividerStandard, #d2d8de);
+	height: 2.875rem;
+	padding: 0.688rem 1rem 0.813rem 2.875rem;
+	max-width: none;
+	width: 100%;
+	color-scheme: light only;
+}
+.form input, .form select, .recurly-hosted-field {
+	border-radius: 0.25rem;
+	height: 32px;
+	margin: 0.25rem 0 0 0;
+	padding-left: 6px;
+	max-width: 280px;
+}
+.form input, .form textarea, .form select, .form option, .recurly-hosted-field {
+	font-family: "Figtree", Helvetica, Arial, sans-serif;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	width: 100%;
+	color: var(--labelPrimary, #19223c);
+	border: 1px solid var(--dividerStandard, #d2d8de);
+	background-color: var(--inputBackground, #fff);
+	color-scheme: light only;
+}
+.form p label.error, .form p label.apple-error, .form p label.google-error {
+	color: #c40303;
+	margin-top: 3px;
+}
+.form p.error, .form p.apple-error, .form p.google-error, .form p label.error, .form p label.apple-error, .form p label.google-error {
+	color: #c40303;
+	font-weight: bold;
+}
+
+/* || PASSWORD */
+.authentications-container .form .password-toggle {
+	max-width: none;
+}
+.form .password-toggle {
+	display: block;
+	position: relative;
+	max-width: 280px;
+}
+.form .password-toggle input[type="password"], .form .password-toggle input[type="text"] {
+	padding-right: 4.5rem;
+	z-index: 1;
+}
+.authentications-container input[type="password"], .authentications-container .password-toggle input[type="text"] {
+	background: url(https://app.ynabassets.com/24.35.2/assets/icon-lock-39ae6a97acef04cdfdb77a1e33c7041575dbb4c6232a1fee70adc81a6f8ee155.svg) no-repeat 1rem;
+	background-size: 1rem;
+	margin-top: 0;
+}
+.authentications-container .form .password-toggle label {
+	top: 2px;
+}
+.form .password-toggle label {
+	align-items: center;
+	background-color: var(--backgroundSecondary, #edf1f5);
+	border-top-right-radius: 0.15rem;
+	border-bottom-right-radius: 0.15rem;
+	color: var(--labelPrimary, #19223c);
+	cursor: pointer;
+	display: flex;
+	font-size: 0.875rem;
+	font-weight: normal;
+	line-height: 1rem;
+	padding: 0 0.5rem;
+	position: absolute;
+	bottom: 2px;
+	right: 2px;
+	top: 6px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	z-index: 2;
+}
+.form .password-toggle input[type="checkbox"] {
+	cursor: pointer;
+	height: auto;
+	padding: 0;
+	margin: 0 0.25rem 0 0;
+	width: auto;
+}
+
+/* || REMEMBER */
+.authentications-container .remember-me-and-forgot-password {
+	display: flex;
+}
+.authentications-container .remember-me-and-forgot-password label {
+	color: inherit;
+	flex: 1 1 auto;
+	font-weight: normal;
+	line-height: 1.5rem;
+	text-align: left;
+}
+.authentications-container .remember-me-and-forgot-password input[type="checkbox"] {
+	height: auto;
+	padding: 0;
+	margin: 0 0.25rem 0 0;
+	width: auto;
+}
+.authentications-container .remember-me-and-forgot-password a {
+	font-size: 0.875rem;
+	flex: 1 1 auto;
+	text-align: right;
+}
+/* || BUTTON */
+.authentications-container .button-primary {
+	background-color: var(--primaryAction, #3b5eda);
+	border: 0;
+}
+.authentications-container .button-primary {
+	margin-top: 4px;
+	width: 100%;
+}
+.form .button-submit, .button-launch-app, .button-primary {
+	color: var(--labelDarkBackgroundPrimary);
+	background-color: var(--buttonPrimaryBackground, #3b5eda);
+	border-color: var(--buttonPrimaryBackground, #3b5eda);
+}
+.button {
+	border-radius: 0.25rem;
+	font-family: "Figtree", Helvetica, Arial, sans-serif;
+	font-size: 1rem;
+	font-weight: bold;
+	height: 40px;
+	line-height: 1.0625rem;
+	margin: 0;
+	padding: 0 10px;
+	text-align: center;
+	white-space: nowrap;
+	transition: background-color .3s ease;
+}
+.button:hover {
+	background-color: var(--buttonPrimaryBackgroundActive);
+}
 
 
 /* || FOOTER */
@@ -147,3 +364,139 @@ footer a:hover,
 .your-privacy-choices:hover {
 	color: var(--primaryAction, #3b5eda);
 }
+
+/* || SSO BUTTONS */
+.u-hr-text::after {
+	background-color: #fff;
+	font-family: "Figtree", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: rgba(0,0,0,0.46);
+	content: attr(data-content);
+	display: inline-block;
+	line-height: 1.25em;
+	padding: 0 0.5em;
+	position: relative;
+}
+.u-hr-text::before {
+	background-color: rgba(0,0,0,0.15);
+	content: " ";
+	height: 1px;
+	left: 0;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+}
+.authentications-container hr {
+	margin: 1rem 0;
+}
+.u-hr-text {
+	background-color: transparent;
+	border: 0;
+	color: #000000;
+	height: 1.25rem;
+	line-height: 1.25rem;
+	outline: 0;
+	position: relative;
+	text-align: center;
+}
+
+/* || APLE BUTTON */
+.button-brand-apple:link, .button-brand-apple:visited, .button-brand-apple:hover, .button-brand-apple:active, .button-brand-google-inner:link, .button-brand-google-inner:visited, .button-brand-google-inner:hover, .button-brand-google-inner:active {
+	text-decoration: none;
+}
+.authentications-container .button-brand {
+	margin-bottom: 8px;
+	width: 100%;
+}
+.button-brand-apple {
+	cursor: pointer;
+	border: solid 1px #000;
+	border-radius: 6px;
+}
+.button-brand-apple, .button-brand-google-inner {
+	align-items: center;
+	background-color: #fff;
+	color: #19223c;
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	font-family: "Figtree", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	height: 40px;
+	justify-content: center;
+	min-width: 240px;
+	padding-left: 12px;
+	padding-right: 12px;
+	transition: background-color 0.218s, border-color 0.218s;
+}
+.button-brand-apple .button-brand-logo {
+	margin-top: -4px;
+	height: 14px;
+}
+.button-brand-apple .button-brand-logo, .button-brand-google-inner .button-brand-logo {
+	display: block;
+	margin-right: 5px;
+	width: 18px;
+}
+.button-brand-apple .button-brand-logo .provider-logo, .button-brand-google-inner .button-brand-logo .provider-logo {
+	position: static;
+	height: 100%;
+	vertical-align: baseline;
+	width: auto;
+}
+.button-brand-apple .button-brand-name {
+	color: #000;
+}
+.button-brand-apple .button-brand-name, .button-brand-google-inner .button-brand-name {
+	color: #19223c;
+	text-align: center;
+}
+.provider-logo {
+	vertical-align: middle;
+	height: 1em;
+}
+.button-brand-apple:hover {
+	background-color: var(--backgroundContainer);
+	transition: background-color .3s ease;
+}
+.apple-error {
+	margin-bottom: 1rem;
+	margin-top: 0;
+}
+.apple-error, .google-error {
+	display: none;
+}
+/* || GOOGLE BUTTON */
+.button-brand-google {
+	color-scheme: light;
+	display: flex;
+	height: 40px;
+}
+.button-brand-google-inner {
+	border-radius: 4px;
+	box-sizing: border-box;
+	transition: background-color .218s,border-color .218s;
+	-moz-user-select: none;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #dadce0;
+	color: #3c4043;
+	cursor: pointer;
+	font-size: 14px;
+	height: 40px;
+	letter-spacing: 0.25px;
+	outline: none;
+	overflow: hidden;
+	padding: 0 12px;
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	width: auto;
+}
+
+
+
+
+
+
