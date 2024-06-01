@@ -33,7 +33,7 @@
 									<span class="password-toggle">
 										<input class="required" placeholder="Password" data-login-target="passwordInput" autocapitalize="none" autocomplete="off"
 										type="password" name="request_data[password]" id="request_data_password">
-										<label><input type="checkbox" id="ckeckboxPass" data-password-toggle="">Show</label></span>
+										<label><input type="checkbox" id="togglePassword" data-password-toggle="">Show</label></span>
 									<label class="error" for="request_data_password"></label>
 								</p>
 								<p class="remember-me-and-forgot-password">
@@ -55,14 +55,14 @@
 									<a class="button-brand button-brand-apple" data-label="Continue with Apple" data-trigger-action="false" data-login-target="appleButton"
 									href="#" onclick="return false;">
 										<span class="button-brand-logo"><img class="provider-logo"
-											src="https://app.ynabassets.com/24.35.2/assets/apple-logo-2c788e8b33e66470099c79c4dd155595d8ebc31822e8e28dd3f44c6235a0991f.svg"></span><span
+											src="/backend/assets/brand/apple-logo.svg"></span><span
 										class="button-brand-name">Continue with Apple
 										</span>
 									</a>
 									<p class="apple-error"></p>
 									<div class="button-brand button-brand-google" data-width="288" data-login-target="googleButton">
 										<div class="button-brand-google-inner js-disabled"><span class="button-brand-logo"><img class="provider-logo"
-												src="https://app.ynabassets.com/24.36.1/assets/google-logo-2c0f347e5835e29844bdcd1195338db4fc1445e232c3b72c2b38c15454e14c31.svg"/></span><span
+												src="/backend/assets/brand/google-logo.svg"/></span><span
 											class="button-brand-name">Continuar con Google</span></div>
 										<div id="gsi_312426_985296-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div>
 									</div>
@@ -80,7 +80,7 @@
 @push('scripts')
 	<script>
 		const passwordField = document.getElementById('request_data_password');
-		const togglePassword = document.getElementById('ckeckboxPass');
+		const togglePassword = document.getElementById('togglePassword');
 
 		togglePassword.addEventListener('change', function () {
 			// Toggle the type attribute

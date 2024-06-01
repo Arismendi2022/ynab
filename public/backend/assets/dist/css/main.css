@@ -177,7 +177,7 @@ h2 {
 	color: #ababab !important;
 }
 .authentications-container input[type="email"] {
-	background: url(https://app.ynabassets.com/24.35.2/assets/icon-mail-11e15acdf5f7fba6d7459d44a4bba0dad084fdceecd21694b11d2af0da30af03.svg) no-repeat 1rem;
+	background: url(/backend/assets/brand/icon-mail.svg) no-repeat 1rem;
 	background-size: 1rem;
 	margin-top: 0;
 }
@@ -230,7 +230,7 @@ h2 {
 	z-index: 1;
 }
 .authentications-container input[type="password"], .authentications-container .password-toggle input[type="text"] {
-	background: url(https://app.ynabassets.com/24.35.2/assets/icon-lock-39ae6a97acef04cdfdb77a1e33c7041575dbb4c6232a1fee70adc81a6f8ee155.svg) no-repeat 1rem;
+	background: url(/backend/assets/brand/icon-lock.svg) no-repeat 1rem;
 	background-size: 1rem;
 	margin-top: 0;
 }
@@ -431,7 +431,7 @@ footer a:hover,
 }
 .button-brand-apple .button-brand-logo {
 	margin-top: -4px;
-	height: 14px;
+	height: 16px;
 }
 .button-brand-apple .button-brand-logo, .button-brand-google-inner .button-brand-logo {
 	display: block;
