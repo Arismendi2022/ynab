@@ -14,30 +14,34 @@
 			<div class="authentications-container">
 				<div class="authentications-container-item">
 					<h2>Create an account</h2>
-					<p>Have an account? <a data-action="login#trackClickedSignUp" href="/users/sign_up">Log in</a>.</p>
-					<form class="form signup-form" action="" method="POST">
+					<p>Have an account? <a data-action="login#trackClickedSignUp" href="{{ route('users.sign_in') }}">Log in</a>.</p>
+					<form class="form signup-form" action="{{ route('users.create') }}" method="POST" novalidate>
 						@csrf
 						<div data-login-target="identityContainer">
 							<p class="js-form-email">
 								<label for="request_data_email" class="u-sr-only">Email:</label>
 								<input class="required" autofocus="autofocus" spellcheck="false" placeholder="Email address" data-login-target="emailInput" type="email"
-								name="request_data[email]" id="request_data_email_signup">
-								<label class="error" for="request_data_email_signup"></label>
+								name="email" id="request_data_email_signup" value="{{old('email')}}">
+								@error('email')
+								<label class="error" for="request_data_email_signup">{{ $message }}</label>
+								@enderror
 							</p>
 							<p class="js-form-password">
 								<label class="u-sr-only" for="request_data_password_signup">Password:</label>
 								<span class="password-toggle">
 										<input class="required" placeholder="Password" data-login-target="passwordInput" autocapitalize="none" autocomplete="off"
-										type="password" name="request_data[password]" id="request_data_password_signup">
+										type="password" name="password" id="request_data_password_signup">
 										<label><input type="checkbox" id="togglePassword" data-password-toggle="">Show</label></span>
-								<label class="error" for="request_data_password_signup"></label>
+								@error('password')
+								<label class="error" for="request_data_password_signup">{{ $message }}</label>
+								@enderror
 							</p>
 							<p>
 								<button name="sign_up" type="submit" id="sign_up" class="button button-primary" data-disable-with="Signing Up...">Sign Up</button>
 							</p>
 							<p class="terms-consent">
-								By creating an account, you agree to the YNAB <a rel="noopener noreferrer" target="_blank" href="https://www.ynab.com/privacy-policy/">Privacy Policy</a> and <a
-								rel="noopener noreferrer" target="_blank" href="https://www.ynab.com/terms/">Terms of Service</a>.
+								By creating an account, you agree to the YNAB <a rel="noopener noreferrer" target="_blank" href="#" onclick="return false;">Privacy Policy</a> and <a
+								rel="noopener noreferrer" target="_blank" href="#" onclick="return false;" >Terms of Service</a>.
 							</p>
 						</div>
 						<div data-login-target="ssoButtons">

@@ -18,9 +18,9 @@
 							<h2>Log In</h2>
 						</div>
 						<div data-login-target="loginSubheader">
-							<p>New to YNAB? <a data-action="login#trackClickedSignUp" href="/users/sign_up">Sign up today</a>.</p>
+							<p>New to YNAB? <a data-action="login#trackClickedSignUp" href="{{ route('users.sign_up') }}">Sign up today</a>.</p>
 						</div>
-						<form id="login-form" class="form login-form" action="" method="POST">
+						<form id="login-form" class="form login-form" action="" method="POST" novalidate>
 							@csrf
 							<div data-login-target="identityContainer">
 								<p class="js-form-email">
