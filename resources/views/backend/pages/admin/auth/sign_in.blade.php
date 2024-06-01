@@ -6,7 +6,7 @@
 			<section class="aside-content">
 				<aside>
           <span class="doodle">
-            <img src="backend/assets/brand/doodle-logo.svg">
+            <img src="/backend/assets/brand/doodle-logo.svg">
           </span>
 					<p>
 						Create the life you want with YNAB, a money management method that will put you on the path to less money stress.
@@ -20,7 +20,8 @@
 						<div data-login-target="loginSubheader">
 							<p>New to YNAB? <a data-action="login#trackClickedSignUp" href="/users/sign_up">Sign up today</a>.</p>
 						</div>
-						<form id="login-form" class=" form login-form" action="" method="POST">
+						<form id="login-form" class="form login-form" action="" method="POST">
+							@csrf
 							<div data-login-target="identityContainer">
 								<p class="js-form-email">
 									<label for="request_data_email" class="u-sr-only">Email:</label>

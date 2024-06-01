@@ -6,14 +6,9 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="description"
-		content="Personal home budget software built with Four Simple Rules to help you quickly gain control of your money, get out of debt, and reach your financial goals!">
+	content="Personal home budget software built with Four Simple Rules to help you quickly gain control of your money, get out of debt, and reach your financial goals!">
 	<title>@yield('pageTitle')</title>
-	
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-{{-- 	<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"> --}}
 	<link rel="shortcut icon" href="/backend/assets/brand/ynab-tree-logo.svg">
-	{{-- <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
 	<link href="/backend/assets/dist/css/main.css" rel="stylesheet">
 	
 	<style>
@@ -26,7 +21,7 @@
 <div class="page-wrapper">
 	<header class="page-header">
 		<a title="YNAB" class="ynab-primary-logo launch_app_button" href="/"><img alt=""
-				src="/backend/assets/brand/ynab-primary-logo.svg">
+			src="/backend/assets/brand/ynab-primary-logo.svg">
 		</a>
 	</header>
 	<main class="page-main" role="main">
