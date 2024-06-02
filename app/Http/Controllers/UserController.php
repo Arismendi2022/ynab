@@ -11,38 +11,22 @@
 	{
 		public function loginHandler(Request $request){
 			
-			$fieldType = filter_var($request->email,FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
+			$request->validate([
+				'email'    => 'required|email|exists:users',
+				'password' => 'required|min:5|max:30'
+			],[
+				'email.required'    => 'Se requiere correo electrónico.',
+				'email.email'       => 'Dirección de correo electrónico no válida.',
+				'email.exists'      => 'El correo electrónico no existe en el sistema.',
+				'password.required' => 'Se requiere contraseña.',
+				'min'               => 'La contraseña debe tener al menos 5 caracteres.',
+				'max'               => 'La contraseña no debe exceder más de 30 caracteres.'
+			]);
 			
-			if($fieldType == 'email'){
-				$request->validate([
-					'email'    => 'required|email|exists:users',
-					'password' => 'required|min:5|max:30'
-				],[
-					'email.required'    => 'Se requiere correo o nombre de usuario.',
-					'email.email'       => 'Dirección de correo no válida.',
-					'email.exists'      => 'El correo no existe en el sistema.',
-					'password.required' => 'Se requiere contraseña.',
-					'min'               => 'La contraseña debe tener al menos 5 caracteres.',
-					'max'               => 'La contraseña no debe exceder más de 30 caracteres.'
-				]);
-			}else{
-				$request->validate([
-					'email'    => 'required|exists:users',
-					'password' => 'required|min:5|max:30'
-				
-				],[
-					'email.required'    => 'Se requiere correo o nombre de usuario.',
-					'email.exists'      => 'El correo no existe en el sistema.',
-					'password.required' => 'Se requiere contraseña.',
-					'min'               => 'La contraseña debe tener al menos 5 caracteres.',
-					'max'               => 'La contraseña no debe exceder más de 30 caracteres.'
-				]);
-			}
-			
-			$creds = array(
-				$fieldType => $request->email,
+			$creds = [
+				'email'    => $request->email,
 				'password' => $request->password
-			);
+			];
 			
 			if(Auth::guard('users')->attempt($creds)){
 				return redirect()->route('users.budget');
