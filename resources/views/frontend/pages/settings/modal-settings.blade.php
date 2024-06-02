@@ -244,7 +244,7 @@
 				<hr>
 			</li>
 			<li>
-				<button type="button">
+				<button type="button" onclick="event.preventDefault();document.getElementById('usersLogoutForm').submit()">
 					<svg class="ynab-new-icon " width="16" height="16">
 						<!---->
 						<use href="#icon_sprite_logout">
@@ -257,6 +257,7 @@
 					</svg>
 					Log Out
 				</button>
+				<form action="<?= route('users.logout_handler') ?>" id="usersLogoutForm" method="POST">@csrf</form>
 			</li>
 			<li>
 				<hr>

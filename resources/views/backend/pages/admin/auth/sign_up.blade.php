@@ -15,7 +15,7 @@
 				<div class="authentications-container-item">
 					<h2>Create an account</h2>
 					<p>Have an account? <a data-action="login#trackClickedSignUp" href="{{ route('users.sign_in') }}">Log in</a>.</p>
-					<form class="form signup-form" action="{{ route('users.create') }}" method="POST" novalidate>
+					<form class="form signup-form" action="{{ route('users.create') }}" method="POST" accept-charset="UTF-8" novalidate>
 						@csrf
 						<div data-login-target="identityContainer">
 							<p class="js-form-email">

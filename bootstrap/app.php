@@ -11,7 +11,18 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->alias([
+					'users.guest'=> \App\Http\Middleware\UserRedirect::class,
+	        'users.auth'=> \App\Http\Middleware\UserAuthenticate::class,
+					'PreventBackHistory' => \App\Http\Middleware\PreventBackHistory::class,
+        ]);
+				
+				$middleware->redirectTo(
+					guests: '/users/sign_in' ,
+					users: '/users/budget'
+					
+				);
+	    
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

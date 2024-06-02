@@ -20,22 +20,26 @@
 						<div data-login-target="loginSubheader">
 							<p>New to YNAB? <a data-action="login#trackClickedSignUp" href="{{ route('users.sign_up') }}">Sign up today</a>.</p>
 						</div>
-						<form id="login-form" class="form login-form" action="" method="POST" novalidate>
+						<form id="login-form" class="form login-form" action="{{ route('users.login_handler') }}" method="POST" accept-charset="UTF-8" novalidate>
 							@csrf
 							<div data-login-target="identityContainer">
 								<p class="js-form-email">
 									<label for="request_data_email" class="u-sr-only">Email:</label>
 									<input class="required" autofocus="autofocus" spellcheck="false" placeholder="Email address" data-login-target="emailInput" type="email"
-									name="request_data[email]" id="request_data_email">
-									<label class="error" for="request_data_email"></label>
+									name="email" id="request_data_email" value="{{ old('email') }}">
+									@error('email')
+										<label class="error" for="request_data_email">{{ $message }}</label>
+									@enderror
 								</p>
 								<p class="js-form-password">
 									<label class="u-sr-only" for="request_data_password">Password:</label>
 									<span class="password-toggle">
 										<input class="required" placeholder="Password" data-login-target="passwordInput" autocapitalize="none" autocomplete="off"
-										type="password" name="request_data[password]" id="request_data_password">
+										type="password" name="password" id="request_data_password" value="{{ old('password') }}">
 										<label><input type="checkbox" id="togglePassword" data-password-toggle="">Show</label></span>
-									<label class="error" for="request_data_password"></label>
+									@error('password')
+										<label class="error" for="request_data_password">{{ $message }}</label>
+									@enderror
 								</p>
 								<p class="remember-me-and-forgot-password">
 									<label for="request_data_remember_me">
