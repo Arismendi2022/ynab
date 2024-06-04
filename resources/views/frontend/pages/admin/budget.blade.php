@@ -10,7 +10,7 @@
 		<header id="ember15" class="budget-header left-to-budget-is-positive">
 			<div class="budget-header-flexbox">
 				<div class="budget-header-item budget-header-calendar">
-					<button class="budget-header-calendar-prev " aria-label="previous month budget" type="button">
+					<button id="prev-month" class="budget-header-calendar-prev " aria-label="previous month budget" type="button">
 						<svg class="ynab-new-icon " width="30" height="30">
 							<!---->
 							<use href="#icon_sprite_chevron_left_circle">
@@ -22,7 +22,7 @@
 					</button>
 					<div class="budget-header-calendar-date">
 						<button class="budget-header-calendar-date-button" type="button">
-							May 2024
+							<span id="current-date">Jun 2024</span>
 							<svg class="ynab-new-icon " width="12" height="12">
 								<!---->
 								<use href="#icon_sprite_caret_down">
@@ -36,7 +36,7 @@
 							Enter a note...
 						</button>
 					</div>
-					<button class="budget-header-calendar-next" aria-label="next month budget" type="button">
+					<button id="next-month" class="budget-header-calendar-next" aria-label="next month budget" type="button">
 						<svg class="ynab-new-icon " width="30" height="30">
 							<!---->
 							<use href="#icon_sprite_chevron_right_circle">
@@ -787,5 +787,30 @@
 			$('#ember25').css('transition', 'opacity 0.2s');
 		});
 	});
+	
+	 // Inicializa el calendario con la fecha actual
+	document.addEventListener('DOMContentLoaded', function () {
+		const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+		let currentDate = new Date(); // Fecha actual
+
+		const updateCalendar = () => {
+			const currentMonth = monthNames[currentDate.getMonth()];
+			const currentYear = currentDate.getFullYear();
+			document.getElementById('current-date').innerText = `${currentMonth} ${currentYear}`;
+		};
+
+		document.getElementById('prev-month').addEventListener('click', () => {
+			currentDate.setMonth(currentDate.getMonth() - 1);
+			updateCalendar();
+		});
+
+		document.getElementById('next-month').addEventListener('click', () => {
+			currentDate.setMonth(currentDate.getMonth() + 1);
+			updateCalendar();
+		});
+
+		updateCalendar(); // Inicializa el calendario con la fecha actual
+	});
+	
 </script>
 @endpush
