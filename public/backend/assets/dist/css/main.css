@@ -505,9 +505,37 @@ footer a:hover,
 	text-decoration: none;
 }
 
-/* || VERIFY ACCOUNT */
+/* || VERIFY */
+.verify {
+	font-family: "Figtree", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.verify p,
+.verify a {
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.2;
+}
+
+/* || ACCOUNT CONFIRMATION */
 h2, p {
 	font-family: "Figtree", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.page-main > section {
+	flex: 1 0 auto;
+	max-width: 40rem;
+}
+a.button-launch-app {
+border: none;
+color: var(--labelDarkBackgroundPrimary, #fff);
+}
+
+a.button {
+	border-radius: 0.25rem;
+	text-decoration: none;
+	padding: 6px 14px;
+}
+.button-launch-app {
+	background-color: var(--buttonPrimaryBackground, #3B5EDA);
 }
 
 

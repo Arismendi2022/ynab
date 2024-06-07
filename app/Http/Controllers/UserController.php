@@ -5,6 +5,7 @@
 	use App\Models\User;
 	use App\Models\VerificationToken;
 	use Illuminate\Http\Request;
+	use illuminate\Support\Carbon;
 	use Illuminate\Support\Facades\Auth;
 	use Illuminate\Support\Facades\Hash;
 	use Illuminate\Support\Str;
@@ -31,7 +32,16 @@
 			];
 			
 			if(Auth::guard('users')->attempt($creds)){
-				return redirect()->route('users.budget');
+				if(!auth('users')->user()->verified){
+					auth('users')->logout();
+					return redirect()->back()
+						->withErrors(['email' => 'Se requiere verificación. Si tiene una cuenta con nosotros, verifique su correo electrónico.'])
+						->withInput($request->only('email'));
+					
+				}else{
+					return redirect()->route('users.budget');
+					
+				}
 			}else{
 				return redirect()->back()
 					->withErrors(['password' => 'Contraseña incorrecta.'])
@@ -107,6 +117,37 @@
 					->withInput($request->only('email'));
 			}
 		}//End Method
+		
+		public function verifyAccount(Request $request,$token){
+			$verifyToken = verificationToken::where('token',$token)->first();
+			
+			if(!is_null($verifyToken)){
+				$users = User::where('email',$verifyToken->email)->first();
+				
+				$email = $users->email;
+				
+				if(!$users->verified){
+					$users->verified          = 1;
+					$users->email_verified_at = Carbon::now();
+					$users->save();
+					
+					return view('email-templates.user-confirmation')->with('email',$email);
+					
+					/*return redirect()->route('users.sign_in')
+						->withErrors(['email' => 'Se ha verificado tu cuenta.
+					 Inicie sesión con sus credenciales y complete la configuración de su cuenta de usuario.'])
+						->withInput($request->only('email'));*/
+				}else{
+					return redirect()->route('users.sign_in')
+						->withErrors(['email' => 'Se ha verificado tu cuenta. Ahora puedes iniciar sesión'])
+						->withInput($request->only('email'));
+				}
+			}else{
+				return redirect()->back()
+					->withErrors(['email' => 'Algo salió mal.'])
+					->withInput($request->only('email'));
+			}
+		} //End Method
 		
 		
 	}
