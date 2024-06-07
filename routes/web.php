@@ -15,6 +15,10 @@
 			Route::view('/sign_up','backend.pages.admin.auth.sign_up')->name('sign_up');
 			Route::post('/create',[UserController::class,'createUser'])->name('create');
 			Route::get('/account/verify/{token}',[UserController::class,'verifyAccount'])->name('verify');
+			Route::get('/forgot-password',[UserController::class,'forgotPassword'])->name('forgot-password');
+			//Route::post('/send-password-reset-link','sendPasswordResetLink')->name('send-password-reset-link');
+		//	Route::get('/password/reset/{token}','showResetForm')->name('reset_password');
+			
 			
 		});
 		

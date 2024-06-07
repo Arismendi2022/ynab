@@ -47,18 +47,8 @@
 	box-sizing: border-box;
 }
 
-/* || GENERAL STYLES */
-body {
-	color: var(--labelPrimary, #19223c);
-	background-color: var(--backgroundPrimary, #fff);
-	font-family: "Figtree", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 16px;
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-}
-body {
-	line-height: 1.4;
+html, body {
+	height: 100%;
 }
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
@@ -66,7 +56,25 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	border: 0;
 	vertical-align: baseline;
 	font: inherit;
+	font-size: inherit;
 	font-size: 100%;
+}
+
+/* || GENERAL STYLES */
+body {
+	color: var(--labelPrimary, #19223C);
+	background-color: var(--backgroundPrimary, #fff);
+	font-family: "Figtree", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+body {
+	line-height: 1.4;
 }
 
 /* || HEADER */
@@ -130,7 +138,6 @@ p {
 	margin-top: 1rem;
 	line-height: 1.5rem;
 	color: var(--labelPrimary, #19223c);
-	font-family: "Figtree", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 section.aside-content > div {
 	flex: 1;
@@ -304,6 +311,7 @@ h2 {
 }
 .button {
 	border-radius: 0.25rem;
+	border: 2px solid var(--primaryAction, #3B5EDA);
 	font-family: "Figtree", Helvetica, Arial, sans-serif;
 	font-size: 1rem;
 	font-weight: bold;
@@ -419,7 +427,6 @@ footer a:hover,
 	display: flex;
 	flex-direction: row;
 	flex: 1;
-	font-family: "Figtree", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	font-weight: 500;
 	height: 40px;
@@ -517,9 +524,6 @@ footer a:hover,
 }
 
 /* || ACCOUNT CONFIRMATION */
-h2, p {
-	font-family: "Figtree", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
 .page-main > section {
 	flex: 1 0 auto;
 	max-width: 40rem;
@@ -538,6 +542,31 @@ a.button {
 	background-color: var(--buttonPrimaryBackground, #3B5EDA);
 }
 
+/* || FORGOT PASSWORD */
+section {
+	display: block;
+}
+h2 {
+	color: var(--labelHeading, #2C396A);
+	font-family: "Figtree", Helvetica, Arial, sans-serif;
+	font-size: 2.25rem;
+	font-weight: 700;
+	line-height: 2.5625rem;
+	margin-top: 2rem;
+}
+hr {
+	border: 0;
+	border-bottom: 1px solid var(--dividerStandard, #D2D8DE);
+	color: var(--dividerStandard, #D2D8DE);
+	margin: 2rem 0;
+}
+.js-formp p {
+	content: " ";
+}
+.button-primary:hover {
+	background-color: var(--buttonPrimaryBackgroundActive, #374D9B);
+	border-color: var(--buttonPrimaryBackgroundActive, #374D9B);
+}
 
 
 

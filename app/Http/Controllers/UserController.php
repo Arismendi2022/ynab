@@ -149,6 +149,14 @@
 			}
 		} //End Method
 		
+		public function forgotPassword(Request $request){
+			$data = [
+				'pageTitle' => 'Forgot Password'
+			];
+			return view('backend.pages.admin.auth.forgot-password',$data);
+			
+		}// End method
+		
 		
 	}
  

@@ -45,7 +45,7 @@
 									<label for="request_data_remember_me">
 										<input data-login-target="rememberMeInput" type="checkbox" value="1" name="request_data[remember_me]" id="request_data_remember_me">
 										Keep me logged in
-									</label> <a href="/users/password/new">Forgot password?</a>
+									</label> <a href="{{ route('users.forgot-password') }}">Forgot password?</a>
 								</p>
 								<p>
 								</p>
