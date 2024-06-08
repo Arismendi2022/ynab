@@ -1,6 +1,6 @@
 <?php
 	class constGuards {
-		const USERS = 'users';
+		const USERS = 'user';
 		
 	}
 	

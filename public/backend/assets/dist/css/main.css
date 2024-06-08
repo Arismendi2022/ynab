@@ -56,7 +56,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	border: 0;
 	vertical-align: baseline;
 	font: inherit;
-	font-size: inherit;
 	font-size: 100%;
 }
 
@@ -321,12 +320,13 @@ h2 {
 	padding: 0 10px;
 	text-align: center;
 	white-space: nowrap;
+	cursor: pointer;
 	transition: background-color .3s ease;
 }
-.button:hover {
-	background-color: var(--buttonPrimaryBackgroundActive);
+.button-primary:hover {
+	background-color: var(--buttonPrimaryBackgroundActive, #374D9B);
+	border-color: var(--buttonPrimaryBackgroundActive, #374D9B);
 }
-
 
 /* || FOOTER */
 footer {
@@ -563,10 +563,12 @@ hr {
 .js-formp p {
 	content: " ";
 }
-.button-primary:hover {
-	background-color: var(--buttonPrimaryBackgroundActive, #374D9B);
-	border-color: var(--buttonPrimaryBackgroundActive, #374D9B);
+
+/* || RESET PASSWORD */
+em {
+	font-style: italic;
 }
+
 
 
 

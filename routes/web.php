@@ -16,8 +16,9 @@
 			Route::post('/create',[UserController::class,'createUser'])->name('create');
 			Route::get('/account/verify/{token}',[UserController::class,'verifyAccount'])->name('verify');
 			Route::get('/forgot-password',[UserController::class,'forgotPassword'])->name('forgot-password');
-			//Route::post('/send-password-reset-link','sendPasswordResetLink')->name('send-password-reset-link');
-		//	Route::get('/password/reset/{token}','showResetForm')->name('reset_password');
+			Route::post('/send-password-reset-link',[UserController::class,'sendPasswordResetLink'])->name('send-password-reset-link');
+			//Route::get('/password/reset/{token}','showResetForm')->name('reset_password');
+			Route::get('/reset-password',[UserController::class,'showResetForm'])->name('reset-password');
 			
 			
 		});
