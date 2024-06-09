@@ -12,7 +12,7 @@
 				@csrf
 				<p class="js-form-email">
 					<label for="request_data_email">Email:</label>
-					<input class="required" autofocus="autofocus" spellcheck="false" type="email" name="email"  value="{{ old('email') }}" request_data_email"/>
+					<input class="required" autofocus="autofocus" spellcheck="false" type="email" name="email" value="{{ old('email') }}" id="request_data_email"/>
 					@error('email')
 					<label class="error" for="request_data_email">{{ $message }}</label>
 					@enderror
@@ -25,6 +25,36 @@
 				</p>
 			</form>
 		</section>
+		<section data-new-passwords-target="passwordsSuccessContainer" style="display: none;">
+			<h2>Reset password instructions sent!</h2>
+			<p>
+				Instructions to reset your password have been sent to <strong class="js-email"></strong>.
+			</p>
+			<p>
+				<a class="button" href="{{ route('users.sign_in') }}">Return to log in</a>
+			</p>
+		</section>
 	</div>
 @endsection
+@push('scripts')
+	<script>
+		document.querySelector('.js-form').addEventListener('submit', function(event) {
+			event.preventDefault(); // Prevent the form from submitting immediately
+
+			// Get the email entered by the user
+			var email = document.getElementById('request_data_email').value;
+
+			// Set the email into the 'js-email' element
+			document.querySelector('.js-email').innerText = email;
+
+			// Hide the first section
+			document.querySelector('[data-new-passwords-target="passwordsContainer"]').style.display = 'none';
+
+			// Show the second section
+			document.querySelector('[data-new-passwords-target="passwordsSuccessContainer"]').style.display = 'block';
+		});
+	</script>
+@endpush
+
+
 

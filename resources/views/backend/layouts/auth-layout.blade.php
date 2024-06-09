@@ -44,7 +44,7 @@
 </footer>
 
 @stack('scripts')
-</body>
 
+</body>
 </html>
 

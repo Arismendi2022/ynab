@@ -219,9 +219,9 @@
 			);
 			
 			if(sendEmail($mailConfig)){
-				return redirect()->route('users.forgot-password')
+				/*return redirect()->route('users.forgot-password')
 					->withErrors(['email' => 'Le enviamos por correo el enlace para restablecer su contraseña.'])
-					->withInput($request->only('email'));
+					->withInput($request->only('email'));*/
 			}else{
 				return redirect()->back()
 					->withErrors(['email' => 'Algo salió mal.'])

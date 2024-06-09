@@ -6,7 +6,8 @@
 			<div class="js-main_screen_or_otp_app_or_otp_backup_code">
 				<h2>Reset your password</h2>
 				<form class="form js-form" data-edit-passwords-target="resetForm" action="" accept-charset="UTF-8" data-remote="true" method="post" novalidate="novalidate">
-					<input value="dpctk11i9Mfx4r-CLxq_" autocomplete="off" type="hidden" name="request_data[reset_password_token]" id="request_data_reset_password_token">
+					@csrf
+					<input value="dpctk11i9Mfx4r-CLxq_" autocomplete="off" type="hidden" name="request_data[reset_password_token]">
 					<p>
 						<em>Password tip</em>: Create a password using four random words. It's easy to remember, but hard to crack.
 					</p>
