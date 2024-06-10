@@ -170,64 +170,73 @@
 				'email.exists'   => 'El correo electrónico no existe en el sistema',
 			]);
 			
-			/** Get User details */
-			$user = User::where('email',$request->email)->first();
-			
-			/** Generate token */
-			$token = base64_encode(Str::random(64));
-			
-			/** Check if there is an existing reset password token */
-			$oldToken = DB::table('password_reset_tokens')
-				->where(['email' => $user->email,'guard' => constGuards::USERS])->first();
-			
-			if($oldToken){
-				/** Update existing token */
-				DB::table('password_reset_tokens')->where([
-					'email' => $user->email,
-					'guard' => constGuards::USERS])
-					->update([
+			try{
+				// Start transaction
+				DB::beginTransaction();
+				
+				/** Get User details */
+				$user = User::where('email',$request->email)->first();
+				
+				/** Generate token */
+				$token = base64_encode(Str::random(64));
+				
+				/** Check if there is an existing reset password token */
+				$oldToken = DB::table('password_reset_tokens')
+					->where(['email' => $user->email,'guard' => constGuards::USERS])->first();
+				
+				if($oldToken){
+					/** Update existing token */
+					DB::table('password_reset_tokens')->where([
+						'email' => $user->email,
+						'guard' => constGuards::USERS])
+						->update([
+							'token'      => $token,
+							'created_at' => Carbon::now()
+						]);
+					
+				}else{
+					/** Add new token */
+					DB::table('password_reset_tokens')->insert([
+						'email'      => $user->email,
+						'guard'      => constGuards::USERS,
 						'token'      => $token,
 						'created_at' => Carbon::now()
 					]);
+				}
 				
-			}else{
-				/** Add new token */
-				DB::table('password_reset_tokens')->insert([
-					'email'      => $user->email,
-					'guard'      => constGuards::USERS,
-					'token'      => $token,
-					'created_at' => Carbon::now()
-				]);
+				$actionLink = route('users.reset-password',['token' => $token,'email' => urlencode($user->email)]);
+				
+				$data = array(
+					'actionLink' => $actionLink,
+					'user'       => $user
+				);
+				
+				$mail_body = view('email-templates.user-forgot-email-template',$data)->render();
+				
+				$mailConfig = array(
+					'mail_from_email'      => env('EMAIL_FROM_ADDRESS'),
+					'mail_from_name'       => env('EMAIL_FROM_NAME'),
+					'mail_recipient_email' => $user->email,
+					'mail_recipient_name'  => $user->name,
+					'mail_subject'         => 'Reset password',
+					'mail_body'            => $mail_body
+				);
+				
+				// Send email
+				if(sendEmail($mailConfig)){
+					// Commit transaction
+					DB::commit();
+					return redirect()->back()
+						->withErrors(['email' => 'Le enviamos por correo el enlace para restablecer su contraseña.'])
+						->withInput($request->only('email'));
+				}else{
+					throw new \Exception('Error al enviar el correo electrónico');
+				}
+			} catch(\Exception $e){
+				// Rollback transaction on error
+				DB::rollBack();
+				return redirect()->back()->withErrors(['email' => 'Error al enviar el correo electrónico.']);
 			}
-			
-			$actionLink = route('users.reset-password',['token' => $token,'email' => urlencode($user->email)]);
-			
-			$data = array(
-				'actionLink' => $actionLink,
-				'user'       => $user
-			);
-			
-			$mail_body = view('email-templates.user-forgot-email-template',$data)->render();
-			
-			$mailConfig = array(
-				'mail_from_email'      => env('EMAIL_FROM_ADDRESS'),
-				'mail_from_name'       => env('EMAIL_FROM_NAME'),
-				'mail_recipient_email' => $user->email,
-				'mail_recipient_name'  => $user->name,
-				'mail_subject'         => 'Reset password',
-				'mail_body'            => $mail_body
-			);
-			
-			if(sendEmail($mailConfig)){
-				/*return redirect()->route('users.forgot-password')
-					->withErrors(['email' => 'Le enviamos por correo el enlace para restablecer su contraseña.'])
-					->withInput($request->only('email'));*/
-			}else{
-				return redirect()->back()
-					->withErrors(['email' => 'Algo salió mal.'])
-					->withInput($request->only('email'));
-			}
-			
 		}//End method
 		
 		public function showResetForm(Request $request,$token = null){
@@ -237,7 +246,6 @@
 			return view('backend.pages.admin.auth.reset-password',$data);
 			
 		}//End method
-		
 		
 	}
  

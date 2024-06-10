@@ -1,3 +1,4 @@
+
 @extends('backend.layouts.auth-layout')
 @section('pageTitle', isset($pageTitle) ? $pageTitle : 'Page title here')
 @section('content')
@@ -38,7 +39,7 @@
 @endsection
 @push('scripts')
 	<script>
-		document.querySelector('.js-form').addEventListener('submit', function(event) {
+	/*/!*	document.querySelector('.js-form').addEventListener('submit', function(event) {
 			event.preventDefault(); // Prevent the form from submitting immediately
 
 			// Get the email entered by the user
@@ -51,10 +52,8 @@
 			document.querySelector('[data-new-passwords-target="passwordsContainer"]').style.display = 'none';
 
 			// Show the second section
-			document.querySelector('[data-new-passwords-target="passwordsSuccessContainer"]').style.display = 'block';
-		});
+			document.querySelecto*!/r('[data-new-passwords-target="passwordsSuccessContainer"]').style.display = 'block';
+		});*/
+	
 	</script>
 @endpush
-
-
-
