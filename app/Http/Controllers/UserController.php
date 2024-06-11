@@ -222,21 +222,17 @@
 					'mail_body'            => $mail_body
 				);
 				
-				// Send email
 				if(sendEmail($mailConfig)){
-					// Commit transaction
 					DB::commit();
-					return redirect()->back()
-						->withErrors(['email' => 'Le enviamos por correo el enlace para restablecer su contraseña.'])
-						->withInput($request->only('email'));
+					return response()->json(['success' => true,'email' => $user->email]);
 				}else{
 					throw new \Exception('Error al enviar el correo electrónico');
 				}
 			} catch(\Exception $e){
-				// Rollback transaction on error
 				DB::rollBack();
-				return redirect()->back()->withErrors(['email' => 'Error al enviar el correo electrónico.']);
+				return response()->json(['success' => false,'errors' => ['email' => 'Error al enviar el correo electrónico.']],500);
 			}
+			
 		}//End method
 		
 		public function showResetForm(Request $request,$token = null){

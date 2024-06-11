@@ -43,6 +43,8 @@
 	<div class="copyright">© Copyright {{ date('Y') }} YNAB LLC. All rights reserved.</div>
 </footer>
 
+<script src="/frontend/assets/dist/js/jquery-3.7.1.min.js"></script>
+
 @stack('scripts')
 
 </body>

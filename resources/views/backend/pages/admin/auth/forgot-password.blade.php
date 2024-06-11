@@ -1,4 +1,3 @@
-
 @extends('backend.layouts.auth-layout')
 @section('pageTitle', isset($pageTitle) ? $pageTitle : 'Page title here')
 @section('content')
@@ -9,14 +8,12 @@
 				No sweat. Enter the email address you signed up with and we'll send you instructions to reset your password.
 			</p>
 			<hr>
-			<form class="form js-form" action="{{ route('users.send-password-reset-link') }}" accept-charset="UTF-8" data-remote="true" method="POST" novalidate>
+			<form class="form js-form" id="password-reset-form" action="{{ route('users.send-password-reset-link') }}" accept-charset="UTF-8" data-remote="true" method="POST" novalidate>
 				@csrf
 				<p class="js-form-email">
 					<label for="request_data_email">Email:</label>
 					<input class="required" autofocus="autofocus" spellcheck="false" type="email" name="email" value="{{ old('email') }}" id="request_data_email"/>
-					@error('email')
-					<label class="error" for="request_data_email">{{ $message }}</label>
-					@enderror
+					<label class="error" id="email-error" for="request_data_email" style="display: none;"></label>
 				</p>
 				<p style="margin-top: 1.25rem;">
 					<button name="button" type="submit" class="button button-primary" data-disable-with="Sending Reset Instructions...">Send Reset Instructions</button>
@@ -39,21 +36,49 @@
 @endsection
 @push('scripts')
 	<script>
-	/*/!*	document.querySelector('.js-form').addEventListener('submit', function(event) {
-			event.preventDefault(); // Prevent the form from submitting immediately
+		$(document).ready(function () {
+			$('#password-reset-form').on('submit', function (e) {
+				e.preventDefault();
 
-			// Get the email entered by the user
-			var email = document.getElementById('request_data_email').value;
+				var form = $(this);
+				var actionUrl = form.attr('action');
+				var formData = form.serialize();
 
-			// Set the email into the 'js-email' element
-			document.querySelector('.js-email').innerText = email;
+				$.ajax({
+					type: 'POST',
+					url: actionUrl,
+					data: formData,
+					dataType: 'json',
+					success: function (response) {
+						// Restablecer los mensajes de error
+						$('#email-error').hide().text('');
 
-			// Hide the first section
-			document.querySelector('[data-new-passwords-target="passwordsContainer"]').style.display = 'none';
+						if (response.success) {
+							// Ocultar la sección del formulario
+							$('[data-new-passwords-target="passwordsContainer"]').hide();
 
-			// Show the second section
-			document.querySelecto*!/r('[data-new-passwords-target="passwordsSuccessContainer"]').style.display = 'block';
-		});*/
-	
+							// Mostrar la sección de éxito
+							$('[data-new-passwords-target="passwordsSuccessContainer"]').show();
+
+							// Actualizar el email en el mensaje de éxito
+							$('.js-email').text(response.email);
+						} else {
+							// Mostrar mensajes de error en el DOM
+							if (response.errors.email) {
+								$('#email-error').text(response.errors.email[0]).show();
+							}
+						}
+					},
+					error: function (xhr) {
+						var response = xhr.responseJSON;
+						if (response && response.errors) {
+							if (response.errors.email) {
+								$('#email-error').text(response.errors.email[0]).show();
+							}
+						}
+					}
+				});
+			});
+		});
 	</script>
 @endpush
