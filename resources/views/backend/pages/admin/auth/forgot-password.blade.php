@@ -71,10 +71,11 @@
 					},
 					error: function (xhr) {
 						var response = xhr.responseJSON;
-						if (response && response.errors) {
-							if (response.errors.email) {
-								$('#email-error').text(response.errors.email[0]).show();
-							}
+						if (response && response.errors && response.errors.email) {
+							$('#email-error').text(response.errors.email[0]).show();
+						} else {
+							// Mensaje de error genérico para otros errores
+							$('#email-error').text('Hubo un error enviando el correo. Por favor, intenta de nuevo.').show();
 						}
 					}
 				});

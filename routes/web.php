@@ -17,10 +17,9 @@
 			Route::get('/account/verify/{token}',[UserController::class,'verifyAccount'])->name('verify');
 			Route::get('/forgot-password',[UserController::class,'forgotPassword'])->name('forgot-password');
 			Route::post('/send-password-reset-link',[UserController::class,'sendPasswordResetLink'])->name('send-password-reset-link');
-			//Route::get('/password/reset/{token}','showResetForm')->name('reset_password');
-			Route::get('/reset-password',[UserController::class,'showResetForm'])->name('reset-password');
-			
-			
+			Route::get('/password/reset/{token}',[UserController::class,'showResetForm'])->name('reset-password');
+			Route::post('/reset-password-handler', [UserController::class,'resetPasswordHandler'])->name('reset-password-handler');
+				
 		});
 		
 		Route::middleware(['auth:users','PreventBackHistory'])->group(function(){

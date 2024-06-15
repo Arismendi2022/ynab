@@ -4,6 +4,7 @@
 	
 	use App\Models\User;
 	use App\Models\VerificationToken;
+	use constDefaults;
 	use constGuards;
 	use Illuminate\Http\Request;
 	use illuminate\Support\Carbon;
@@ -206,10 +207,8 @@
 				
 				$actionLink = route('users.reset-password',['token' => $token,'email' => urlencode($user->email)]);
 				
-				$data = array(
-					'actionLink' => $actionLink,
-					'user'       => $user
-				);
+				$data['actionLink'] = $actionLink;
+				$data['user']       = $user;
 				
 				$mail_body = view('email-templates.user-forgot-email-template',$data)->render();
 				
@@ -230,18 +229,79 @@
 				}
 			} catch(\Exception $e){
 				DB::rollBack();
-				return response()->json(['success' => false,'errors' => ['email' => 'Error al enviar el correo electrónico.']],500);
+				return response()->json(['errors' => ['email' => ['Error al enviar el correo electrónico.']]],500);
 			}
 			
 		}//End method
 		
 		public function showResetForm(Request $request,$token = null){
-			$data = [
-				'pageTitle' => 'Reset Password | YNAB'
-			];
-			return view('backend.pages.admin.auth.reset-password',$data);
+			//Check if token exist
+			$get_token = DB::table('password_reset_tokens')
+				->where(['token' => $token,'guard' => constGuards::USERS])->first();
 			
-		}//End method
+			if($get_token){
+				// Check if this token is not expired
+				$diffMins = Carbon::createFromFormat('Y-m-d H:i:s',$get_token->created_at)->diffInMinutes(Carbon::now());
+				
+				if($diffMins > constDefaults::tokenExpiredMinutes){
+					//when token is older that 30 minutes expired
+					return redirect()->route('users.forgot-password',['token' => $token])
+						->withErrors(['email' => 'El token expiró, solicite otro enlace para restablecer la contraseña.']);
+				}else{
+					return view('backend.pages.admin.auth.reset-password')->with(['token' => $token]);
+				}
+			}else{
+				return redirect()->route('users.forgot-password',['token' => $token])
+					->withErrors(['email' => 'Token no válido! Solicite otro enlace para restablecer la contraseña.']);
+			}
+		} //End method
+		
+		public function resetPasswordHandler(Request $request){
+			//Validate the form
+			$request->validate([
+				'new_password' => 'required|min:5|max:20',
+			
+			],[
+				'required' => 'Se requiere nueva contraseña.',
+				'min'      => 'La nueva contraseña debe tener al menos 5 caracteres.',
+				'max'      => 'La nueva contraseña no debe exceder más de 20 caracteres.',
+			]);
+			
+			$token = DB::table('password_reset_tokens')->where(['token' => $request->token,'guard' => constGuards::USERS])->first();
+			
+			//Get user details
+			$user = User::where('email',$token->email)->first();
+			
+			//Update user password
+			User::where('email',$user->email)->update(['password' => Hash::make($request->new_password)]);
+			
+			//Delete token record
+			DB::table('password_reset_tokens')->where([
+				'email' => $user->email,
+				'token' => $request->token,
+				'guard' => constGuards::USERS
+			])->delete();
+			
+			//Send email to notify user for new password
+			$data['user']         = $user;
+			$data['new_password'] = $request->new_password;
+			
+			$mail_body = view('email-templates.user-reset-email-template',$data)->render();
+			
+			$mailConfig = array(
+				'mail_from_email'      => env('EMAIL_FROM_ADDRESS'),
+				'mail_from_name'       => env('EMAIL_FROM_NAME'),
+				'mail_recipient_email' => $user->email,
+				'mail_recipient_name'  => $user->name,
+				'mail_subject'         => 'Password Changed',
+				'mail_body'            => $mail_body
+			);
+			
+			sendEmail($mailConfig);
+			//Redirect and display message on login page
+			return redirect()->route('users.forgot-password',['token' => $token])
+				->withErrors(['email' => 'Listo!, Tu contraseña ha sido cambiada. Utilice la nueva contraseña para iniciar sesión en el sistema.']);
+		} //End Method
 		
 	}
  
