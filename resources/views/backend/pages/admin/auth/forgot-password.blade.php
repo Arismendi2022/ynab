@@ -13,7 +13,12 @@
 				<p class="js-form-email">
 					<label for="request_data_email">Email:</label>
 					<input class="required" autofocus="autofocus" spellcheck="false" type="email" name="email" value="{{ old('email') }}" id="request_data_email"/>
-					<label class="error" id="email-error" for="request_data_email" style="display: none;"></label>
+					{{-- <label class="error" id="email-error" for="request_data_email" style="display: none;"></label> --}}
+					<label class="error" id="email-error" for="request_data_email">
+						@error('email')
+						{{ $message }}
+						@enderror
+					</label>
 				</p>
 				<p style="margin-top: 1.25rem;">
 					<button name="button" type="submit" class="button button-primary" data-disable-with="Sending Reset Instructions...">Send Reset Instructions</button>
@@ -80,6 +85,18 @@
 					}
 				});
 			});
+		});
+
+		// Este enfoque asegura que el mensaje de error se elimine
+		document.addEventListener('DOMContentLoaded', function () {
+			const passwordField = document.getElementById('request_data_email');
+			const errorLabel = document.querySelector('.error[for="request_data_email"]');
+
+			if (passwordField && errorLabel) {
+				passwordField.addEventListener('input', function () {
+					errorLabel.style.display = 'none';
+				});
+			}
 		});
 	</script>
 @endpush

@@ -245,8 +245,9 @@
 				
 				if($diffMins > constDefaults::tokenExpiredMinutes){
 					//when token is older that 30 minutes expired
+					
 					return redirect()->route('users.forgot-password',['token' => $token])
-						->withErrors(['email' => 'El token expiró, solicite otro enlace para restablecer la contraseña.']);
+						->withErrors(['email' => 'El token expiró, solicite otro enlace para restablecer la contraseña.']);/**/
 				}else{
 					return view('backend.pages.admin.auth.reset-password')->with(['token' => $token]);
 				}
@@ -299,8 +300,7 @@
 			
 			sendEmail($mailConfig);
 			//Redirect and display message on login page
-			return redirect()->route('users.forgot-password',['token' => $token])
-				->withErrors(['email' => 'Listo!, Tu contraseña ha sido cambiada. Utilice la nueva contraseña para iniciar sesión en el sistema.']);
+			return response()->json(['success' => true]);
 		} //End Method
 		
 	}

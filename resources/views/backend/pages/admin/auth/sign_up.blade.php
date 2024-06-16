@@ -41,7 +41,7 @@
 							</p>
 							<p class="terms-consent">
 								By creating an account, you agree to the YNAB <a rel="noopener noreferrer" target="_blank" href="#" onclick="return false;">Privacy Policy</a> and <a
-								rel="noopener noreferrer" target="_blank" href="#" onclick="return false;" >Terms of Service</a>.
+								rel="noopener noreferrer" target="_blank" href="#" onclick="return false;">Terms of Service</a>.
 							</p>
 						</div>
 						<div data-login-target="ssoButtons">
@@ -81,6 +81,28 @@
 			// Toggle the type attribute
 			const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
 			passwordField.setAttribute('type', type);
+		});
+		// Este enfoque asegura que el mensaje de error se elimine
+		document.addEventListener('DOMContentLoaded', function () {
+			const passwordField = document.getElementById('request_data_email_signup');
+			const errorLabel = document.querySelector('.error[for="request_data_email_signup"]');
+
+			if (passwordField && errorLabel) {
+				passwordField.addEventListener('input', function () {
+					errorLabel.style.display = 'none';
+				});
+			}
+		});
+		// Este enfoque asegura que el mensaje de error se elimine
+		document.addEventListener('DOMContentLoaded', function () {
+			const passwordField = document.getElementById('request_data_password_signup');
+			const errorLabel = document.querySelector('.error[for="request_data_password_signup"]');
+
+			if (passwordField && errorLabel) {
+				passwordField.addEventListener('input', function () {
+					errorLabel.style.display = 'none';
+				});
+			}
 		});
 	</script>
 @endpush

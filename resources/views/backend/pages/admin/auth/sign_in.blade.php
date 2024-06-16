@@ -28,7 +28,7 @@
 									<input class="required" autofocus="autofocus" spellcheck="false" placeholder="Email address" data-login-target="emailInput" type="email"
 									name="email" id="request_data_email" value="{{ old('email') }}">
 									@error('email')
-										<label class="error" for="request_data_email">{{ $message }}</label>
+									<label class="error" for="request_data_email">{{ $message }}</label>
 									@enderror
 								</p>
 								<p class="js-form-password">
@@ -38,7 +38,7 @@
 										type="password" name="password" id="request_data_password" value="{{ old('password') }}">
 										<label><input type="checkbox" id="togglePassword" data-password-toggle="">Show</label></span>
 									@error('password')
-										<label class="error" for="request_data_password">{{ $message }}</label>
+									<label class="error" for="request_data_password">{{ $message }}</label>
 									@enderror
 								</p>
 								<p class="remember-me-and-forgot-password">
@@ -84,6 +84,7 @@
 @endsection
 @push('scripts')
 	<script>
+		//Muetra la contraseña
 		const passwordField = document.getElementById('request_data_password');
 		const togglePassword = document.getElementById('togglePassword');
 
@@ -92,6 +93,29 @@
 			const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
 			passwordField.setAttribute('type', type);
 		});
+		// Este enfoque asegura que el mensaje de error se elimine
+		document.addEventListener('DOMContentLoaded', function () {
+			const passwordField = document.getElementById('request_data_email');
+			const errorLabel = document.querySelector('.error[for="request_data_email"]');
+
+			if (passwordField && errorLabel) {
+				passwordField.addEventListener('input', function () {
+					errorLabel.style.display = 'none';
+				});
+			}
+		});
+		// Este enfoque asegura que el mensaje de error se elimine
+		document.addEventListener('DOMContentLoaded', function () {
+			const passwordField = document.getElementById('request_data_password');
+			const errorLabel = document.querySelector('.error[for="request_data_password"]');
+
+			if (passwordField && errorLabel) {
+				passwordField.addEventListener('input', function () {
+					errorLabel.style.display = 'none';
+				});
+			}
+		});
+	
 	</script>
 @endpush
 
