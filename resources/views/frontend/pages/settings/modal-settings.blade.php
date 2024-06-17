@@ -19,7 +19,7 @@
 				</button>
 			</li>
 			<li>
-				<a href="/users/budgets" class="recent-budgets-view-all">
+				<a href="#" onclick="return false;" class="recent-budgets-view-all">
           <span class="open-budgets-link">
             <svg class="ynab-new-icon " width="16" height="16">
               <!---->
@@ -327,6 +327,13 @@
 @push('scripts')
 	<script>
 		<!---->
+		// Obtén el botón que abre el modal
+		var btn = document.querySelector(".modal-select-budget-settings");
+
+		// Cuando el usuario haga clic en el botón, muestra un mensaje en la consola
+		btn.onclick = function() {
+			alert("Botón de configuración de presupuesto clickeado!"); // Mensaje en la consola
+		}
 	</script>
 @endpush
 

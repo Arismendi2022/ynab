@@ -20,13 +20,14 @@
 			foreach($guards as $guard){
 				if(Auth::guard($guard)->check()){
 					//return redirect(RouteServiceProvider::HOME);
-					if($guard === 'users'){
-						return redirect()->route('users.budget');
+					if($guard === 'main'){
+						return redirect()->route('main.budget');
 					}
 				}
 			}
 			
 			return $next($request);
 		}
+		
 		
 	}

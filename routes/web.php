@@ -1,6 +1,7 @@
 <?php
 	
 	use App\Http\Controllers\UserController;
+	use App\Http\Controllers\MainController;
 	use Illuminate\Support\Facades\Route;
 	
 	Route::get('/', function () {
@@ -23,9 +24,28 @@
 		});
 		
 		Route::middleware(['auth:users','PreventBackHistory'])->group(function(){
-			Route::view('/budget','frontend.pages.admin.budget')->name('budget');
+			//Route::view('/budget','frontend.pages.admin.budget')->name('budget');
 			Route::post('/logout_handler',[UserController::class,'logoutHandler'])->name('logout_handler');
 			
 		});
+	});
+	
+	// Grupo de rutas para la parte principal (main)
+	Route::prefix('main')->name('main.')->group(function() {
+		
+		Route::middleware(['auth:users','PreventBackHistory'])->group(function(){
+			Route::get('/budget',[MainController::class,'budget'])->name('budget');
+			//Route::view('/budget','frontend.pages.admin.budget')->name('budget');
+			Route::get('/profile',[MainController::class,'profile'])->name('profile');
+			Route::get('/budget-settings',[MainController::class,'budgetSettings'])->name('budget-settings');
+			// Agrega aquí más rutas según sea necesario
+		});
+		
+		Route::middleware(['guest:users','PreventBackHistory'])->group(function(){
+			Route::view('/about','frontend.pages.main.about')->name('about');
+			Route::view('/contact','frontend.pages.main.contact')->name('contact');
+			// Agrega aquí más rutas públicas según sea necesario
+		});
+		
 	});
 	

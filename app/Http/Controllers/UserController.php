@@ -42,7 +42,7 @@
 						->withInput($request->only('email'));
 					
 				}else{
-					return redirect()->route('users.budget');
+					return redirect()->route('main.budget');
 					
 				}
 			}else{
@@ -58,13 +58,6 @@
 			return redirect()->route('users.sign_in');
 			
 		}  //End Method
-		
-		public function budget(Request $request){
-			$data = [
-				'pageTitle' => 'Budget'
-			];
-			return view('backend.pages.budget',$data);
-		}//End Method
 		
 		public function createUser(Request $request){
 			//Validate User Registration form
@@ -302,7 +295,6 @@
 				'mail_subject'         => 'Password Changed',
 				'mail_body'            => $mail_body
 			);
-			
 			sendEmail($mailConfig);
 			//Redirect and display message on login page
 			return response()->json(['success' => true]);
