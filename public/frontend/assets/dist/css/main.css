@@ -482,7 +482,7 @@ input::-moz-focus-inner {
 	justify-content: space-between;
 	margin: .5rem .3125rem .5rem .5rem;
 	padding: .3125rem .5rem;
-	transition: background-color .3s ease;
+	transition: background-color .2s ease;
 }
 .sidebar-nav-menu {
 	background-color: var(--sidebarBackground);
@@ -631,7 +631,7 @@ ul.nav-main .sidebar-nav-menu-collapsed {
 .sidebar-resized-collapsed .nav-main button:hover,
 .nav-main li a:hover,
 .nav-main li.active a {
-	background-color: var(--sidebarButtonBackgroundSelected);
+	background-color: var(--sidebarButtonBackgroundActive);
 }
 
 .nav-main a {
@@ -891,7 +891,7 @@ bdi {
 	justify-content: center;
 	min-height: 2rem;
 	white-space: nowrap;
-	transition: background-color .3s ease;
+	transition: background-color .15s ease;
 }
 .ynab-button {
 	align-items: center;
@@ -900,8 +900,9 @@ bdi {
 .ynab-button > .ynab-new-icon {
 	margin-right: .5rem;
 }
-.ynab-button.contrast:hover {
+.ynab-button.contrast:not([disabled]):hover {
 	background-color: var(--backgroundDarkTertiary);
+	color: var(--labelDarkBackgroundPrimary);
 }
 
 /* BOTTOM COLLAPSE */
@@ -929,8 +930,10 @@ bdi {
 	color: var(--sidebarLabelPrimary);
 	stroke-width: 2;
 }
-.sidebar-collapse:hover {
+.sidebar-collapse:hover,
+.sidebar-expand:hover {
 	opacity: 1;
+	filter: none;
 }
 
 /* || SIDEBAR RESIZER */
@@ -1718,6 +1721,10 @@ hr {
 }
 ul.modal-list a:hover,
 ul.modal-list button:hover {
-	background-color: var(--backgroundGroupedPrimary);
+	background-color: var(--backgroundSecondaryElevated);
+	text-decoration: none;
 }
+
+
+
 

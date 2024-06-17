@@ -8,11 +8,12 @@
 	<meta name="description"
 	content="Personal home budget software built with Four Simple Rules to help you quickly gain control of your money, get out of debt, and reach your financial goals!">
 	<title>@yield('pageTitle')</title>
+	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	<link rel="shortcut icon" href="/backend/assets/brand/ynab-tree-logo.svg">
-	<link href="/backend/assets/dist/css/main.css" rel="stylesheet">
+	<link href="/backend/assets/dist/css/auth.css" rel="stylesheet">
 	
 	<style>
 	</style>

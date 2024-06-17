@@ -71,6 +71,13 @@
 			$request->validate([
 				'email'    => 'required|email|unique:users|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
 				'password' => 'required|min:5',
+			],[
+				'email.required'    => 'Se requiere correo electrónico.',
+				'email.email'       => 'Dirección de correo electrónico no válida.',
+				'email.regex'       => 'El formato del correo electrónico no es válido.',
+				'password.required' => 'Se requiere contraseña.',
+				'min'               => 'La contraseña debe tener al menos 5 caracteres.',
+				'max'               => 'La contraseña no debe exceder más de 30 caracteres.',
 			]);
 			
 			$users           = new User();
@@ -136,13 +143,10 @@
 					
 					return view('email-templates.user-confirmation')->with('email',$email);
 					
-					/*return redirect()->route('users.sign_in')
-						->withErrors(['email' => 'Se ha verificado tu cuenta.
-					 Inicie sesión con sus credenciales y complete la configuración de su cuenta de usuario.'])
-						->withInput($request->only('email'));*/
 				}else{
 					return redirect()->route('users.sign_in')
-						->withErrors(['email' => 'Se ha verificado tu cuenta. Ahora puedes iniciar sesión'])
+						->withErrors(['email' => 'Se ha verificado tu cuenta.
+					 Inicie sesión con sus credenciales y complete la configuración de su cuenta de usuario.'])
 						->withInput($request->only('email'));
 				}
 			}else{
@@ -163,11 +167,12 @@
 		public function sendPasswordResetLink(request $request){
 			//Validate the form
 			$request->validate([
-				'email' => 'required|email|exists:users,email'
+				'email' => 'required|email|exists:users,email|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
 			],[
 				
 				'email.required' => 'Correo electronico es requerido',
 				'email.email'    => 'Dirección de correo electrónico no válida',
+				'email.regex'    => 'El formato del correo electrónico no es válido.',
 				'email.exists'   => 'El correo electrónico no existe en el sistema',
 			]);
 			

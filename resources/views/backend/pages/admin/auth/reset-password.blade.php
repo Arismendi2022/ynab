@@ -46,7 +46,7 @@
 			</div>
 			<br>
 			<p>
-				Need help? Chat with us in the app or email us at <a href="mailto:help@ynab.com">help@ynab.com</a>.
+				Need help? Chat with us in the app or email us at <a href="#" onclick="return false;">help@ynab.com</a>.
 			</p>
 		</div>
 	</div>
