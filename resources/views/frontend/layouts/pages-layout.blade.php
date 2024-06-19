@@ -36,6 +36,9 @@
 <!---->
 @include('frontend.pages.settings.modal-settings')
 <!---->
+@include('frontend.pages.settings.modal-new-budget')
+<!---->
+
 <div class="tooltip-global">
     <span role="tooltip" id="ember18" class="tooltip-content" style="top: calc(108px + 0.5rem); left: 687.817px; opacity: 0; transition: opacity 0.2s;">
       Views Menu

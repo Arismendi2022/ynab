@@ -3,24 +3,24 @@
 	color-scheme: light only;
 }
 :root {
-	--alphaBlurple40015: rgba(130, 156, 248, 0.149);
-	--alphaBlurple40020: rgba(130, 156, 248, 0.2);
-	--alphaBlurple40027: rgba(130, 156, 248, 0.271);
-	--alphaBlurple60013: rgba(59, 94, 218, 0.129);
-	--alphaBlurple60020: rgba(59, 94, 218, 0.2);
-	--alphaBlurple80016: rgba(44, 57, 106, 0.161);
-	--alphaBlurple8006: rgba(44, 57, 106, 0.059);
-	--alphaNeutral50012: rgba(110, 122, 136, 0.122);
-	--alphaNeutral50016: rgba(110, 122, 136, 0.161);
-	--alphaNeutral50018: rgba(110, 122, 136, 0.18);
-	--alphaNeutral50020: rgba(110, 122, 136, 0.2);
-	--alphaNeutral50024: rgba(110, 122, 136, 0.239);
-	--alphaNeutral50030: rgba(110, 122, 136, 0.302);
-	--alphaNeutral50032: rgba(110, 122, 136, 0.322);
-	--alphaNeutral50036: rgba(110, 122, 136, 0.302);
-	--alphaNeutral50070: rgba(110, 122, 136, 0.698);
-	--alphaNeutral5008: rgba(110, 122, 136, 0.078);
-	--alphaNeutral70060: rgba(34, 50, 67, 0.6);
+	--alphaBlurple40015: rgba(130,156,248,0.149);
+	--alphaBlurple40020: rgba(130,156,248,0.2);
+	--alphaBlurple40027: rgba(130,156,248,0.271);
+	--alphaBlurple60013: rgba(59,94,218,0.129);
+	--alphaBlurple60020: rgba(59,94,218,0.2);
+	--alphaBlurple80016: rgba(44,57,106,0.161);
+	--alphaBlurple8006: rgba(44,57,106,0.059);
+	--alphaNeutral50012: rgba(110,122,136,0.122);
+	--alphaNeutral50016: rgba(110,122,136,0.161);
+	--alphaNeutral50018: rgba(110,122,136,0.18);
+	--alphaNeutral50020: rgba(110,122,136,0.2);
+	--alphaNeutral50024: rgba(110,122,136,0.239);
+	--alphaNeutral50030: rgba(110,122,136,0.302);
+	--alphaNeutral50032: rgba(110,122,136,0.322);
+	--alphaNeutral50036: rgba(110,122,136,0.302);
+	--alphaNeutral50070: rgba(110,122,136,0.698);
+	--alphaNeutral5008: rgba(110,122,136,0.078);
+	--alphaNeutral70060: rgba(34,50,67,0.6);
 	--brandBlurple100: #ecf0fe;
 	--brandBlurple200: #d5defd;
 	--brandBlurple300: #acbdfb;
@@ -69,14 +69,14 @@
 	--brandSunset800: #68170f;
 	--brandSunset900: #3c0d09;
 	--utilityBlack100: #000;
-	--utilityBlack10: rgba(0, 0, 0, 0.1);
-	--utilityBlack12: rgba(0, 0, 0, 0.12);
-	--utilityBlack15: rgba(0, 0, 0, 0.15);
-	--utilityBlack33: rgba(0, 0, 0, 0.33);
-	--utilityBlack4: rgba(0, 0, 0, 0.04);
-	--utilityBlack5: rgba(0, 0, 0, 0.05);
-	--utilityBlack66: rgba(0, 0, 0, 0.66);
-	--utilityBlackTransparent: rgba(0, 0, 0, 0.001);
+	--utilityBlack10: rgba(0,0,0,0.1);
+	--utilityBlack12: rgba(0,0,0,0.12);
+	--utilityBlack15: rgba(0,0,0,0.15);
+	--utilityBlack33: rgba(0,0,0,0.33);
+	--utilityBlack4: rgba(0,0,0,0.04);
+	--utilityBlack5: rgba(0,0,0,0.05);
+	--utilityBlack66: rgba(0,0,0,0.66);
+	--utilityBlackTransparent: rgba(0,0,0,0.001);
 	--utilityMxWidgetBackgroundDark: #121417;
 	--utilityMxWidgetBackgroundLight: #f8f9fb;
 	--utilitySystemBlue100: #64d2ff;
@@ -91,22 +91,22 @@
 	--utilitySystemRed200: #ff3b30;
 	--utilitySystemYellow100: #ffd60a;
 	--utilitySystemYellow200: #fc0;
-	--utilityTransparentGray100: rgba(235, 235, 245, 0.651);
-	--utilityTransparentGray200: rgba(60, 60, 67, 0.361);
-	--utilityTransparentGray300: rgba(84, 84, 88, 0.651);
-	--utilityTransparentGray400: rgba(60, 60, 67, 0.6);
-	--utilityTransparentGray500: rgba(60, 60, 67, 0.549);
-	--utilityTransparentGray50: rgba(118, 118, 128, 0.239);
+	--utilityTransparentGray100: rgba(235,235,245,0.651);
+	--utilityTransparentGray200: rgba(60,60,67,0.361);
+	--utilityTransparentGray300: rgba(84,84,88,0.651);
+	--utilityTransparentGray400: rgba(60,60,67,0.6);
+	--utilityTransparentGray500: rgba(60,60,67,0.549);
+	--utilityTransparentGray50: rgba(118,118,128,0.239);
 	--utilityWhite100: #fff;
-	--utilityWhite10: rgba(255, 255, 255, 0.102);
-	--utilityWhite15: rgba(255, 255, 255, 0.149);
-	--utilityWhite20: rgba(255, 255, 255, 0.2);
-	--utilityWhite30: rgba(255, 255, 255, 0.302);
-	--utilityWhite35: rgba(255, 255, 255, 0.349);
-	--utilityWhite60: rgba(255, 255, 255, 0.6);
-	--utilityWhite70: rgba(255, 255, 255, 0.698);
-	--utilityWhite80: rgba(255, 255, 255, 0.8);
-	--utilityWhite8: rgba(255, 255, 255, 0.078);
+	--utilityWhite10: rgba(255,255,255,0.102);
+	--utilityWhite15: rgba(255,255,255,0.149);
+	--utilityWhite20: rgba(255,255,255,0.2);
+	--utilityWhite30: rgba(255,255,255,0.302);
+	--utilityWhite35: rgba(255,255,255,0.349);
+	--utilityWhite60: rgba(255,255,255,0.6);
+	--utilityWhite70: rgba(255,255,255,0.698);
+	--utilityWhite80: rgba(255,255,255,0.8);
+	--utilityWhite8: rgba(255,255,255,0.078);
 	--accountwidgetMxWidgetBackground: #f8f9fb;
 	--actionPrimary: #3b5eda;
 	--actionPrimaryActive: #374d9b;
@@ -120,8 +120,8 @@
 	--actionbarBackground: #19223c;
 	--actionbarButtonBackground: #19223c;
 	--backgroundDarkPrimary: #1a2837;
-	--backgroundDarkSecondary: rgba(255, 255, 255, 0.149);
-	--backgroundDarkTertiary: rgba(255, 255, 255, 0.2);
+	--backgroundDarkSecondary: rgba(255,255,255,0.149);
+	--backgroundDarkTertiary: rgba(255,255,255,0.2);
 	--backgroundGroupedPrimary: #edf1f5;
 	--backgroundGroupedSecondary: #fff;
 	--backgroundGroupedTertiary: #edf1f5;
@@ -156,8 +156,8 @@
 	--buttonPrimaryBackground: #3b5eda;
 	--buttonPrimaryBackgroundActive: #374d9b;
 	--buttonPrimaryBackgroundDisabled: #d2d8de;
-	--buttonSecondaryBackground: rgba(59, 94, 218, 0.129);
-	--buttonSecondaryBackgroundActive: rgba(59, 94, 218, 0.2);
+	--buttonSecondaryBackground: rgba(59,94,218,0.129);
+	--buttonSecondaryBackgroundActive: rgba(59,94,218,0.2);
 	--buttonSecondaryLabel: #3b5eda;
 	--calloutSectionNegativeAccent: #c72c1e;
 	--calloutSectionNegativeButtonBackground: #c72c1e;
@@ -175,7 +175,7 @@
 	--calloutSectionPassiveLabel: #0c1722;
 	--calloutSectionPassiveProminentBackground: #d2d8de;
 	--calloutSectionPassiveProminentBackgroundEmphasis: #a5adb6;
-	--calloutSectionPassiveSubtleBackground: rgba(110, 122, 136, 0.122);
+	--calloutSectionPassiveSubtleBackground: rgba(110,122,136,0.122);
 	--calloutSectionPassiveSubtleBackgroundEmphasis: #d2d8de;
 	--calloutSectionPositiveAccent: #67c122;
 	--calloutSectionPositiveButtonBackground: #4d9119;
@@ -193,7 +193,7 @@
 	--calloutSectionStandardLabel: #19223c;
 	--calloutSectionStandardProminentBackground: #d5defd;
 	--calloutSectionStandardProminentBackgroundEmphasis: #829cf8;
-	--calloutSectionStandardSubtleBackground: rgba(59, 94, 218, 0.129);
+	--calloutSectionStandardSubtleBackground: rgba(59,94,218,0.129);
 	--calloutSectionStandardSubtleBackgroundEmphasis: #acbdfb;
 	--calloutSectionWarningAccent: #daac00;
 	--calloutSectionWarningButtonBackground: #f6c91d;
@@ -235,13 +235,14 @@
 	--debtChartsSix: #fef9ed;
 	--debtChartsThree: #587bf6;
 	--debtChartsTwo: #d5defd;
-	--fillPrimary: rgba(110, 122, 136, 0.2);
-	--fillQuarternary: rgba(110, 122, 136, 0.078);
-	--fillSecondary: rgba(110, 122, 136, 0.161);
-	--fillTertiary: rgba(110, 122, 136, 0.122);
+	--fillPrimary: rgba(110,122,136,0.2);
+	--fillQuarternary: rgba(110,122,136,0.078);
+	--fillSecondary: rgba(110,122,136,0.161);
+	--fillTertiary: rgba(110,122,136,0.122);
 	--filterBackground: #fff;
-	--filterBackgroundActive: rgba(59, 94, 218, 0.129);
+	--filterBackgroundActive: rgba(59,94,218,0.129);
 	--filterLabel: #3b5eda;
+	--filterLabelDisabled: #acbdfb;
 	--flagBlue: #5ac8fa;
 	--flagGreen: #34c759;
 	--flagOrange: #ff9500;
@@ -285,7 +286,7 @@
 	--loadingActionActive: #fff;
 	--loadingBackground: #2c396a;
 	--loadingShimmerBackground: #fff;
-	--loadingShimmerBackgroundFaded: rgba(255, 255, 255, 0.8);
+	--loadingShimmerBackgroundFaded: rgba(255,255,255,0.8);
 	--loanChartsPositive: #84dd3e;
 	--loanChartsPrimary: #3b5eda;
 	--loanChartsSecondary: #acbdfb;
@@ -294,7 +295,7 @@
 	--modalBackgroundAccent: #2c396a;
 	--movesSelectedBackground: #3b5eda;
 	--movesStandardBackground: #d5defd;
-	--pillBackground: rgba(59, 94, 218, 0.129);
+	--pillBackground: rgba(59,94,218,0.129);
 	--pillLabel: #3b5eda;
 	--registerSecondaryButtonLabel: #3b5eda;
 	--registerSecondaryButtonLabelActive: #374d9b;
@@ -317,26 +318,26 @@
 	--reportsTen: #faada5;
 	--reportsThree: #374d9b;
 	--reportsTwo: #acbdfb;
-	--scrimDefault: rgba(0, 0, 0, 0.1);
-	--scrimInvisible: rgba(0, 0, 0, 0.001);
-	--scrimStrong: rgba(0, 0, 0, 0.66);
+	--scrimDefault: rgba(0,0,0,0.1);
+	--scrimInvisible: rgba(0,0,0,0.001);
+	--scrimStrong: rgba(0,0,0,0.66);
 	--separatorStandard: #d2d8de;
 	--separatorStrong: #405163;
-	--separatorSubdued: rgba(0, 0, 0, 0.1);
+	--separatorSubdued: rgba(0,0,0,0.1);
 	--settingsHeaderBackground: #fff;
 	--sidebarAccountNegativeBalanceBackground: #fff;
 	--sidebarBackground: #2c396a;
 	--sidebarButtonBackgroundActive: #374d9b;
 	--sidebarButtonBackgroundSelected: #374d9b;
-	--sidebarButtonSecondaryBackground: rgba(255, 255, 255, 0.102);
+	--sidebarButtonSecondaryBackground: rgba(255,255,255,0.102);
 	--sidebarButtonSecondaryBackgroundActive: #374d9b;
-	--sidebarButtonSecondaryBackgroundPressed: rgba(0, 0, 0, 0.15);
-	--sidebarButtonTertiaryBackground: rgba(255, 255, 255, 0.149);
-	--sidebarButtonTertiaryBackgroundActive: rgba(255, 255, 255, 0.302);
-	--sidebarButtonTertiaryBackgroundPressed: rgba(255, 255, 255, 0.349);
+	--sidebarButtonSecondaryBackgroundPressed: rgba(0,0,0,0.15);
+	--sidebarButtonTertiaryBackground: rgba(255,255,255,0.149);
+	--sidebarButtonTertiaryBackgroundActive: rgba(255,255,255,0.302);
+	--sidebarButtonTertiaryBackgroundPressed: rgba(255,255,255,0.349);
 	--sidebarIconFillDefault: #fff;
 	--sidebarLabelPrimary: #fff;
-	--sidebarLabelSecondary: rgba(255, 255, 255, 0.8);
+	--sidebarLabelSecondary: rgba(255,255,255,0.8);
 	--statusNegative: #c72c1e;
 	--statusPositive: #67c122;
 	--statusWarning: #f6c91d;
@@ -361,6 +362,7 @@
 	--viewsWarningSelectedAccent: #daac00;
 	color-scheme: light only;
 }
+
 /* || RESET */
 * {
 	box-sizing: border-box;
@@ -1685,7 +1687,6 @@ button[disabled] {
 	color: var(--iconFillPrimary);
 }
 .budget-view-row ul.budget-view-buttons li .view-button-overspent,
-.ynab-button,
 .ynab-new-settings-menu ul.modal-list a span,
 .ynab-new-settings-menu ul.modal-list button span {
 	align-items: center;
@@ -1725,6 +1726,215 @@ ul.modal-list button:hover {
 	text-decoration: none;
 }
 
+/* || MODAL NEW BUDGET */
+.modal-fresh.mod-skinny .modal {
+	max-width: 30rem;
+}
+.modal-fresh .modal {
+	border-radius: .5rem;
+}
+.modal-fresh .modal-fresh-header {
+	color: var(--labelPrimary);
+	border-bottom: 1px solid var(--separatorSubdued);
+	align-items: center;
+	display: flex;
+	height: 3rem;
+	justify-content: space-between;
+	min-height: 3rem;
+	padding: 0 1rem;
+}
 
 
+/*
+.modal-fresh .modal-fresh-header {
+	font-size: 1.125rem;
+	font-weight: 600;
+	line-height: 1.2;
+}
+.modal-budget-settings .modal-fresh-title, .select-budget table {
+	width: 100%;
+}
+.modal-fresh .modal-fresh-title {
+	display: flex;
+	flex-direction: column;
+}
+.modal-budget-settings .ynab4-migration {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+.modal-budget-settings .ynab4-migration .button {
+	color: var(--labelSecondary);
+	border: 0;
+	justify-content: flex-end;
+	margin-left: auto;
+	padding: 0;
+}
+.modal-budget-settings .ynab4-migration .button {
+	font-size: .75rem;
+	font-weight: 500;
+	line-height: 1.2;
+}
+.modal-budget-settings .ynab4-migration .button:hover {
+	background: initial;
+	color: var(--actionPrimary);
+	text-decoration: underline;
+}
+.button {
+	border-radius: .5rem;
+	height: 2rem;
+}
+modal-budget-settings .ynab4-migration .button .ynab-new-icon {
+	color: var(--labelSecondary);
+}
+.button .ynab-new-icon {
+	position: relative;
+	margin-right: .3rem;
+	overflow: visible;
+}
+.modal-fresh .modal-fresh-body {
+	line-height: 1.5;
+	padding: 1rem;
+}
+.modal-fresh .modal-fresh-body {
+	font-size: .875rem;
+	font-weight: 500;
+}
+.modal-fresh .modal-fresh-body > :last-child {
+	margin-bottom: 0;
+}
+.modal-fresh .modal-fresh-body > :first-child {
+	margin-top: 0;
+}
+body, figure, form {
+	margin: 0;
+}
+.type-body-bold {
+	font-size: .875rem;
+	font-weight: 600;
+	line-height: 1.2;
+}
+.modal-budget-settings .modal-budget-settings-name {
+	margin: .25rem 0 1rem;
+}
+.x-select-container select:focus, input:focus {
+	border: .0625rem solid var(--inputBorderActive);
+	outline: 0;
+}
+:active, :focus {
+	box-shadow: none;
+}
+.modal-fresh input {
+	height: 2rem;
+	padding: .25rem .5rem;
+}
+.modal-fresh input {
+	border: .0625rem solid var(--inputBorder);
+	width: 100%;
+	border-radius: .25rem;
+}
+input {
+	background-color: var(--inputBackground);
+}
+input {
+	color: var(--labelPrimary);
+}
+input {
+	line-height: normal;
+}
+input {
+	font-size: 100%;
+}
+button, input, select {
+	vertical-align: baseline;
+}
+.modal-budget-settings .modal-budget-settings-currency-fields {
+	display: flex;
+	gap: 1rem;
+}
+.modal-budget-settings .modal-budget-settings-currency-fields > div {
+	flex: 1;
+}
+.input-container-with-arrow::after, .x-select-container::after {
+	content: '';
+	height: 0;
+	pointer-events: none;
+	position: absolute;
+	width: 0;
+	border-top: .45em solid var(--iconFillSecondary);
+	border-left: .3rem solid transparent;
+	border-right: .3rem solid transparent;
+	right: .5rem;
+	top: calc(50% - .15rem);
+}
+.modal-budget-settings .x-select-container {
+	display: block;
+	margin: .25rem 0 1rem;
+}
+.input-container-with-arrow, .x-select-container {
+	display: inline;
+	position: relative;
+}
+.x-select-container select {
+	appearance: none;
+	height: 2rem;
+	-webkit-appearance: none;
+	color: var(--labelPrimary);
+	background-color: var(--inputBackground);
+	margin: 0;
+	padding: .25rem 1.5rem .25rem .5rem;
+}
+.x-select-container select, select {
+	border: .0625rem solid var(--inputBorder);
+	border-radius: .25rem;
+}
+.x-select-container select {
+	font-size: .875rem;
+	font-weight: 500;
+	line-height: 1.2;
+}
+button, select {
+	text-transform: none;
+}
+.modal-fresh .modal-fresh-footer {
+	align-items: center;
+	display: flex;
+	gap: .5rem;
+	justify-content: flex-end;
+	padding: 1rem;
+	padding-top: 0;
+}
+.ynab-button.secondary:not([disabled]) {
+	background-color: var(--buttonSecondaryBackground);
+	color: var(--buttonSecondaryLabel);
+	border: 0;
+}
+.ynab-button {
+	background-color: var(--buttonPrimaryBackground);
+	color: var(--labelDarkBackgroundPrimary);
+	border-radius: .5rem;
+	cursor: pointer;
+	flex-direction: row;
+	justify-content: center;
+	min-height: 2rem;
+	padding: .375rem 1rem;
+	transition: background-color .15s ease;
+}
+.ynab-button {
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.2;
+}
+.ynab-button.secondary:not([disabled]):active, .ynab-button.secondary:not([disabled]):hover {
+	background-color: var(--buttonSecondaryBackgroundActive);
+	color: var(--buttonSecondaryLabel);
+}
+.ynab-button:active, .ynab-button:hover {
+	background-color: var(--buttonPrimaryBackgroundActive);
+	color: var(--labelDarkBackgroundPrimary);
+	align-items: center;
+	justify-content: center;
+}
+
+*/
 

@@ -20,7 +20,7 @@
 					</svg>
 					<div class="sidebar-nav-budget-email">
 						<span class="sidebar-nav-budget-email-budget">Arismendi's Budget</span>
-						<span class="sidebar-nav-budget-email-email button-truncate">xijatil774@shanreto.com</span>
+						<span class="sidebar-nav-budget-email-email button-truncate">{{ $admin->email }}</span>
 					</div>
 					<svg class="ynab-new-icon" width="12" height="12">
 						<!---->

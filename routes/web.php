@@ -24,7 +24,6 @@
 		});
 		
 		Route::middleware(['auth:users','PreventBackHistory'])->group(function(){
-			//Route::view('/budget','frontend.pages.admin.budget')->name('budget');
 			Route::post('/logout_handler',[UserController::class,'logoutHandler'])->name('logout_handler');
 			
 		});
@@ -35,8 +34,8 @@
 		
 		Route::middleware(['auth:users','PreventBackHistory'])->group(function(){
 			Route::get('/budget',[MainController::class,'budget'])->name('budget');
-			//Route::view('/budget','frontend.pages.admin.budget')->name('budget');
 			Route::get('/profile',[MainController::class,'profile'])->name('profile');
+			Route::get('/new-budget',[MainController::class,'newBudget'])->name('new-budget');
 			Route::get('/budget-settings',[MainController::class,'budgetSettings'])->name('budget-settings');
 			// Agrega aquí más rutas según sea necesario
 		});
