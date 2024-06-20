@@ -17,12 +17,12 @@
 			<!---->
 		</div>
 		<div class="modal-fresh-body">
-		{{-- 	<section>
+		 	<section>
 				<form>
 					<label for="budget-name" class="type-body-bold">Budget Name</label>
 					<div class="field-with-error">
 						<div>
-							<input id="modal-settings-budget-name" class="ember-text-field ember-view modal-budget-settings-name" type="text">
+							<input id="modal-settings-budget-name" class="ember-text-field ember-view modal-budget-settings-name" type="text" autofocus>
 						</div>
 						<!---->
 						<!---->
@@ -550,17 +550,35 @@
 						</select>
 					</div>
 				</form>
-			</section> --}}
+			</section>
 			<!---->
 		</div>
-		{{-- <div class="modal-fresh-footer">
+		 <div class="modal-fresh-footer">
 			<button class="ynab-button secondary  " type="button">
 				Cancel
 			</button>
 			<button class="ynab-button primary  " type="button">
 				Create Budget
 			</button>
-		</div> --}}
+		</div>
 		<!---->
 	</div>
 </div>
+@push('scripts')
+	<script>
+		<!---->
+		document.addEventListener('DOMContentLoaded', () => {
+			const elements = document.querySelectorAll('.input-container-with-arrow, .x-select-container');
+
+			elements.forEach(element => {
+				element.addEventListener('focus', () => {
+					element.classList.add('focused');
+				});
+
+				element.addEventListener('blur', () => {
+					element.classList.remove('focused');
+				});
+			});
+		});
+	</script>
+@endpush
