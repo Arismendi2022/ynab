@@ -576,12 +576,10 @@ nav ul {
 	height: 2.9375rem;
 	margin-bottom: .5rem;
 }
-
 ul.nav-main .sidebar-nav-menu-collapsed {
 	display: none;
 	margin-top: .5125rem;
 }
-
 /* || NAVLINK */
 .sidebar-resized-collapsed .nav-main button {
 	display: flex;
@@ -625,17 +623,12 @@ ul.nav-main .sidebar-nav-menu-collapsed {
 	font-weight: 500;
 	line-height: 1.2;
 }
-/* .nav-accounts a:hover {
-	background-color: var(--sidebarButtonBackgroundSelected);
-} */
-
 .nav-accounts a:hover,
 .sidebar-resized-collapsed .nav-main button:hover,
 .nav-main li a:hover,
 .nav-main li.active a {
 	background-color: var(--sidebarButtonBackgroundActive);
 }
-
 .nav-main a {
 	align-items: center;
 	border: 0;
@@ -1101,7 +1094,6 @@ header {
 	line-height: 0;
 	width: 2.5rem;
 }
-
 .budget-header-calendar svg {
 	color: var(--actionPrimary);
 	margin-left: .3rem;
@@ -1883,7 +1875,7 @@ button, input, select {
 }
 .input-container-with-arrow.focused::after,
 .input-container-with-arrow.is-modal-open::after,
-.x-select-container.focused::after, .x-select-container.is-modal-open::after{
+.x-select-container.focused::after, .x-select-container.is-modal-open::after {
 	border-top: .45em solid var(--inputBorderActive);
 }
 .input-container-with-arrow::after, .x-select-container::after {

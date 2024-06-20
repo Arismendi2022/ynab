@@ -8,7 +8,6 @@
 	<link rel="shortcut icon" href="/frontend/assets/brand/ynab-tree-logo.svg">
 	<title>@yield('pageTitle')</title>
 	
-	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	<link href="/frontend/assets/dist/css/main.css" rel="stylesheet">

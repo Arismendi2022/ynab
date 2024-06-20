@@ -73,50 +73,57 @@
 				'max'               => 'La contraseña no debe exceder más de 30 caracteres.',
 			]);
 			
-			$users           = new User();
-			$users->email    = $request->email;
-			$users->password = Hash::make($request->password);
-			$saved           = $users->save();
-			
-			if($saved){
-				//Generate token
-				$token = base64_encode(Str::random(64));
+			DB::beginTransaction();
+			try{
 				
-				VerificationToken::create([
-					'user_type' => 'admin',
-					'email'     => $request->email,
-					'token'     => $token
-				]);
+				$users           = new User();
+				$users->email    = $request->email;
+				$users->password = Hash::make($request->password);
+				$saved           = $users->save();
 				
-				$actionLink          = route('users.verify',['token' => $token]);
-				$data['action_link'] = $actionLink;
-				$data['users_name']  = $request->name;
-				$data['users_email'] = $request->email;
-				
-				//Send Activation link to this user email
-				$mail_body = view('email-templates.user-verify-template',$data)->render();
-				
-				$mailConfig = array(
-					'mail_from_email'      => env('EMAIL_FROM_ADDRESS'),
-					'mail_from_name'       => env('EMAIL_FROM_NAME'),
-					'mail_recipient_email' => $request->email,
-					'mail_recipient_name'  => $request->name,
-					'mail_subject'         => 'Verifica tu cuenta.',
-					'mail_body'            => $mail_body
-				);
-				
-				if(sendEmail($mailConfig)){
-					return redirect()->back()
-						->withErrors(['email' => 'Por favor revise su correo electrónico para verificar su cuenta antes de continuar.'])
-						->withInput($request->only('email'));
-				}else{
+				if($saved){
+					//Generate token
+					$token = base64_encode(Str::random(64));
+					
+					VerificationToken::create([
+						'user_type' => 'admin',
+						'email'     => $request->email,
+						'token'     => $token
+					]);
+					
+					$actionLink          = route('users.verify',['token' => $token]);
+					$data['action_link'] = $actionLink;
+					$data['users_name']  = $request->name;
+					$data['users_email'] = $request->email;
+					
+					//Send Activation link to this user email
+					$mail_body = view('email-templates.user-verify-template',$data)->render();
+					
+					$mailConfig = array(
+						'mail_from_email'      => env('EMAIL_FROM_ADDRESS'),
+						'mail_from_name'       => env('EMAIL_FROM_NAME'),
+						'mail_recipient_email' => $request->email,
+						'mail_recipient_name'  => $request->name,
+						'mail_subject'         => 'Verifica tu cuenta.',
+						'mail_body'            => $mail_body
+					);
+					
+					if(sendEmail($mailConfig)){
+						DB::commit();
+						return redirect()->back()
+							->withErrors(['email' => 'Por favor revise su correo electrónico para verificar su cuenta antes de continuar.'])
+							->withInput($request->only('email'));
+					}else{
+						DB::rollBack();
+					}
 					return redirect()->back()
 						->withErrors(['email' => 'Algo salió mal al enviar el enlace de verificación.'])
 						->withInput($request->only('email'));
 				}
-			}else{
+			} catch(\Exception $e){
+				DB::rollBack();
 				return redirect()->back()
-					->withErrors(['email' => 'Algo salió mal.'])
+					->withErrors(['email' => 'Ocurrió un problema inesperado. Por favor, intente nuevamente más tarde.'])
 					->withInput($request->only('email'));
 			}
 		}//End Method
