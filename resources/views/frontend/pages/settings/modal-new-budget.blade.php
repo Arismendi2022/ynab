@@ -287,7 +287,27 @@
 </div>
 @push('scripts')
 	<script>
+		//Ajusta el left y top del modal
+		function centrarModal() {
+        const modal = document.querySelector('.modal-fresh .modal');
+        const { innerWidth: width, innerHeight: height } = window;
+        const modalWidth = modal.offsetWidth;
+        const modalHeight = modal.offsetHeight;
+
+        modal.style.left = `${(width - modalWidth) / 2}px`;
+        modal.style.top = `${(height - modalHeight) / 2}px`;
+    }
+
+    function cerrarModal() {
+        document.querySelector('.modal-overlay').style.display = 'none';
+        document.querySelector('.modal-fresh').style.display = 'none';
+    }
+
+    window.addEventListener('resize', centrarModal);
+    window.addEventListener('load', centrarModal);
+    document.addEventListener('DOMContentLoaded', centrarModal);
 		<!---->
+		//activa el focus a los select
 		document.addEventListener('DOMContentLoaded', () => {
 			const selectElements = document.querySelectorAll('.js-x-select');
 
@@ -305,5 +325,7 @@
 				}
 			});
 		});
+		// cierre el modal
+		
 	</script>
 @endpush
