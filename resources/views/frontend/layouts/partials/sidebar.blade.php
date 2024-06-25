@@ -1,5 +1,5 @@
 {{-- Main Sidebar Container --}}
-<nav id="ember4" class="ynab-u sidebar logged-in" role="navigation">
+<nav id="ember4" class="ynab-u sidebar logged-in" style="width:260px;" role="navigation">
 	<div class="sidebar-left">
 		<div class="sidebar-contents">
 			<div class="sidebar-nav">
@@ -337,31 +337,37 @@
 
 		const tooltipContent = document.querySelector('.tooltip-content');
 
-		sidebarBtn.addEventListener("click", () => {
-			sidebar.classList.toggle("sidebar-resized-collapsed");
-			sidebarBtn.classList.toggle("sidebar-expand");
+		// Colapsa/Expande el sidebar - Espera a que el DOM esté completamente cargado
+		document.addEventListener("DOMContentLoaded", function () {
 
-			// Obtener el ancho actual del sidebar
-			const sidebarWidth = sidebar.offsetWidth;
+			// Agregar un evento de clic al botón
+			sidebarBtn.addEventListener("click", () => {
+				sidebar.classList.toggle("sidebar-resized-collapsed");
+				sidebarBtn.classList.toggle("sidebar-expand");
+				// Verificar el ancho actual y cambiarlo
+				if (sidebar.style.width === "260px") {
+					sidebar.style.width = "56px";
 
-			// Verificar el ancho del sidebar y ocultar el botón según sea necesario
-			if (sidebarWidth <= 56) {
-				tooltipContent.classList.add('tooltip-center');
-				iconCollapsed.setAttribute('href', '#icon_sprite_sidebar_close');
-				addAccountButton.style.display = "block";
-				navAccounts.style.display = "block";
-				navLabels.forEach(labels => {
-					labels.style.display = 'block';
-				});
-			} else {
-				tooltipContent.classList.remove('tooltip-center');
-				iconCollapsed.setAttribute('href', '#icon_sprite_sidebar_open');
-				addAccountButton.style.display = "none";
-				navAccounts.style.display = "none";
-				navLabels.forEach(labels => {
-					labels.style.display = 'none';
-				});
-			}
+					tooltipContent.classList.remove('tooltip-center');
+					iconCollapsed.setAttribute('href', '#icon_sprite_sidebar_open');
+					navAccounts.style.display = "none";
+					addAccountButton.style.display = "none";
+					navLabels.forEach(labels => {
+						labels.style.display = 'none';
+					});
+
+				} else {
+					sidebar.style.width = "260px";
+
+					tooltipContent.classList.add('tooltip-center');
+					iconCollapsed.setAttribute('href', '#icon_sprite_sidebar_close');
+					addAccountButton.style.display = "block";
+					navAccounts.style.display = "block";
+					navLabels.forEach(labels => {
+						labels.style.display = 'block';
+					});
+				}
+			});
 		});
 
 		// Agregar evento de clic al botón "BUDGET"
@@ -419,21 +425,32 @@
 			});
 		});
 
-		// Escuchar el evento keydown en todo el documento
+		// Activa el shift + el punto (.)
 		document.addEventListener('keydown', function (event) {
+			// Obtener el código de la tecla presionada
+			var keyPressed = event.key;
+			var keyCode = event.code;
+
 			// Verificar si la tecla presionada es '>'
-			if (event.key === '>') {
+			if (keyPressed === '>' || keyCode === 'IntlBackslash') {
 				// Verificar si la tecla Shift también está presionada
 				if (event.shiftKey) {
 					// Mostrar un mensaje
 					sidebar.classList.toggle("sidebar-resized-collapsed");
 					sidebarBtn.classList.toggle("sidebar-expand");
+					// Verificar el ancho actual y cambiarlo
+					if (sidebar.style.width === "260px") {
+						sidebar.style.width = "56px";
+						tooltipContent.classList.remove('tooltip-center');
+						iconCollapsed.setAttribute('href', '#icon_sprite_sidebar_open');
+						navAccounts.style.display = "none";
+						addAccountButton.style.display = "none";
+						navLabels.forEach(labels => {
+							labels.style.display = 'none';
+						});
 
-					// Obtener el ancho actual del sidebar
-					const sidebarWidth = sidebar.offsetWidth;
-
-					// Verificar el ancho del sidebar y ocultar el botón según sea necesario
-					if (sidebarWidth <= 56) {
+					} else {
+						sidebar.style.width = "260px";
 						tooltipContent.classList.add('tooltip-center');
 						iconCollapsed.setAttribute('href', '#icon_sprite_sidebar_close');
 						addAccountButton.style.display = "block";
@@ -441,20 +458,62 @@
 						navLabels.forEach(labels => {
 							labels.style.display = 'block';
 						});
-					} else {
-						tooltipContent.classList.remove('tooltip-center');
-						iconCollapsed.setAttribute('href', '#icon_sprite_sidebar_open');
-						addAccountButton.style.display = "none";
-						navAccounts.style.display = "none";
-						navLabels.forEach(labels => {
-							labels.style.display = 'none';
-						});
 					}
 				}
 			}
 		});
 
+		// Activa modal settingd
 		document.addEventListener('DOMContentLoaded', function () {
+			const toggleModalButton = document.querySelector('.sidebar-nav-menu-budget');
+			const modalOverlay = document.getElementById('ember180');
+
+			toggleModalButton.addEventListener('click', function () {
+				modalOverlay.classList.toggle('active');
+			});
+			// Cierra el modal al hacer clic fuera de él
+			/*document.addEventListener('click', function (event) {
+				// Verifica si el clic ocurrió fuera del modal
+				if (!modalOverlay.contains(event.target) && !toggleModalButton.contains(event.target)) {
+					modalOverlay.classList.remove('active');
+				}
+			});*/
+		});
+
+
+		/*	const openModalButtons = document.querySelectorAll('.js-sidebar-nav-menu');
+	
+			/!*	openModalButtons.forEach(function (button) {
+					button.addEventListener('click', function () {
+						alert('Botón clicado!');
+					});*!/
+			openModalButtons.forEach(function (button) {
+				button.addEventListener('click', function () {
+					// Función para abrir el modal
+					function openModal() {
+						document.getElementById('ember180').classList.add('active');
+					}
+	
+					// Función para cerrar el modal
+					function closeModal() {
+						document.getElementById('ember180').classList.remove('active');
+					}
+	
+					// Abrir el modal al hacer clic en el botón
+					openModal();
+	
+					// Event listener para cerrar el modal al hacer clic fuera de él
+					document.addEventListener('click', function (event) {
+						const modal = document.querySelector('.modal');
+						if (!modal.contains(event.target)) {
+							closeModal();
+						}
+					});
+				});
+			});*/
+
+
+		/*document.addEventListener('DOMContentLoaded', function () {
 			const modalOverlay = document.querySelector('.modal-overlay');
 			const openModalButtons = document.querySelectorAll('.js-sidebar-nav-menu');
 			const viewAllBudgetsLink = document.querySelector('.recent-budgets-view-all');
@@ -483,7 +542,7 @@
 					hideModal();
 				}
 			});
-		});
+		});*/
 	
 	</script>
 @endpush

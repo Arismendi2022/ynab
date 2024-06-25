@@ -333,7 +333,7 @@
 
 		// New Budget
 		newBudget.addEventListener('click', () => {
-			console.log("Botón de New Budget clickeado!"); // Mensaje en la consola
+			alert("Botón de New Budget clickeado!"); // Mensaje en la consola
 		});
 
 		budgetSettings.addEventListener('click', () => {
