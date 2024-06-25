@@ -355,6 +355,9 @@
 					navLabels.forEach(labels => {
 						labels.style.display = 'none';
 					});
+					// Añadir y eliminar clases
+					sidebarBtn.classList.add('sidebar-expand');
+					sidebarBtn.classList.remove('sidebar-collapse');
 
 				} else {
 					sidebar.style.width = "260px";
@@ -366,6 +369,9 @@
 					navLabels.forEach(labels => {
 						labels.style.display = 'block';
 					});
+					// Añadir y eliminar clases
+					sidebarBtn.classList.remove('sidebar-expand');
+					sidebarBtn.classList.add('sidebar-collapse');
 				}
 			});
 		});
@@ -448,6 +454,9 @@
 						navLabels.forEach(labels => {
 							labels.style.display = 'none';
 						});
+						// Añadir y eliminar clases
+						sidebarBtn.classList.add('sidebar-expand');
+						sidebarBtn.classList.remove('sidebar-collapse');
 
 					} else {
 						sidebar.style.width = "260px";
@@ -458,6 +467,9 @@
 						navLabels.forEach(labels => {
 							labels.style.display = 'block';
 						});
+						// Añadir y eliminar clases
+						sidebarBtn.classList.remove('sidebar-expand');
+						sidebarBtn.classList.add('sidebar-collapse');
 					}
 				}
 			}
@@ -465,11 +477,13 @@
 
 		// Activa modal settingd
 		document.addEventListener('DOMContentLoaded', function () {
-			const toggleModalButton = document.querySelector('.sidebar-nav-menu-budget');
+			const openModalButtons = document.querySelectorAll('.js-sidebar-nav-menu');
 			const modalOverlay = document.getElementById('ember180');
 
-			toggleModalButton.addEventListener('click', function () {
-				modalOverlay.classList.toggle('active');
+			openModalButtons.forEach(button => {
+				button.addEventListener('click', function () {
+					modalOverlay.classList.toggle('active');
+				});
 			});
 			// Cierra el modal al hacer clic fuera de él
 			/*document.addEventListener('click', function (event) {

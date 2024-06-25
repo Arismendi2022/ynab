@@ -365,8 +365,6 @@
 
 /* || RESET */
 * {
-	margin: 0;
-	padding: 0;
 	box-sizing: border-box;
 }
 
@@ -383,6 +381,10 @@ body, button, html, input, select, textarea {
 }
 body, figure, form {
 	margin: 0;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
 }
 
 /* || LAYOUT */
@@ -454,10 +456,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 	overflow-x: hidden;
 }
 /* || SIDEBAR NAV */
+.sidebar-resized-collapsed .nav-accounts, .sidebar-resized-collapsed .nav-accounts-empty-state, .sidebar-resized-collapsed .nav-add-account, .sidebar-resized-collapsed .navlink-label, .sidebar-resized-collapsed .referral-program, .sidebar-resized-collapsed .referral-program-banner, .sidebar-resized-collapsed .sidebar-nav-menu-budget, .sidebar-resized-half .nav-account-value, .sidebar-resized-half .referral-program-link-text {
+	display: none;
+}
 .sidebar .sidebar-nav {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+}
+button:focus-visible {
+	outline-color: var(--actionPrimary);
+	outline-style: auto;
+	outline-width: 1px;
 }
 .sidebar-nav-menu {
 	color: var(--sidebarLabelPrimary);
@@ -561,10 +571,22 @@ nav ol, nav ul {
 	list-style: none;
 	list-style-image: none;
 }
+/* || BUTTON COLLAPSED */
+.sidebar-resized-collapsed ul.nav-main .sidebar-nav-menu-collapsed {
+	display: flex;
+	height: 2.9375rem;
+	margin-bottom: .5rem;
+}
 ul.nav-main .sidebar-nav-menu-collapsed {
 	display: none;
 	margin-top: .5125rem;
 }
+.sidebar-resized-collapsed .nav-main button {
+	display: flex;
+	justify-content: center;
+}
+
+/* || BOTONES NAV */
 .ftue-add-accounts .navlink, .nav-main .navlink {
 	display: flex;
 	height: 2.5rem;
@@ -851,6 +873,11 @@ button.contrast:not([disabled]):active, .ynab-button.contrast:not([disabled]):ho
 	height: 2.5rem;
 	width: 100%;
 }
+.sidebar-expand {
+	align-self: center;
+	justify-content: center;
+	margin-left: .2rem;
+}
 .sidebar-collapse, .sidebar-expand {
 	border: 0;
 	display: flex;
@@ -946,6 +973,11 @@ button.contrast:not([disabled]):active, .ynab-button.contrast:not([disabled]):ho
 	filter: none;
 	transition: opacity .2s .5s;
 } /* || END SIDEBAR */
+.sidebar-resized-collapsed,
+.sidebar {
+	transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
+	/* Transición suave de 0.3 segundos */
+}
 
 /* || CONTENT */
 .content {
@@ -1306,18 +1338,7 @@ ul.budget-view-buttons li:not(.views-menu-button) button:hover {
 	flex: 1;
 	height: 100%;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
 	display: block;
 }
 .budget-table,
