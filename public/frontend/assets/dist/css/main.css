@@ -1501,15 +1501,13 @@ button[disabled] {
 }
 
 /* || MODAL SETTINGS MENU */
-/*
-
 .ynab-new-settings-menu.modal-overlay {
 	background-color: var(--scrimInvisible);
 }
 :active, :focus {
 	box-shadow: none;
 }
- .modal-overlay {
+.modal-overlay {
 	height: 100%;
 	left: 0;
 	position: absolute;
@@ -1518,7 +1516,7 @@ button[disabled] {
 	z-index: 10001;
 }
 
-!* || MODAL-OVERLAY *!
+/* || MODAL-OVERLAY */
 .modal-overlay.active > .modal {
 	transform: scale(1);
 	opacity: 1;
@@ -1546,7 +1544,7 @@ button[disabled] {
 	animation-fill-mode: forwards;
 	opacity: 0;
 }
-!* || UL *!
+/* || UL */
 .accounts-calendar-grid::after,
 .ynab-new-settings-menu ul.modal-list::after {
 	clear: both;
@@ -1565,7 +1563,7 @@ button[disabled] {
 	zoom: 1;
 }
 
-!* || LI *!
+/* || LI */
 .ynab-new-settings-menu ul.modal-list li {
 	padding: 0;
 	color: var(--labelPrimary);
@@ -1640,7 +1638,7 @@ ul.modal-list button:hover {
 	background-color: var(--backgroundSecondaryElevated);
 	text-decoration: none;
 }
-*/
+
 
 /* || MODAL NEW BUDGET */
  /*

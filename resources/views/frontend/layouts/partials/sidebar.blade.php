@@ -485,46 +485,15 @@
 					modalOverlay.classList.toggle('active');
 				});
 			});
+
 			// Cierra el modal al hacer clic fuera de él
-			/*document.addEventListener('click', function (event) {
-				// Verifica si el clic ocurrió fuera del modal
-				if (!modalOverlay.contains(event.target) && !toggleModalButton.contains(event.target)) {
+			modalOverlay.addEventListener('click', function (event) {
+				if (event.target === modalOverlay) {
 					modalOverlay.classList.remove('active');
 				}
-			});*/
+			});
+
 		});
-
-
-		/*	const openModalButtons = document.querySelectorAll('.js-sidebar-nav-menu');
-	
-			/!*	openModalButtons.forEach(function (button) {
-					button.addEventListener('click', function () {
-						alert('Botón clicado!');
-					});*!/
-			openModalButtons.forEach(function (button) {
-				button.addEventListener('click', function () {
-					// Función para abrir el modal
-					function openModal() {
-						document.getElementById('ember180').classList.add('active');
-					}
-	
-					// Función para cerrar el modal
-					function closeModal() {
-						document.getElementById('ember180').classList.remove('active');
-					}
-	
-					// Abrir el modal al hacer clic en el botón
-					openModal();
-	
-					// Event listener para cerrar el modal al hacer clic fuera de él
-					document.addEventListener('click', function (event) {
-						const modal = document.querySelector('.modal');
-						if (!modal.contains(event.target)) {
-							closeModal();
-						}
-					});
-				});
-			});*/
 
 
 		/*document.addEventListener('DOMContentLoaded', function () {
