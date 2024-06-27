@@ -1,5 +1,5 @@
 {{-- modal settings --}}
-<div id="ember180" class="modal-overlay ynab-u ynab-new-settings-menu active ">
+<div id="ember180" class="modal-overlay ynab-u ynab-new-settings-menu">
 	<div class="modal" role="dialog" aria-modal="true" style="top: 54px; left: 24px;">
 		<!---->
 		<ul class="modal-list">

@@ -476,56 +476,24 @@
 		});
 
 		// Activa modal settingd
-		document.addEventListener('DOMContentLoaded', function () {
-			const openModalButtons = document.querySelectorAll('.js-sidebar-nav-menu');
-			const modalOverlay = document.getElementById('ember180');
+		const openModalButtons = document.querySelectorAll('.js-sidebar-nav-menu');
 
-			openModalButtons.forEach(button => {
-				button.addEventListener('click', function () {
-					modalOverlay.classList.toggle('active');
-				});
+		openModalButtons.forEach(button => {
+			button.addEventListener('click', function(event) {
+				var modalOverlay = document.getElementById('ember180');
+				modalOverlay.classList.toggle('active');
+				event.stopPropagation(); // Detener la propagación del evento para evitar cierres no deseados
 			});
-
-			// Cierra el modal al hacer clic fuera de él
-			modalOverlay.addEventListener('click', function (event) {
-				if (event.target === modalOverlay) {
-					modalOverlay.classList.remove('active');
-				}
-			});
-
 		});
 
-
-		/*document.addEventListener('DOMContentLoaded', function () {
-			const modalOverlay = document.querySelector('.modal-overlay');
-			const openModalButtons = document.querySelectorAll('.js-sidebar-nav-menu');
-			const viewAllBudgetsLink = document.querySelector('.recent-budgets-view-all');
-
-			// Función para mostrar el modal
-			function showModal() {
-				modalOverlay.classList.add('active');
-			}
-
-			// Función para ocultar el modal
-			function hideModal() {
+		// Cerrar el modal al hacer clic fuera de él
+		window.addEventListener('click', function(event) {
+			var modalOverlay = document.getElementById('ember180');
+			var modal = document.querySelector('.modal');
+			if (modalOverlay.classList.contains('active') && !modal.contains(event.target) && !event.target.classList.contains('js-sidebar-nav-menu')) {
 				modalOverlay.classList.remove('active');
 			}
-
-			// Event listener para los botones que abren el modal en el sidebar
-			openModalButtons.forEach(function (button) {
-				button.addEventListener('click', showModal);
-			});
-
-			// Event listener para el enlace que cierra el modal
-			viewAllBudgetsLink.addEventListener('click', hideModal);
-
-			// Opción: si deseas cerrar el modal haciendo clic fuera de él
-			modalOverlay.addEventListener('click', function (event) {
-				if (event.target === modalOverlay) {
-					hideModal();
-				}
-			});
-		});*/
-	
+		});
+		
 	</script>
 @endpush

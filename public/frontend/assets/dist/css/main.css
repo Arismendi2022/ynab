@@ -1513,7 +1513,11 @@ button[disabled] {
 	position: absolute;
 	top: 0;
 	width: 100%;
+	display: none; /* Inicialmente oculto */
 	z-index: 10001;
+}
+.modal-overlay.active {
+	display: block; /* Mostrar el overlay cuando tenga la clase active */
 }
 
 /* || MODAL-OVERLAY */
