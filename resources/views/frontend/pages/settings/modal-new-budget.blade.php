@@ -1,5 +1,5 @@
 {{-- modal new budget --}}
-<div id="ember150" class="modal-overlay active modal-fresh mod-skinny modal-budget-settings">
+<div id="ember150" class="modal-overlay modal-fresh mod-skinny modal-budget-settings">
 	<div class="modal" role="dialog" aria-modal="true" style="left: 720px; top: 263.5px;">
 		<div class="modal-fresh-header">
 			<div class="modal-fresh-title">

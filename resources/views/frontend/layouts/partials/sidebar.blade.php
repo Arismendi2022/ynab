@@ -480,7 +480,7 @@
 
 		openModalButtons.forEach(button => {
 			button.addEventListener('click', function(event) {
-				var modalOverlay = document.getElementById('ember180');
+				const modalOverlay = document.getElementById('ember180');
 				modalOverlay.classList.toggle('active');
 				event.stopPropagation(); // Detener la propagación del evento para evitar cierres no deseados
 			});
@@ -488,8 +488,8 @@
 
 		// Cerrar el modal al hacer clic fuera de él
 		window.addEventListener('click', function(event) {
-			var modalOverlay = document.getElementById('ember180');
-			var modal = document.querySelector('.modal');
+			const modalOverlay = document.getElementById('ember180');
+			const modal = document.querySelector('.modal');
 			if (modalOverlay.classList.contains('active') && !modal.contains(event.target) && !event.target.classList.contains('js-sidebar-nav-menu')) {
 				modalOverlay.classList.remove('active');
 			}

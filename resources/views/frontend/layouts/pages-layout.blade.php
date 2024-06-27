@@ -38,7 +38,7 @@
 <!---->
 @include('frontend.pages.settings.modal-settings')
 <!---->
-{{--@include('frontend.pages.settings.modal-new-budget')--}}
+@include('frontend.pages.settings.modal-new-budget')
 <!---->
 
 <div class="tooltip-global">

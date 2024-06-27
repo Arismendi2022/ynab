@@ -1508,12 +1508,13 @@ button[disabled] {
 	box-shadow: none;
 }
 .modal-overlay {
+	background-color: var(--scrimDefault);
 	height: 100%;
 	left: 0;
 	position: absolute;
 	top: 0;
 	width: 100%;
-	display: none; /* Inicialmente oculto */
+	display: none;
 	z-index: 10001;
 }
 .modal-overlay.active {
@@ -1643,32 +1644,19 @@ ul.modal-list button:hover {
 	text-decoration: none;
 }
 
-
 /* || MODAL NEW BUDGET */
- /*
-.modal-overlay {
-	background-color: var(--scrimDefault);
-	height: 100%;
-	left: 0;
-	display: block;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index: 10001;
+a:focus-visible, div:focus-visible, li:focus-visible {
+	outline-color: var(--actionPrimary);
+	outline-style: auto;
+	outline-width: 1px;
 }
-
 .modal-fresh.mod-skinny .modal {
 	max-width: 30rem;
 }
-
-modal-fresh .modal {
-	border-radius: .5rem;
-}
-
 .modal-fresh .modal {
 	border-radius: .5rem;
 }
-
+ /* || END MODAL NEW BUDGET */
 .modal-fresh .modal-fresh-header {
 	color: var(--labelPrimary);
 	border-bottom: 1px solid rgba(0, 0, 0, .1);
@@ -1685,23 +1673,19 @@ modal-fresh .modal {
 	font-weight: 600;
 	line-height: 1.2;
 }
-
 .modal-budget-settings .modal-fresh-title,
 .select-budget table {
 	width: 100%;
 }
-
 .modal-fresh .modal-fresh-title {
 	display: flex;
 	flex-direction: column;
 }
-
 .modal-budget-settings .ynab4-migration {
 	align-items: center;
 	display: flex;
 	justify-content: space-between;
 }
-
 .modal-budget-settings .ynab4-migration .button {
 	color: var(--labelSecondary);
 	border: 0;
@@ -1728,13 +1712,11 @@ modal-fresh .modal {
 	border-radius: .5rem;
 	height: 2rem;
 }
-
 button {
 	background: 0 0;
 	border: 0;
 	padding: 0;
 }
-
 button,
 html input[type="button"],
 input[type="reset"],
@@ -1743,16 +1725,13 @@ input[type="submit"] {
 	cursor: pointer;
 	*overflow: visible;
 }
-
 button,
 select {
 	text-transform: none;
 }
-
 .modal-budget-settings .ynab4-migration .button .ynab-new-icon {
 	color: var(--labelSecondary);
 }
-
 .button .ynab-new-icon,
 .button-cancel .ynab-new-icon,
 .button-secondary .ynab-new-icon {
@@ -1761,59 +1740,47 @@ select {
 	margin-right: .3rem;
 	overflow: visible;
 }
-
 .ynab-new-icon {
 	fill: currentColor;
 	stroke: none;
 }
-
 .modal-fresh .modal-fresh-body {
 	line-height: 1.5;
 	padding: 1rem;
 }
-
 .modal-fresh .modal-fresh-body {
 	font-size: .875rem;
 	font-weight: 500;
 }
-
 .modal-fresh .modal-fresh-body> :last-child {
 	margin-bottom: 0;
 }
-
 .modal-fresh .modal-fresh-body> :first-child {
 	margin-top: 0;
 }
-
 section {
 	display: block;
 }
-
 form {
 	margin: 0;
 }
-
 .type-body-bold {
 	font-size: .875rem;
 	font-weight: 600;
 	line-height: 1.2;
 }
-
 .modal-budget-settings .modal-budget-settings-name {
 	margin: .25rem 0 1rem;
 }
-
 .modal-fresh input {
 	height: 2rem;
 	padding: .25rem .5rem;
 }
-
 .modal-fresh input {
 	border: .0625rem solid var(--inputBorder);
 	width: 100%;
 	border-radius: .25rem;
 }
-
 input {
 	background-color: var(--inputBackground);
 }
@@ -1825,39 +1792,32 @@ input {
 input {
 	line-height: normal;
 }
-
 input {
 	font-size: 100%;
 }
-
 button,
 input,
 select {
 	vertical-align: baseline;
 }
-
 .x-select-container select:focus,
 input:focus {
 	border: .0625rem solid var(--inputBorderActive);
 	outline: 0;
 }
-
 .modal-budget-settings .modal-budget-settings-currency-fields {
 	display: flex;
 	gap: 1rem;
 }
-
 .modal-budget-settings .modal-budget-settings-currency-fields>div {
 	flex: 1;
 }
-
 .input-container-with-arrow.focused::after,
 .input-container-with-arrow.is-modal-open::after,
 .x-select-container.focused::after,
 .x-select-container.is-modal-open::after {
 	border-top: .45em solid var(--inputBorderActive);
 }
-
 .input-container-with-arrow::after,
 .x-select-container::after {
 	content: "";
@@ -1871,17 +1831,14 @@ input:focus {
 	right: .5rem;
 	top: calc(50% - .15rem);
 }
-
 .modal-budget-settings .x-select-container {
 	display: block;
 	margin: .25rem 0 1rem;
 }
-
 .x-select-container {
 	display: inline;
 	position: relative;
 }
-
 .x-select-container select {
 	height: 2rem;
 	-webkit-appearance: none;
@@ -1890,29 +1847,24 @@ input:focus {
 	margin: 0;
 	padding: .25rem 1.5rem .25rem .5rem;
 }
-
 .x-select-container select,
 select {
 	border: .0625rem solid var(--inputBorder);
 	border-radius: .25rem;
 }
-
 .modal-fresh select {
 	width: 100%;
 }
-
 .x-select-container select,
 select {
 	font-size: .875rem;
 	font-weight: 500;
 	line-height: 1.2;
 }
-
 button,
 select {
 	text-transform: none;
 }
-
 .modal-fresh .modal-fresh-footer {
 	align-items: center;
 	display: flex;
@@ -1921,13 +1873,11 @@ select {
 	padding: 1rem;
 	padding-top: 0;
 }
-
 .ynab-button.secondary:not([disabled]) {
 	background-color: var(--buttonSecondaryBackground);
 	color: var(--buttonSecondaryLabel);
 	border: 0;
 }
-
 .ynab-button {
 	background-color: var(--buttonPrimaryBackground);
 	color: var(--labelDarkBackgroundPrimary);
@@ -1945,13 +1895,11 @@ select {
 	font-weight: 500;
 	line-height: 1.2;
 }
-
 .ynab-button.secondary:not([disabled]):active,
 .ynab-button.secondary:not([disabled]):hover {
 	background-color: var(--buttonSecondaryBackgroundActive);
 	color: var(--buttonSecondaryLabel);
 }
-
 .ynab-button:active,
 .ynab-button:hover {
 	background-color: var(--buttonPrimaryBackgroundActive);
@@ -1959,4 +1907,6 @@ select {
 	align-items: center;
 	justify-content: center;
 }
- */
+
+
+

@@ -327,20 +327,18 @@
 @push('scripts')
 	<script>
 		<!---->
-		// Obtén el botón que abre el modal
-		const budgetSettings = document.querySelector(".modal-select-budget-settings");
 		const newBudget = document.querySelector(".modal-select-budget-create");
+		const modalOverlay = document.getElementById('ember150');
+		const modalOverlaySettings = document.getElementById('ember180');
 
 		// New Budget
 		newBudget.addEventListener('click', () => {
-			alert("Botón de New Budget clickeado!"); // Mensaje en la consola
+			modalOverlay.classList.toggle('active');
+			if ( modalOverlaySettings) {
+				modalOverlaySettings.classList.remove('active'); // Cierra el modal del menú
+			}
 		});
-
-		budgetSettings.addEventListener('click', () => {
-			console.log("Botón de Budget Settings clickeado!"); // Mensaje en la consola
-		});
-	
-	
+		
 	</script>
 @endpush
 
