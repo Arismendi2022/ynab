@@ -327,18 +327,28 @@
 @push('scripts')
 	<script>
 		<!---->
-		const newBudget = document.querySelector(".modal-select-budget-create");
-		const modalOverlay = document.getElementById('ember150');
-		const modalOverlaySettings = document.getElementById('ember180');
+		//Activacion mosal New Bodget
+		document.addEventListener('DOMContentLoaded', function () {
+			const newBudget = document.querySelector(".modal-select-budget-create");
+			const modalOverlay = document.getElementById('ember150');
+			const modalSettings = document.getElementById('ember180');
+			const budgetNameInput = document.getElementById('modal-settings-budget-name');
 
-		// New Budget
-		newBudget.addEventListener('click', () => {
-			modalOverlay.classList.toggle('active');
-			if ( modalOverlaySettings) {
-				modalOverlaySettings.classList.remove('active'); // Cierra el modal del menú
-			}
-		});
-		
+			// New Budget
+			newBudget.addEventListener('click', () => {
+				modalSettings.classList.remove('active'); // Cierra el modal del menú
+
+				// Esperar a que la clase 'active' se aplique y el modal sea visible
+				setTimeout(() => {
+					centrarModal(modalSettings);
+					budgetNameInput.focus(); // Poner el foco en el input
+				}, 1); // Ajusta el tiempo si es necesario
+
+				modalOverlay.classList.toggle('active');
+				if (modalSettings) {
+				}
+			});
+		})
 	</script>
 @endpush
 

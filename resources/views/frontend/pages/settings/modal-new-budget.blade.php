@@ -1,5 +1,5 @@
 {{-- modal new budget --}}
-<div id="ember150" class="modal-overlay modal-fresh mod-skinny modal-budget-settings">
+<div id="ember150" class="modal-overlay modal-fresh mod-skinny modal-budget-settings ">
 	<div class="modal" role="dialog" aria-modal="true" style="left: 720px; top: 263.5px;">
 		<div class="modal-fresh-header">
 			<div class="modal-fresh-title">
@@ -22,7 +22,7 @@
 					<label for="budget-name" class="type-body-bold">Budget Name</label>
 					<div class="field-with-error">
 						<div>
-							<input id="modal-settings-budget-name" class="ember-text-field ember-view modal-budget-settings-name" type="text" autofocus>
+							<input id="modal-settings-budget-name" class="ember-text-field ember-view modal-budget-settings-name" type="text">
 						</div>
 						<!---->
 						<!---->
@@ -185,10 +185,14 @@
 								<select class="js-x-select" id="modal-settings-currency-placement">
 									<!---->
 									<option value="Symbol First">
-										Before amount (<bdi>$</bdi>123,456.78)
+										Before amount (
+										<bdi>$</bdi>
+										123,456.78)
 									</option>
 									<option value="Symbol Last">
-										After amount (123,456.78<bdi>$</bdi>)
+										After amount (123,456.78
+										<bdi>$</bdi>
+										)
 									</option>
 									<option value="Symbol None">
 										Don't show (123,456.78)
@@ -275,10 +279,10 @@
 			<!---->
 		</div>
 		<div class="modal-fresh-footer">
-			<button class="ynab-button secondary  " type="button">
+			<button class="ynab-button secondary" type="button">
 				Cancel
 			</button>
-			<button class="ynab-button primary  " type="button">
+			<button class="ynab-button primary" type="button">
 				Create Budget
 			</button>
 		</div>
@@ -289,23 +293,23 @@
 	<script>
 		//Ajusta el left y top del modal
 		function centrarModal() {
-        const modal = document.querySelector('.modal-fresh .modal');
-        const { innerWidth: width, innerHeight: height } = window;
-        const modalWidth = modal.offsetWidth;
-        const modalHeight = modal.offsetHeight;
+			const modal = document.querySelector('.modal-fresh .modal');
+			const {innerWidth: width, innerHeight: height} = window;
+			const modalWidth = modal.offsetWidth;
+			const modalHeight = modal.offsetHeight;
 
-        modal.style.left = `${(width - modalWidth) / 2}px`;
-        modal.style.top = `${(height - modalHeight) / 2}px`;
-    }
+			modal.style.left = `${(width - modalWidth) / 2}px`;
+			modal.style.top = `${(height - modalHeight) / 2}px`;
+		}
 
-    function cerrarModal() {
-        document.querySelector('.modal-overlay').style.display = 'none';
-        document.querySelector('.modal-fresh').style.display = 'none';
-    }
+		function cerrarModal() {
+			document.querySelector('.modal-overlay').style.display = 'none';
+			document.querySelector('.modal-fresh').style.display = 'none';
+		}
 
-    window.addEventListener('resize', centrarModal);
-    window.addEventListener('load', centrarModal);
-    document.addEventListener('DOMContentLoaded', centrarModal);
+		window.addEventListener('resize', centrarModal);
+		window.addEventListener('load', centrarModal);
+		document.addEventListener('DOMContentLoaded', centrarModal);
 		<!---->
 		//activa el focus a los select
 		document.addEventListener('DOMContentLoaded', () => {
@@ -326,6 +330,14 @@
 			});
 		});
 		// cierre el modal
-		
+		document.addEventListener('DOMContentLoaded', () => {
+			const cancelBtn = document.querySelector('.secondary')
+			const modalOverlay = document.getElementById('ember150');
+
+			cancelBtn.addEventListener('click', () => {
+				modalOverlay.classList.remove('active'); // Cierra el modal del menú
+			});
+		});
+	
 	</script>
 @endpush

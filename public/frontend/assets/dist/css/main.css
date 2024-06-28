@@ -1518,7 +1518,7 @@ button[disabled] {
 	z-index: 10001;
 }
 .modal-overlay.active {
-	display: block; /* Mostrar el overlay cuando tenga la clase active */
+	display: block;
 }
 
 /* || MODAL-OVERLAY */
