@@ -678,3 +678,10 @@ a, a:visited {
 	font-weight: bold;
 }
 
+/* || REGISTER */
+.authentications-panel__terms {
+	font-size: 0.875rem;
+	line-height: 1.2;
+	text-align: start;
+}
+

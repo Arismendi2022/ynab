@@ -1,5 +1,6 @@
 @extends('backend.layouts.auth-layout')
 @section('pageTitle', isset($pageTitle) ? $pageTitle : 'Page title here')
+@section('pageType', 'authentications#new')
 @section('content')
 	<div id="passwords-screen" data-controller="new-passwords">
 		<section data-new-passwords-target="passwordsContainer">
@@ -98,5 +99,11 @@
 				});
 			}
 		});
+
+		//Quita class para modo dark
+		document.addEventListener('DOMContentLoaded', function () {
+			document.body.className = '';
+		});
+	
 	</script>
 @endpush
