@@ -1,6 +1,5 @@
-@extends('backend.layouts.auth-layout')
+@extends('backend.layouts.new-layout')
 @section('pageTitle', isset($pageTitle) ? $pageTitle : 'Page title here')
-@section('pageType', 'authentications#new')
 @section('content')
 	<div id="passwords-screen" data-controller="new-passwords">
 		<section data-new-passwords-target="passwordsContainer">
@@ -21,7 +20,7 @@
 						@enderror
 					</label>
 				</p>
-				<p style="margin-top: 1.25rem;">
+				<p>
 					<button name="button" type="submit" class="button button-primary" data-disable-with="Sending Reset Instructions...">Send Reset Instructions</button>
 				</p>
 				<p>
@@ -99,11 +98,7 @@
 				});
 			}
 		});
-
-		//Quita class para modo dark
-		document.addEventListener('DOMContentLoaded', function () {
-			document.body.className = '';
-		});
+		
 	
 	</script>
 @endpush

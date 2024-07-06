@@ -1,4 +1,4 @@
-@extends('backend.layouts.auth-layout')
+@extends('backend.layouts.new-layout')
 @section('pageTitle', isset($pageTitle) ? $pageTitle : 'Reset password')
 @section('content')
 	<div data-controller="edit-passwords" data-edit-passwords-otp-form-outlet="#otp-form">
@@ -6,7 +6,7 @@
 			<div class="js-main_screen_or_otp_app_or_otp_backup_code">
 				<h2>Reset your password</h2>
 				<form id="password-reset-form" class="form js-form" action="{{ route('users.reset-password-handler') }}" accept-charset="UTF-8" data-remote="true" method="POST"
-				novalidate="novalidate">
+					novalidate="novalidate">
 					@csrf
 					<input value="{{ request()->token }}" autocomplete="off" type="hidden" name="token">
 					<p>
@@ -15,17 +15,18 @@
 					<p class="js-form-password">
 						<label for="request_data_password">Enter a New Password:</label>
 						<span class="password-toggle">
-                        <input class="required" autofocus="autofocus" autocapitalize="none" autocomplete="off" type="password" name="new_password" id="request_data_password"
-                        value="{{ old('new_password') }}">
-                        <label><input type="checkbox" id="togglePassword" data-password-toggle="">Show</label>
-                    </span>
+							<input class="required" autofocus="autofocus" autocapitalize="none" autocomplete="off" type="password" name="new_password"
+								value="{{ old('new_password') }}" id="request_data_password">
+							<label>
+								<input type="checkbox" id="togglePassword" data-password-toggle="">Show</label>
+						</span>
 						<label class="error" id="email-error" for="request_data_password">
 							@error('new_password')
 							{{ $message }}
 							@enderror
 						</label>
 					</p>
-					<p data-edit-passwords-target="resetSubmitButton" style="margin-top: 1.25rem">
+					<p data-edit-passwords-target="resetSubmitButton">
 						<button name="button" type="submit" class="button button-primary" data-disable-with="Saving New Password...">Save New Password</button>
 					</p>
 				</form>
@@ -118,5 +119,6 @@
 			const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
 			passwordField.setAttribute('type', type);
 		});
+	
 	</script>
 @endpush

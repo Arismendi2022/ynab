@@ -87,6 +87,7 @@
 @endsection
 @push('scripts')
 	<script>
+		//Muestra la contraseña
 		const passwordField = document.getElementById('request_data_password_signup');
 		const togglePassword = document.getElementById('togglePassword');
 

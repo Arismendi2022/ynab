@@ -142,9 +142,7 @@
 				});
 			}
 		});
-
-
-
+		
 		//Evitar que la pagina se recarge
 		/*const formLogin = document.querySelector("#login-form");
 
