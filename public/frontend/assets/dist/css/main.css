@@ -1908,5 +1908,121 @@ select {
 	justify-content: center;
 }
 
+/* || MODAL CALENDAR */
+.modal-calendar {
+	background: 0 0;
+}
+.modal-overlay.active > .modal {
+	transform: scale(1);
+	opacity: 1;
+	-ms-filter: none;
+	filter: none;
+}
+.modal-calendar .modal {
+	height: 12.3em;
+	width: 14em;
+}
+/* || YEARS */
+.month-picker-years {
+	border-bottom: 1px solid #d2d8de;
+	border-bottom: 1px solid var(--separatorStandard);
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	margin: 0 .8rem;
+	padding: .3rem 0;
+}
+.month-picker-years .month-picker-years-item {
+	list-style: none;
+}
+.ghost-button.is-icon-only > .ynab-new-icon {
+	margin-right: 0;
+}
+.loan-account-account-header hr, .month-picker-years svg.ynab-new-icon {
+	margin: 0;
+	margin-right: 0px;
+}
+.month-picker-years .month-picker-selected-year {
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+.month-picker-years .month-picker-years-item {
+	list-style: none;
+}
+/* || MONTHS */
+.month-picker-months::after {
+	clear: both;
+}
+.month-picker-months::after, .month-picker-months::before {
+	content: "";
+	display: table;
+}
+.month-picker-months {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	height: 8.375rem;
+	justify-content: center;
+	margin: .3rem .625rem;
+	width: 12.75rem;
+	zoom: 1;
+	padding: 0;
+}
+
+/* || ITEMS */
+.month-picker-months .month-picker-months-item.is-disabled {
+	background-color: transparent;
+	color: var(--labelTertiary);
+	pointer-events: none;
+}
+.month-picker-months .month-picker-months-item {
+	flex: 0 0 auto;
+	height: 2.541666666666667rem;
+	position: relative;
+	width: 2.921875rem;
+	border-radius: .25rem;
+	color: #19223c;
+	color: var(--labelPrimary);
+	cursor: pointer;
+	float: left;
+	list-style: none;
+	margin: .125rem;
+	text-align: center;
+}
+.month-picker-months .month-picker-months-item {
+	font-size: .875rem;
+	font-weight: 600;
+	line-height: 1.2;
+}
+.month-picker-months {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	height: 8.375rem;
+	justify-content: center;
+	margin: .3rem .625rem;
+	width: 12.75rem;
+	zoom: 1;
+	padding: 0;
+}
+.month-picker-months .month-picker-months-item.is-selected {
+	border-radius: .25rem;
+	background-color: var(--buttonPrimaryBackground);
+	color: var(--labelDarkBackgroundPrimary);
+}
+
+/* || ARROW */
+.modal-arrow {
+	fill: var(--backgroundPrimaryElevated);
+	height: .9375rem;
+	position: absolute;
+	stroke: none;
+	transition-property: none;
+	width: 1.875rem;
+	-webkit-transition-property: none;
+}
+
+
+
 
 
