@@ -329,7 +329,7 @@
 				}
 			});
 		});
-		// cierre el modal
+		// cierra el modal
 		document.addEventListener('DOMContentLoaded', () => {
 			const cancelBtn = document.querySelector('.secondary')
 			const modalOverlay = document.getElementById('ember150');

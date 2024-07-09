@@ -1,3 +1,4 @@
+{{-- modal calendart --}}
 <div id="ember148" class="modal-overlay active ynab-u modal-calendar">
 	<div class="modal" role="dialog" aria-modal="true" style="top: 57.4667px; left: 256.466px;">
 		<div class="ynab-calendar">
@@ -78,3 +79,7 @@
 		</svg>
 	</div>
 </div>
+
+@push('scripts')
+
+@endpush

@@ -36,11 +36,13 @@
 </div>
 <!---->
 <!---->
-@include('frontend.pages.settings.modal-settings')
+@include('components.modals.modal-settings')
 <!---->
-@include('frontend.pages.settings.modal-new-budget')
+@include('components.modals.modal-new-budget')
 <!---->
-@include('frontend.pages.settings.modal-calendar')
+{{--@include('components.modals.modal-calendar')--}}
+<!---->
+@include('components.modals.modal-add-account')
 <!---->
 
 <div class="tooltip-global">

@@ -159,52 +159,52 @@
 	--buttonSecondaryBackground: rgba(59,94,218,0.129);
 	--buttonSecondaryBackgroundActive: rgba(59,94,218,0.2);
 	--buttonSecondaryLabel: #3b5eda;
-	--calloutSectionNegativeAccent: #c72c1e;
-	--calloutSectionNegativeButtonBackground: #c72c1e;
-	--calloutSectionNegativeButtonBackgroundActive: #962116;
-	--calloutSectionNegativeButtonForeground: #feedeb;
-	--calloutSectionNegativeLabel: #3c0d09;
-	--calloutSectionNegativeProminentBackground: #faada5;
-	--calloutSectionNegativeProminentBackgroundEmphasis: #f77f73;
-	--calloutSectionNegativeSubtleBackground: #feedeb;
-	--calloutSectionNegativeSubtleBackgroundEmphasis: #faada5;
-	--calloutSectionPassiveAccent: #6e7a88;
-	--calloutSectionPassiveButtonBackground: #405163;
-	--calloutSectionPassiveButtonBackgroundActive: #223243;
-	--calloutSectionPassiveButtonForeground: #fff;
-	--calloutSectionPassiveLabel: #0c1722;
-	--calloutSectionPassiveProminentBackground: #d2d8de;
-	--calloutSectionPassiveProminentBackgroundEmphasis: #a5adb6;
-	--calloutSectionPassiveSubtleBackground: rgba(110,122,136,0.122);
-	--calloutSectionPassiveSubtleBackgroundEmphasis: #d2d8de;
-	--calloutSectionPositiveAccent: #67c122;
-	--calloutSectionPositiveButtonBackground: #4d9119;
-	--calloutSectionPositiveButtonBackgroundActive: #346011;
-	--calloutSectionPositiveButtonForeground: #f1fbe9;
-	--calloutSectionPositiveLabel: #1d300d;
-	--calloutSectionPositiveProminentBackground: #c1ee9f;
-	--calloutSectionPositiveProminentBackgroundEmphasis: #84dd3e;
-	--calloutSectionPositiveSubtleBackground: #f1fbe9;
-	--calloutSectionPositiveSubtleBackgroundEmphasis: #c1ee9f;
-	--calloutSectionStandardAccent: #3b5eda;
-	--calloutSectionStandardButtonBackground: #3b5eda;
-	--calloutSectionStandardButtonBackgroundActive: #374d9b;
-	--calloutSectionStandardButtonForeground: #ecf0fe;
-	--calloutSectionStandardLabel: #19223c;
-	--calloutSectionStandardProminentBackground: #d5defd;
-	--calloutSectionStandardProminentBackgroundEmphasis: #829cf8;
-	--calloutSectionStandardSubtleBackground: rgba(59,94,218,0.129);
-	--calloutSectionStandardSubtleBackgroundEmphasis: #acbdfb;
-	--calloutSectionWarningAccent: #daac00;
-	--calloutSectionWarningButtonBackground: #f6c91d;
-	--calloutSectionWarningButtonBackgroundActive: #daac00;
-	--calloutSectionWarningButtonForeground: #362c05;
-	--calloutSectionWarningProminentBackground: #fbe48e;
-	--calloutSectionWarningProminentBackgroundEmphasis: #daac00;
-	--calloutSectionWarningProminentBackgroundLabel: #362c05;
-	--calloutSectionWarningSubtleBackground: #fef9ed;
-	--calloutSectionWarningSubtleBackgroundEmphasis: #fbe48e;
-	--calloutSectionWarningSubtleBackgroundLabel: #362c05;
+	--calloutNegativeAccent: #c72c1e;
+	--calloutNegativeButtonBackground: #c72c1e;
+	--calloutNegativeButtonBackgroundActive: #962116;
+	--calloutNegativeButtonForeground: #feedeb;
+	--calloutNegativeLabel: #3c0d09;
+	--calloutNegativeProminentBackground: #faada5;
+	--calloutNegativeProminentBackgroundEmphasis: #f77f73;
+	--calloutNegativeSubtleBackground: #feedeb;
+	--calloutNegativeSubtleBackgroundEmphasis: #faada5;
+	--calloutSecondaryAccent: #6e7a88;
+	--calloutSecondaryButtonBackground: #405163;
+	--calloutSecondaryButtonBackgroundActive: #223243;
+	--calloutSecondaryButtonForeground: #fff;
+	--calloutSecondaryLabel: #0c1722;
+	--calloutSecondaryProminentBackground: #d2d8de;
+	--calloutSecondaryProminentBackgroundEmphasis: #a5adb6;
+	--calloutSecondarySubtleBackground: rgba(110,122,136,0.122);
+	--calloutSecondarySubtleBackgroundEmphasis: #d2d8de;
+	--calloutPositiveAccent: #67c122;
+	--calloutPositiveButtonBackground: #4d9119;
+	--calloutPositiveButtonBackgroundActive: #346011;
+	--calloutPositiveButtonForeground: #f1fbe9;
+	--calloutPositiveLabel: #1d300d;
+	--calloutPositiveProminentBackground: #c1ee9f;
+	--calloutPositiveProminentBackgroundEmphasis: #84dd3e;
+	--calloutPositiveSubtleBackground: #f1fbe9;
+	--calloutPositiveSubtleBackgroundEmphasis: #c1ee9f;
+	--calloutPrimaryAccent: #3b5eda;
+	--calloutPrimaryButtonBackground: #3b5eda;
+	--calloutPrimaryButtonBackgroundActive: #374d9b;
+	--calloutPrimaryButtonForeground: #ecf0fe;
+	--calloutPrimaryLabel: #19223c;
+	--calloutPrimaryProminentBackground: #d5defd;
+	--calloutPrimaryProminentBackgroundEmphasis: #829cf8;
+	--calloutPrimarySubtleBackground: rgba(59,94,218,0.129);
+	--calloutPrimarySubtleBackgroundEmphasis: #acbdfb;
+	--calloutWarningAccent: #daac00;
+	--calloutWarningButtonBackground: #f6c91d;
+	--calloutWarningButtonBackgroundActive: #daac00;
+	--calloutWarningButtonForeground: #362c05;
+	--calloutWarningProminentBackground: #fbe48e;
+	--calloutWarningProminentBackgroundEmphasis: #daac00;
+	--calloutWarningProminentBackgroundLabel: #362c05;
+	--calloutWarningSubtleBackground: #fef9ed;
+	--calloutWarningSubtleBackgroundEmphasis: #fbe48e;
+	--calloutWarningSubtleBackgroundLabel: #362c05;
 	--categoryBalanceAlternateBorder: #000;
 	--categoryBalanceAlternateNegativeBackground: #c72c1e;
 	--categoryBalanceAlternateNegativeBackgroundActive: #962116;
@@ -376,7 +376,7 @@ body, html {
 	color: var(--labelPrimary);
 }
 body, button, html, input, select, textarea {
-	font-family: 'Figtree','Helvetica Neue',Helvetica,Arial,sans-serif;
+	font-family: "Figtree", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	transition: none;
 }
 body, figure, form {
@@ -399,7 +399,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 .skip-to-content {
 	background-color: var(--calloutSectionStandardProminentBackground);
 	color: var(--calloutSectionStandardLabel);
-	clip: rect(1px,1px,1px,1px);
+	clip: rect(1px, 1px, 1px, 1px);
 	height: 1px;
 	margin: 0;
 	overflow: hidden;
@@ -972,7 +972,8 @@ button.contrast:not([disabled]):active, .ynab-button.contrast:not([disabled]):ho
 	opacity: 1;
 	filter: none;
 	transition: opacity .2s .5s;
-} /* || END SIDEBAR */
+}
+/* || END SIDEBAR */
 .sidebar-resized-collapsed,
 .sidebar {
 	transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -1086,7 +1087,7 @@ header {
 
 /* || TOTALS */
 .to-be-budgeted.is-positive {
-	background-color: var(--calloutSectionPositiveProminentBackground);
+	background-color: var(--calloutPositiveProminentBackground);
 	color: var(--calloutSectionPositiveLabel);
 }
 .to-be-budgeted {
@@ -1156,8 +1157,8 @@ h1 {
 	margin-left: 2.5rem;
 }
 .is-positive .to-be-budgeted-button {
-	background-color: var(--calloutSectionPositiveButtonBackground);
-	color: var(--calloutSectionPositiveButtonForeground);
+	background-color: var(--calloutPositiveButtonBackground);
+	color: var(--calloutPositiveButtonForeground);
 	opacity: 1;
 	-ms-filter: none;
 	filter: none;
@@ -1193,7 +1194,7 @@ h1 {
 	width: .5rem;
 }
 .to-be-budgeted-button:hover {
-	background-color: var(--calloutSectionPositiveButtonBackgroundActive);
+	background-color: var(--calloutPositiveButtonBackgroundActive);
 }
 
 /* ||DAYS */
@@ -1535,7 +1536,7 @@ button[disabled] {
 	width: 14.25rem;
 }
 .modal:active, .modal:focus {
-	box-shadow: 0 16px 64px rgba(0,0,0,.2);
+	box-shadow: 0 16px 64px rgba(0, 0, 0, .2);
 }
 .modal {
 	background-color: var(--backgroundPrimaryElevated);
@@ -1544,8 +1545,8 @@ button[disabled] {
 	height: auto;
 	position: relative;
 	z-index: 1;
-	box-shadow: 0 16px 64px rgba(0,0,0,.2);
-	transition: transform 150ms ease,opacity 100ms ease;
+	box-shadow: 0 16px 64px rgba(0, 0, 0, .2);
+	transition: transform 150ms ease, opacity 100ms ease;
 	animation-fill-mode: forwards;
 	opacity: 0;
 }
@@ -1656,7 +1657,7 @@ a:focus-visible, div:focus-visible, li:focus-visible {
 .modal-fresh .modal {
 	border-radius: .5rem;
 }
- /* || END MODAL NEW BUDGET */
+/* || END MODAL NEW BUDGET */
 .modal-fresh .modal-fresh-header {
 	color: var(--labelPrimary);
 	border-bottom: 1px solid rgba(0, 0, 0, .1);
@@ -1752,10 +1753,10 @@ select {
 	font-size: .875rem;
 	font-weight: 500;
 }
-.modal-fresh .modal-fresh-body> :last-child {
+.modal-fresh .modal-fresh-body > :last-child {
 	margin-bottom: 0;
 }
-.modal-fresh .modal-fresh-body> :first-child {
+.modal-fresh .modal-fresh-body > :first-child {
 	margin-top: 0;
 }
 section {
@@ -1809,7 +1810,7 @@ input:focus {
 	display: flex;
 	gap: 1rem;
 }
-.modal-budget-settings .modal-budget-settings-currency-fields>div {
+.modal-budget-settings .modal-budget-settings-currency-fields > div {
 	flex: 1;
 }
 .input-container-with-arrow.focused::after,
@@ -2021,6 +2022,156 @@ select {
 	width: 1.875rem;
 	-webkit-transition-property: none;
 }
+
+/* || ADD ACCOUNT */
+.account-widget-modal.self-centered {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	padding: 2% 0 4%;
+	z-index: 10012;
+}
+.account-widget-modal.self-centered .modal {
+	height: 608px;
+	overflow: hidden;
+	padding: 0;
+	position: relative !important;
+	width: 360px;
+}
+.modal-overlay.active > .modal {
+	transform: scale(1);
+	opacity: 1;
+	-ms-filter: none;
+	filter: none;
+}
+.account-widget {
+	background-color: var(--backgroundPrimaryElevated);
+	height: 100%;
+	outline: 0;
+	-webkit-overflow-scrolling: touch;
+}
+.account-widget {
+	font-size: .875rem;
+	font-weight: 500;
+	line-height: 1.2;
+}
+.account-widget .account-widget-step {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+.account-widget .account-widget-step .account-widget-header {
+	border-bottom: 1px solid var(--separatorSubdued);
+	align-items: center;
+	display: flex;
+	flex: 0 0 auto;
+	height: 3.5rem;
+	padding: .625rem 1rem;
+}
+.account-widget .account-widget-step .account-widget-header .hidden-header-button:first-child, .account-widget .account-widget-step .account-widget-header button:first-child {
+	margin-left: -1rem;
+}
+.account-widget .account-widget-step .account-widget-header .hidden-header-button, .account-widget .account-widget-step .account-widget-header button {
+	height: 3.5rem;
+	padding: 0;
+	width: 3.5rem;
+}
+.account-widget .account-widget-step .account-widget-header .account-widget-header-title {
+	flex: 6 1 auto;
+	text-align: center;
+}
+.account-widget .account-widget-step .account-widget-header .account-widget-header-title h1 {
+	color: var(--labelPrimary);
+	margin: 0;
+}
+.account-widget .account-widget-step .account-widget-header button:last-child {
+	margin-right: -1rem;
+}
+.account-widget .ynab-new-icon {
+	color: var(--actionPrimary);
+}
+.account-widget .account-widget-step .account-widget-body {
+	flex: 1 1 auto;
+	overflow: auto;
+	padding: 1rem 1rem 0;
+}
+.account-widget .account-widget-step-with-help-box .account-widget-body {
+	display: flex;
+	flex-direction: column;
+}
+.account-widget .account-widget-select-linked-unlinked .select-linked-unlinked-box {
+	background: var(--buttonSecondaryBackground);
+	border-radius: .25rem;
+	cursor: pointer;
+	display: flex;
+}
+.account-widget .account-widget-select-linked-unlinked .select-linked-unlinked-box .select-linked-unlinked-box-text {
+	display: flex;
+	margin: 2rem 1.25rem;
+}
+.account-widget .account-widget-select-linked-unlinked .select-linked-unlinked-box .select-linked-unlinked-box-icon {
+	margin-right: .75rem;
+	margin-top: .25rem;
+}
+.account-widget .account-widget-select-linked-unlinked .select-linked-unlinked-box .select-linked-unlinked-box-icon .ynab-new-icon.icon-download {
+	height: 1.6rem;
+	width: 1.6rem;
+}
+.account-widget .account-widget-select-linked-unlinked .select-linked-unlinked-box .select-linked-unlinked-box-icon .ynab-new-icon {
+	color: var(--actionPrimary);
+}
+.account-widget .account-widget-select-linked-unlinked .select-linked-unlinked-box .select-linked-unlinked-box-text .select-linked-unlinked-box-title {
+	color: var(--actionPrimary);
+}
+.account-widget .account-widget-select-linked-unlinked .select-linked-unlinked-box .select-linked-unlinked-box-text .select-linked-unlinked-box-message {
+	color: var(--labelPrimary);
+	margin-bottom: 0;
+}
+.account-widget p {
+	margin: .3rem 0 1rem;
+}
+.account-widget .separator-text {
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	border-bottom: 1px solid var(--separatorSubdued);
+	line-height: .3rem;
+	margin-bottom: 1.5rem;
+	margin-top: 1.2rem;
+	text-align: center;
+	width: 100%;
+}
+.account-widget .account-widget-select-linked-unlinked .select-linked-unlinked-box .select-linked-unlinked-box-icon .ynab-new-icon.icon-edit {
+	height: 1.5rem;
+	width: 1.5rem;
+}
+.account-widget .account-widget-step-with-help-box .account-widget-help-box {
+	margin-bottom: 1rem;
+	margin-top: auto;
+}
+.account-widget .account-widget-help-box {
+	align-items: center;
+	background-color: var(--calloutPrimarySubtleBackground);
+	border-radius: .5rem;
+	display: flex;
+	height: 4.5rem;
+	padding: 1rem;
+}
+.account-widget .account-widget-help-box > .ynab-new-icon {
+	color: var(--calloutPrimaryAccent);
+	flex-shrink: 0;
+	height: 1.5rem;
+	margin-right: 1rem;
+	position: initial;
+	width: 1.5rem;
+}
+.account-widget .account-widget-select-linked-unlinked .select-linked-unlinked-box:hover {
+	background: var(--buttonSecondaryBackgroundActive);
+}
+
+
+
+
+
 
 
 

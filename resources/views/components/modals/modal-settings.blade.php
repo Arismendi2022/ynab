@@ -327,7 +327,7 @@
 @push('scripts')
 	<script>
 		<!---->
-		//Activacion mosal New Bodget
+		//Activacion modal New Bodget
 		document.addEventListener('DOMContentLoaded', function () {
 			const newBudget = document.querySelector(".modal-select-budget-create");
 			const modalOverlay = document.getElementById('ember150');
