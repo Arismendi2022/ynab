@@ -429,6 +429,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 .ynab-u {
 	display: inline-block;
+	*display: inline;
 	zoom: 1;
 	letter-spacing: normal;
 	word-spacing: normal;
@@ -1505,6 +1506,7 @@ button[disabled] {
 .ynab-new-settings-menu.modal-overlay {
 	background-color: var(--scrimInvisible);
 }
+
 :active, :focus {
 	box-shadow: none;
 }
@@ -1515,17 +1517,14 @@ button[disabled] {
 	position: absolute;
 	top: 0;
 	width: 100%;
-	display: none;
 	z-index: 10001;
 }
-.modal-overlay.active {
-	display: block;
-}
 
-/* || MODAL-OVERLAY */
+/* || MODAL */
 .modal-overlay.active > .modal {
 	transform: scale(1);
 	opacity: 1;
+	-ms-filter: none;
 	filter: none;
 }
 .ynab-new-settings-menu .modal {
@@ -1545,11 +1544,14 @@ button[disabled] {
 	height: auto;
 	position: relative;
 	z-index: 1;
-	box-shadow: 0 16px 64px rgba(0, 0, 0, .2);
-	transition: transform 150ms ease, opacity 100ms ease;
+	box-shadow: 0 16px 64px rgba(0,0,0,.2);
+	transition: transform 150ms ease,opacity 100ms ease;
 	animation-fill-mode: forwards;
 	opacity: 0;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
 }
+
 /* || UL */
 .accounts-calendar-grid::after,
 .ynab-new-settings-menu ul.modal-list::after {
@@ -1657,10 +1659,9 @@ a:focus-visible, div:focus-visible, li:focus-visible {
 .modal-fresh .modal {
 	border-radius: .5rem;
 }
-/* || END MODAL NEW BUDGET */
+
 .modal-fresh .modal-fresh-header {
 	color: var(--labelPrimary);
-	border-bottom: 1px solid rgba(0, 0, 0, .1);
 	border-bottom: 1px solid var(--separatorSubdued);
 	align-items: center;
 	display: flex;
@@ -1890,7 +1891,6 @@ select {
 	padding: .375rem 1rem;
 	transition: background-color .15s ease;
 }
-
 .ynab-button {
 	font-size: 1rem;
 	font-weight: 500;
@@ -1912,12 +1912,6 @@ select {
 /* || MODAL CALENDAR */
 .modal-calendar {
 	background: 0 0;
-}
-.modal-overlay.active > .modal {
-	transform: scale(1);
-	opacity: 1;
-	-ms-filter: none;
-	filter: none;
 }
 .modal-calendar .modal {
 	height: 12.3em;
@@ -2023,7 +2017,7 @@ select {
 	-webkit-transition-property: none;
 }
 
-/* || ADD ACCOUNT */
+/* || MODAL ADD ACCOUNT */
 .account-widget-modal.self-centered {
 	align-items: center;
 	display: flex;
@@ -2037,12 +2031,6 @@ select {
 	padding: 0;
 	position: relative !important;
 	width: 360px;
-}
-.modal-overlay.active > .modal {
-	transform: scale(1);
-	opacity: 1;
-	-ms-filter: none;
-	filter: none;
 }
 .account-widget {
 	background-color: var(--backgroundPrimaryElevated);

@@ -1,5 +1,5 @@
 {{-- modal new budget --}}
-<div id="ember150" class="modal-overlay modal-fresh mod-skinny modal-budget-settings ">
+<div id="ember150" class="modal-fresh mod-skinny modal-budget-settings ">
 	<div class="modal" role="dialog" aria-modal="true" style="left: 720px; top: 263.5px;">
 		<div class="modal-fresh-header">
 			<div class="modal-fresh-title">
@@ -302,11 +302,6 @@
 			modal.style.top = `${(height - modalHeight) / 2}px`;
 		}
 
-		function cerrarModal() {
-			document.querySelector('.modal-overlay').style.display = 'none';
-			document.querySelector('.modal-fresh').style.display = 'none';
-		}
-
 		window.addEventListener('resize', centrarModal);
 		window.addEventListener('load', centrarModal);
 		document.addEventListener('DOMContentLoaded', centrarModal);
@@ -335,7 +330,7 @@
 			const modalOverlay = document.getElementById('ember150');
 
 			cancelBtn.addEventListener('click', () => {
-				modalOverlay.classList.remove('active'); // Cierra el modal del menú
+				modalOverlay.classList.remove('modal-overlay','active'); // Cierra el modal del menú
 			});
 		});
 	

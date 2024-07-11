@@ -563,3 +563,17 @@
 		<!---->
 	</div>
 </div>
+@push('scripts')
+	<script>
+		//Desactivar la clase modal-overlay por defecto
+		const modalOverlay = document.querySelector('.modal-overlay');
+
+		document.addEventListener('DOMContentLoaded', function () {
+			modalOverlay.classList.remove('modal-overlay');
+		});
+		
+	
+	</script>
+
+@endpush
+

@@ -474,33 +474,37 @@
 				}
 			}
 		});
-
+		
 		// Activa modal settings
 		const openModalButtons = document.querySelectorAll('.js-sidebar-nav-menu');
 
 		openModalButtons.forEach(button => {
 			button.addEventListener('click', function (event) {
-				const modalOverlay = document.getElementById('ember180');
-				modalOverlay.classList.toggle('active');
+				const modalActive = document.getElementById('ember180');
+				modalActive.classList.add('modal-overlay','active');
+				//modalActive.classList.add('modal-overlay');
 				event.stopPropagation(); // Detener la propagación del evento para evitar cierres no deseados
 			});
 		});
 
 		// Cerrar el modal al hacer clic fuera de él
 		document.addEventListener('click', function (event) {
-			const modalOverlay = document.getElementById('ember180');
+			const modalActive = document.getElementById('ember180');
 			const modal = document.querySelector('.modal');
-			if (modalOverlay.classList.contains('active') && !modal.contains(event.target) && !event.target.classList.contains('js-sidebar-nav-menu')) {
-				modalOverlay.classList.remove('active');
+			if (modalActive.classList.contains('active') && !modal.contains(event.target) && !event.target.classList.contains('js-sidebar-nav-menu')) {
+				modalActive.classList.remove('modal-overlay', 'active');
 			}
 		});
 
-		//nav-add-account
-		const addAccount = document.querySelector('.nav-add-account')
+		// modal nav-add-account
+		document.addEventListener('DOMContentLoaded', function () {
+			const openButton = document.querySelector('.nav-add-account');
 
-		addAccount.addEventListener('click', () => {
-			alert(" Click en Add Account...");
+			openButton.addEventListener('click', function () {
+				const modalActive = document.getElementById('ember145');
+				modalActive.classList.add('modal-overlay', 'active');
 
+			});
 		});
 	
 	</script>

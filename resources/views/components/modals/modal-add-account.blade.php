@@ -1,5 +1,5 @@
 {{-- modal add account --}}
-<div id="ember145" class="modal-overlay active ynab-u modal-generic self-centered account-widget-modal">
+<div id="ember145" class="ynab-u modal-generic self-centered account-widget-modal ">
 	<div class="modal" role="dialog" aria-modal="true">
 		<div class="account-widget" tabindex="0">
 			<div class="account-widget-step account-widget-select-linked-unlinked account-widget-step-with-help-box">
@@ -13,7 +13,11 @@
 						<svg class="ynab-new-icon icon-close" width="16" height="16">
 							<!---->
 							<use href="#icon_sprite_close">
-							
+								<symbol xmlns="http://www.w3.org/2000/svg" id="icon_sprite_close" fill="none" viewBox="0 0 24 24">
+									<path fill="currentColor" fill-rule="evenodd"
+										d="M22.5 22.5a1.4 1.4 0 0 1-2 0L12 13.9l-8.6 8.6a1.4 1.4 0 0 1-1.9-2l8.6-8.5-8.6-8.5a1.4 1.4 0 0 1 2-2l8.5 8.6 8.5-8.6a1.4 1.4 0 1 1 2 2L13.9 12l8.6 8.6a1.4 1.4 0 0 1 0 1.9"
+										clip-rule="evenodd"></path>
+								</symbol>
 							</use>
 						</svg>
 					</button>
@@ -93,5 +97,16 @@
 </div>
 
 @push('scripts')
+	<script>
+		//Cierra el modal
+		document.addEventListener('DOMContentLoaded', function () {
+			const closeButton = document.querySelector('button[aria-label="Close"]');
+			
+			closeButton.addEventListener('click', function () {
+				const modalActive = document.getElementById('ember145');
+				modalActive.classList.remove('modal-overlay', 'active');
+			});
+		});
+	</script>
 
 @endpush
