@@ -3,24 +3,24 @@
 	color-scheme: light only !important;
 }
 :root {
-	--alphaBlurple40015: rgba(130,156,248,0.149);
-	--alphaBlurple40020: rgba(130,156,248,0.2);
-	--alphaBlurple40027: rgba(130,156,248,0.271);
-	--alphaBlurple60013: rgba(59,94,218,0.129);
-	--alphaBlurple60020: rgba(59,94,218,0.2);
-	--alphaBlurple80016: rgba(44,57,106,0.161);
-	--alphaBlurple8006: rgba(44,57,106,0.059);
-	--alphaNeutral50012: rgba(110,122,136,0.122);
-	--alphaNeutral50016: rgba(110,122,136,0.161);
-	--alphaNeutral50018: rgba(110,122,136,0.18);
-	--alphaNeutral50020: rgba(110,122,136,0.2);
-	--alphaNeutral50024: rgba(110,122,136,0.239);
-	--alphaNeutral50030: rgba(110,122,136,0.302);
-	--alphaNeutral50032: rgba(110,122,136,0.322);
-	--alphaNeutral50036: rgba(110,122,136,0.302);
-	--alphaNeutral50070: rgba(110,122,136,0.698);
-	--alphaNeutral5008: rgba(110,122,136,0.078);
-	--alphaNeutral70060: rgba(34,50,67,0.6);
+	--alphaBlurple40015: rgba(130, 156, 248, 0.149);
+	--alphaBlurple40020: rgba(130, 156, 248, 0.2);
+	--alphaBlurple40027: rgba(130, 156, 248, 0.271);
+	--alphaBlurple60013: rgba(59, 94, 218, 0.129);
+	--alphaBlurple60020: rgba(59, 94, 218, 0.2);
+	--alphaBlurple80016: rgba(44, 57, 106, 0.161);
+	--alphaBlurple8006: rgba(44, 57, 106, 0.059);
+	--alphaNeutral50012: rgba(110, 122, 136, 0.122);
+	--alphaNeutral50016: rgba(110, 122, 136, 0.161);
+	--alphaNeutral50018: rgba(110, 122, 136, 0.18);
+	--alphaNeutral50020: rgba(110, 122, 136, 0.2);
+	--alphaNeutral50024: rgba(110, 122, 136, 0.239);
+	--alphaNeutral50030: rgba(110, 122, 136, 0.302);
+	--alphaNeutral50032: rgba(110, 122, 136, 0.322);
+	--alphaNeutral50036: rgba(110, 122, 136, 0.302);
+	--alphaNeutral50070: rgba(110, 122, 136, 0.698);
+	--alphaNeutral5008: rgba(110, 122, 136, 0.078);
+	--alphaNeutral70060: rgba(34, 50, 67, 0.6);
 	--brandBlurple100: #ecf0fe;
 	--brandBlurple200: #d5defd;
 	--brandBlurple300: #acbdfb;
@@ -69,14 +69,14 @@
 	--brandSunset800: #68170f;
 	--brandSunset900: #3c0d09;
 	--utilityBlack100: #000;
-	--utilityBlack10: rgba(0,0,0,0.1);
-	--utilityBlack12: rgba(0,0,0,0.12);
-	--utilityBlack15: rgba(0,0,0,0.15);
-	--utilityBlack33: rgba(0,0,0,0.33);
-	--utilityBlack4: rgba(0,0,0,0.04);
-	--utilityBlack5: rgba(0,0,0,0.05);
-	--utilityBlack66: rgba(0,0,0,0.66);
-	--utilityBlackTransparent: rgba(0,0,0,0.001);
+	--utilityBlack10: rgba(0, 0, 0, 0.1);
+	--utilityBlack12: rgba(0, 0, 0, 0.12);
+	--utilityBlack15: rgba(0, 0, 0, 0.15);
+	--utilityBlack33: rgba(0, 0, 0, 0.33);
+	--utilityBlack4: rgba(0, 0, 0, 0.04);
+	--utilityBlack5: rgba(0, 0, 0, 0.05);
+	--utilityBlack66: rgba(0, 0, 0, 0.66);
+	--utilityBlackTransparent: rgba(0, 0, 0, 0.001);
 	--utilityMxWidgetBackgroundDark: #121417;
 	--utilityMxWidgetBackgroundLight: #f8f9fb;
 	--utilitySystemBlue100: #64d2ff;
@@ -91,22 +91,22 @@
 	--utilitySystemRed200: #ff3b30;
 	--utilitySystemYellow100: #ffd60a;
 	--utilitySystemYellow200: #fc0;
-	--utilityTransparentGray100: rgba(235,235,245,0.651);
-	--utilityTransparentGray200: rgba(60,60,67,0.361);
-	--utilityTransparentGray300: rgba(84,84,88,0.651);
-	--utilityTransparentGray400: rgba(60,60,67,0.6);
-	--utilityTransparentGray500: rgba(60,60,67,0.549);
-	--utilityTransparentGray50: rgba(118,118,128,0.239);
+	--utilityTransparentGray100: rgba(235, 235, 245, 0.651);
+	--utilityTransparentGray200: rgba(60, 60, 67, 0.361);
+	--utilityTransparentGray300: rgba(84, 84, 88, 0.651);
+	--utilityTransparentGray400: rgba(60, 60, 67, 0.6);
+	--utilityTransparentGray500: rgba(60, 60, 67, 0.549);
+	--utilityTransparentGray50: rgba(118, 118, 128, 0.239);
 	--utilityWhite100: #fff;
-	--utilityWhite10: rgba(255,255,255,0.102);
-	--utilityWhite15: rgba(255,255,255,0.149);
-	--utilityWhite20: rgba(255,255,255,0.2);
-	--utilityWhite30: rgba(255,255,255,0.302);
-	--utilityWhite35: rgba(255,255,255,0.349);
-	--utilityWhite60: rgba(255,255,255,0.6);
-	--utilityWhite70: rgba(255,255,255,0.698);
-	--utilityWhite80: rgba(255,255,255,0.8);
-	--utilityWhite8: rgba(255,255,255,0.078);
+	--utilityWhite10: rgba(255, 255, 255, 0.102);
+	--utilityWhite15: rgba(255, 255, 255, 0.149);
+	--utilityWhite20: rgba(255, 255, 255, 0.2);
+	--utilityWhite30: rgba(255, 255, 255, 0.302);
+	--utilityWhite35: rgba(255, 255, 255, 0.349);
+	--utilityWhite60: rgba(255, 255, 255, 0.6);
+	--utilityWhite70: rgba(255, 255, 255, 0.698);
+	--utilityWhite80: rgba(255, 255, 255, 0.8);
+	--utilityWhite8: rgba(255, 255, 255, 0.078);
 	--accountwidgetMxWidgetBackground: #f8f9fb;
 	--actionPrimary: #3b5eda;
 	--actionPrimaryActive: #374d9b;
@@ -120,8 +120,8 @@
 	--actionbarBackground: #19223c;
 	--actionbarButtonBackground: #19223c;
 	--backgroundDarkPrimary: #1a2837;
-	--backgroundDarkSecondary: rgba(255,255,255,0.149);
-	--backgroundDarkTertiary: rgba(255,255,255,0.2);
+	--backgroundDarkSecondary: rgba(255, 255, 255, 0.149);
+	--backgroundDarkTertiary: rgba(255, 255, 255, 0.2);
 	--backgroundGroupedPrimary: #edf1f5;
 	--backgroundGroupedSecondary: #fff;
 	--backgroundGroupedTertiary: #edf1f5;
@@ -156,8 +156,8 @@
 	--buttonPrimaryBackground: #3b5eda;
 	--buttonPrimaryBackgroundActive: #374d9b;
 	--buttonPrimaryBackgroundDisabled: #d2d8de;
-	--buttonSecondaryBackground: rgba(59,94,218,0.129);
-	--buttonSecondaryBackgroundActive: rgba(59,94,218,0.2);
+	--buttonSecondaryBackground: rgba(59, 94, 218, 0.129);
+	--buttonSecondaryBackgroundActive: rgba(59, 94, 218, 0.2);
 	--buttonSecondaryLabel: #3b5eda;
 	--calloutNegativeAccent: #c72c1e;
 	--calloutNegativeButtonBackground: #c72c1e;
@@ -175,7 +175,7 @@
 	--calloutSecondaryLabel: #0c1722;
 	--calloutSecondaryProminentBackground: #d2d8de;
 	--calloutSecondaryProminentBackgroundEmphasis: #a5adb6;
-	--calloutSecondarySubtleBackground: rgba(110,122,136,0.122);
+	--calloutSecondarySubtleBackground: rgba(110, 122, 136, 0.122);
 	--calloutSecondarySubtleBackgroundEmphasis: #d2d8de;
 	--calloutPositiveAccent: #67c122;
 	--calloutPositiveButtonBackground: #4d9119;
@@ -193,7 +193,7 @@
 	--calloutPrimaryLabel: #19223c;
 	--calloutPrimaryProminentBackground: #d5defd;
 	--calloutPrimaryProminentBackgroundEmphasis: #829cf8;
-	--calloutPrimarySubtleBackground: rgba(59,94,218,0.129);
+	--calloutPrimarySubtleBackground: rgba(59, 94, 218, 0.129);
 	--calloutPrimarySubtleBackgroundEmphasis: #acbdfb;
 	--calloutWarningAccent: #daac00;
 	--calloutWarningButtonBackground: #f6c91d;
@@ -235,12 +235,12 @@
 	--debtChartsSix: #fef9ed;
 	--debtChartsThree: #587bf6;
 	--debtChartsTwo: #d5defd;
-	--fillPrimary: rgba(110,122,136,0.2);
-	--fillQuarternary: rgba(110,122,136,0.078);
-	--fillSecondary: rgba(110,122,136,0.161);
-	--fillTertiary: rgba(110,122,136,0.122);
+	--fillPrimary: rgba(110, 122, 136, 0.2);
+	--fillQuarternary: rgba(110, 122, 136, 0.078);
+	--fillSecondary: rgba(110, 122, 136, 0.161);
+	--fillTertiary: rgba(110, 122, 136, 0.122);
 	--filterBackground: #fff;
-	--filterBackgroundActive: rgba(59,94,218,0.129);
+	--filterBackgroundActive: rgba(59, 94, 218, 0.129);
 	--filterLabel: #3b5eda;
 	--filterLabelDisabled: #acbdfb;
 	--flagBlue: #5ac8fa;
@@ -286,7 +286,7 @@
 	--loadingActionActive: #fff;
 	--loadingBackground: #2c396a;
 	--loadingShimmerBackground: #fff;
-	--loadingShimmerBackgroundFaded: rgba(255,255,255,0.8);
+	--loadingShimmerBackgroundFaded: rgba(255, 255, 255, 0.8);
 	--loanChartsPositive: #84dd3e;
 	--loanChartsPrimary: #3b5eda;
 	--loanChartsSecondary: #acbdfb;
@@ -295,7 +295,7 @@
 	--modalBackgroundAccent: #2c396a;
 	--movesSelectedBackground: #3b5eda;
 	--movesStandardBackground: #d5defd;
-	--pillBackground: rgba(59,94,218,0.129);
+	--pillBackground: rgba(59, 94, 218, 0.129);
 	--pillLabel: #3b5eda;
 	--registerSecondaryButtonLabel: #3b5eda;
 	--registerSecondaryButtonLabelActive: #374d9b;
@@ -318,26 +318,26 @@
 	--reportsTen: #faada5;
 	--reportsThree: #374d9b;
 	--reportsTwo: #acbdfb;
-	--scrimDefault: rgba(0,0,0,0.1);
-	--scrimInvisible: rgba(0,0,0,0.001);
-	--scrimStrong: rgba(0,0,0,0.66);
+	--scrimDefault: rgba(0, 0, 0, 0.1);
+	--scrimInvisible: rgba(0, 0, 0, 0.001);
+	--scrimStrong: rgba(0, 0, 0, 0.66);
 	--separatorStandard: #d2d8de;
 	--separatorStrong: #405163;
-	--separatorSubdued: rgba(0,0,0,0.1);
+	--separatorSubdued: rgba(0, 0, 0, 0.1);
 	--settingsHeaderBackground: #fff;
 	--sidebarAccountNegativeBalanceBackground: #fff;
 	--sidebarBackground: #2c396a;
 	--sidebarButtonBackgroundActive: #374d9b;
 	--sidebarButtonBackgroundSelected: #374d9b;
-	--sidebarButtonSecondaryBackground: rgba(255,255,255,0.102);
+	--sidebarButtonSecondaryBackground: rgba(255, 255, 255, 0.102);
 	--sidebarButtonSecondaryBackgroundActive: #374d9b;
-	--sidebarButtonSecondaryBackgroundPressed: rgba(0,0,0,0.15);
-	--sidebarButtonTertiaryBackground: rgba(255,255,255,0.149);
-	--sidebarButtonTertiaryBackgroundActive: rgba(255,255,255,0.302);
-	--sidebarButtonTertiaryBackgroundPressed: rgba(255,255,255,0.349);
+	--sidebarButtonSecondaryBackgroundPressed: rgba(0, 0, 0, 0.15);
+	--sidebarButtonTertiaryBackground: rgba(255, 255, 255, 0.149);
+	--sidebarButtonTertiaryBackgroundActive: rgba(255, 255, 255, 0.302);
+	--sidebarButtonTertiaryBackgroundPressed: rgba(255, 255, 255, 0.349);
 	--sidebarIconFillDefault: #fff;
 	--sidebarLabelPrimary: #fff;
-	--sidebarLabelSecondary: rgba(255,255,255,0.8);
+	--sidebarLabelSecondary: rgba(255, 255, 255, 0.8);
 	--statusNegative: #c72c1e;
 	--statusPositive: #67c122;
 	--statusWarning: #f6c91d;
@@ -1544,8 +1544,8 @@ button[disabled] {
 	height: auto;
 	position: relative;
 	z-index: 1;
-	box-shadow: 0 16px 64px rgba(0,0,0,.2);
-	transition: transform 150ms ease,opacity 100ms ease;
+	box-shadow: 0 16px 64px rgba(0, 0, 0, .2);
+	transition: transform 150ms ease, opacity 100ms ease;
 	animation-fill-mode: forwards;
 	opacity: 0;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -1719,16 +1719,12 @@ button {
 	border: 0;
 	padding: 0;
 }
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
 	-webkit-appearance: button;
 	cursor: pointer;
 	*overflow: visible;
 }
-button,
-select {
+button, select {
 	text-transform: none;
 }
 .modal-budget-settings .ynab4-migration .button .ynab-new-icon {
@@ -1797,10 +1793,8 @@ input {
 input {
 	font-size: 100%;
 }
-button,
-input,
-select {
-	vertical-align: baseline;
+button, input, select {
+	vertical-align: baseline; /*  */
 }
 .x-select-container select:focus,
 input:focus {
@@ -1879,17 +1873,6 @@ select {
 	background-color: var(--buttonSecondaryBackground);
 	color: var(--buttonSecondaryLabel);
 	border: 0;
-}
-.ynab-button {
-	background-color: var(--buttonPrimaryBackground);
-	color: var(--labelDarkBackgroundPrimary);
-	border-radius: .5rem;
-	cursor: pointer;
-	flex-direction: row;
-	justify-content: center;
-	min-height: 2rem;
-	padding: .375rem 1rem;
-	transition: background-color .15s ease;
 }
 .ynab-button {
 	font-size: 1rem;
@@ -2118,9 +2101,10 @@ select {
 }
 .account-widget p {
 	margin: .3rem 0 1rem;
+	color: var(--labelPrimary);
 }
 .account-widget .separator-text {
-	border-bottom: 1px solid rgba(0,0,0,.1);
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
 	border-bottom: 1px solid var(--separatorSubdued);
 	line-height: .3rem;
 	margin-bottom: 1.5rem;
@@ -2155,6 +2139,141 @@ select {
 .account-widget .account-widget-select-linked-unlinked .select-linked-unlinked-box:hover {
 	background: var(--buttonSecondaryBackgroundActive);
 }
+
+/* || ACCOUNT WIDGET BODY */
+.account-widget p {
+	margin: .3rem 0 1rem;
+	color: var(--labelPrimary);
+}
+.account-widget .account-widget-add-unlinked-account .header-strong {
+	font-weight: 600;
+}
+.account-widget .y-form-field label:first-of-type {
+	margin-bottom: .25rem;
+}
+.modal-generic label {
+	display: block;
+	padding: .2625rem 0 .0875rem;
+	width: 100%;
+}
+.modal-generic label {
+	font-size: .875rem;
+	font-weight: 600;
+	line-height: 1.2;
+}
+.account-widget input[type="text"] {
+	border-color: var(--actionSecondaryBorder);
+	border-radius: .5rem;
+	height: 3rem;
+}
+.account-widget input {
+	margin-bottom: .25rem !important;
+}
+.modal-generic input, .modal-generic select, .modal-generic textarea, .modal-popup input, .modal-popup textarea {
+	border: .0625rem solid var(--inputBorder);
+	width: 100%;
+	border-radius: .25rem;
+}
+.modal-generic input {
+	background-color: var(--inputBackground);
+	height: 2rem;
+	margin-bottom: .39375rem;
+	padding: .25rem .5rem;
+}
+.account-widget input:focus-visible {
+	border: .0625rem solid var(--actionPrimary);
+}
+.account-widget .account-type-select-button {
+	border: .0625rem solid var(--actionSecondaryBorder);
+	background-color: var(--inputBackground);
+	align-items: center;
+	border-radius: .5em;
+	display: flex;
+	height: 3rem;
+	justify-content: space-between;
+	margin-bottom: .25rem;
+	padding: 0 .5em;
+	width: 100%;
+}
+.account-widget .account-type-select-button svg {
+	padding: .2rem;
+}
+/* || FOOTER */
+.account-widget .account-widget-step .account-widget-footer {
+	border-top: 1px solid var(--separatorSubdued);
+	align-self: flex-end;
+	display: flex;
+	flex: 0 0 auto;
+	gap: 1rem;
+	justify-content: flex-end;
+	padding: 1rem;
+	width: 100%;
+}
+.account-widget .account-widget-step-with-help-box .account-widget-footer {
+	position: relative;
+}
+.account-widget .account-widget-step .account-widget-footer button, .group-subscription-credit-card-form .expiration-cvv-row .cvv .cvv-row #recurly-card-cvv, .join-container .group-join-form-inputs .group-join-form-name-fields input {
+	flex: 1;
+}
+.ynab-button[disabled] {
+	cursor: auto;
+	background-color: var(--buttonPrimaryBackgroundDisabled);
+	border-color: var(--buttonPrimaryBackgroundDisabled);
+	color: var(--labelTertiary);
+}
+.ynab-button.is-large {
+	min-height: 3rem;
+	padding: .375rem 1.5rem;
+}
+
+/* || ACCOUNT TYPE SELECT */
+.account-widget .account-type-select .account-type-select-group {
+	margin-bottom: 1rem;
+}
+.account-widget .account-type-select .account-type-select-group h3, .account-widget .account-widget-truelayer-handoff .account-widget-truelayer-connect h3 {
+	padding: 0;
+}
+.account-widget .account-type-select .account-type-select-group h3 {
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.2;
+}
+.account-widget h3 {
+	margin: 0;
+	padding: 0 0 1rem;
+	color: var(--labelPrimary);
+}
+.account-widget .account-type-select .account-type-select-group p {
+	margin: 0;
+	color: var(--labelSecondary);
+}
+
+/* || BUTTON TYPE SELECT */
+.account-widget .account-type-select .account-type-select-group button {
+	align-items: center;
+	display: flex;
+	height: 3.5rem;
+	justify-content: space-between;
+	line-height: 0;
+	margin-top: .5rem;
+	padding: 1rem;
+	text-align: left;
+	width: 100%;
+}
+.account-widget .account-widget-list-button {
+	border-radius: .5rem;
+	background-color: var(--backgroundPrimaryElevated);
+	border: .0625rem solid var(--separatorSubdued);
+}
+@media (hover: hover) {
+	.account-widget-list-button:not(:disabled):active, .account-widget-list-button:not(:disabled):hover {
+		background-color: #edf1f5;
+		background-color: var(--backgroundSecondaryElevated);
+	}
+}
+
+
+
 
 
 
