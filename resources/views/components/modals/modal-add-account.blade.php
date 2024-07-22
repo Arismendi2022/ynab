@@ -2,7 +2,8 @@
 <div id="ember145" class="ynab-u modal-generic self-centered account-widget-modal ">
 	<div class="modal" role="dialog" aria-modal="true">
 		<div class="account-widget" tabindex="0">
-			{{-- <div class="account-widget-step account-widget-select-linked-unlinked account-widget-step-with-help-box">
+			<!-- Primera sección -->
+			 <div id="section1" class="account-widget-step account-widget-select-linked-unlinked account-widget-step-with-help-box">
 				<div class="account-widget-header">
 					<div class="hidden-header-button"></div>
 					<div class="account-widget-header-title">
@@ -65,9 +66,9 @@
 								</svg>
 							</div>
 							<div class="select-linked-unlinked-box-icon-title-message">
-          <span class="select-linked-unlinked-box-title">
-            Unlinked
-          </span>
+								<span class="select-linked-unlinked-box-title">
+									Unlinked
+								</span>
 								<p class="select-linked-unlinked-box-message">
 									Start with your current balance and enter your own transactions.
 								</p>
@@ -90,9 +91,9 @@
 						</p>
 					</div>
 				</div>
-			</div> --}}
-			<!---->
-			{{-- <div class="account-widget-step account-widget-add-unlinked-account account-widget-step-with-help-box">
+			</div>
+			<!-- Segunda sección -->
+			<div id="section2" class="account-widget-step account-widget-add-unlinked-account account-widget-step-with-help-box">
 				<div class="account-widget-header">
 					<button aria-label="Back" title="Back" type="button">
 						<svg class="ynab-new-icon icon-back" width="16" height="16">
@@ -146,7 +147,7 @@
 						</button>
 						<!---->
 					</div>
-					 <div class="y-form-field field-with-error  currency-input-group">
+					<div class="y-form-field field-with-error  currency-input-group">
 						<label>
 							What is your current account balance?
 						</label>
@@ -159,9 +160,9 @@
 				<div class="account-widget-footer">
 					<button class="ynab-button primary is-large " type="button" disabled="">Next</button>
 				</div>
-			</div> --}}
-			<!---->
-			<div class="account-widget-step account-widget-add-unlinked-account account-widget-step-with-help-box">
+			</div>
+			<!-- Tercera sección -->
+			<div id="section3" class="account-widget-step account-widget-add-unlinked-account account-widget-step-with-help-box">
 				<div class="account-widget-header">
 					<button aria-label="Back" title="Back" type="button">
 						<svg class="ynab-new-icon icon-back" width="16" height="16">
@@ -275,19 +276,44 @@
 
 @push('scripts')
 	<script>
-		//Autofocus
-		/*document.addEventListener("DOMContentLoaded", function() {
-			document.getElementById("ember146").focus();
-		});*/
-		//Cierra el modal
+		//Alterna entre secciones
 		document.addEventListener('DOMContentLoaded', function () {
-			const closeButton = document.querySelector('button[aria-label="Close"]');
+			const buttonUnlinked = document.querySelector('.select-linked-unlinked-box-unlinked');
 
-			closeButton.addEventListener('click', function () {
-				const modalActive = document.getElementById('ember145');
-				modalActive.classList.remove('modal-overlay', 'active');
+			buttonUnlinked.addEventListener('click', () => {
+				alert('Back button clicked:');
+
+
 			});
 		});
+
+
+		//Manejo de botones "Back"
+		document.addEventListener('DOMContentLoaded', function () {
+			const backButtons = document.querySelectorAll('button[aria-label="Back"]');
+
+			backButtons.forEach(function (button) {
+				button.addEventListener('click', function () {
+					console.log('Back button clicked:');
+
+				});
+			});
+		});
+
+
+		//Cierra el modal
+		document.addEventListener('DOMContentLoaded', function () {
+			const closeButtons = document.querySelectorAll('button[aria-label="Close"]');
+
+			closeButtons.forEach(function (button) {
+				button.addEventListener('click', function () {
+					const modalActive = document.getElementById('ember145');
+					modalActive.classList.remove('modal-overlay', 'active');
+
+				});
+			});
+		});
+	
 	</script>
 
 @endpush
