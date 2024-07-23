@@ -474,14 +474,14 @@
 				}
 			}
 		});
-		
+
 		// Activa modal settings
 		const openModalButtons = document.querySelectorAll('.js-sidebar-nav-menu');
 
 		openModalButtons.forEach(button => {
 			button.addEventListener('click', function (event) {
 				const modalActive = document.getElementById('ember180');
-				modalActive.classList.add('modal-overlay','active');
+				modalActive.classList.add('modal-overlay', 'active');
 				event.stopPropagation(); // Detener la propagación del evento para evitar cierres no deseados
 			});
 		});

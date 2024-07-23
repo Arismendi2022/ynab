@@ -3,7 +3,7 @@
 	<div class="modal" role="dialog" aria-modal="true">
 		<div class="account-widget" tabindex="0">
 			<!-- Primera sección -->
-			 <div id="section1" class="account-widget-step account-widget-select-linked-unlinked account-widget-step-with-help-box">
+			<div class="account-widget-step account-widget-select-linked-unlinked account-widget-step-with-help-box">
 				<div class="account-widget-header">
 					<div class="hidden-header-button"></div>
 					<div class="account-widget-header-title">
@@ -93,7 +93,7 @@
 				</div>
 			</div>
 			<!-- Segunda sección -->
-			<div id="section2" class="account-widget-step account-widget-add-unlinked-account account-widget-step-with-help-box">
+			<div class="account-widget-step account-widget-add-unlinked-account account-widget-step-with-help-box" style="display: none">
 				<div class="account-widget-header">
 					<button aria-label="Back" title="Back" type="button">
 						<svg class="ynab-new-icon icon-back" width="16" height="16">
@@ -162,7 +162,7 @@
 				</div>
 			</div>
 			<!-- Tercera sección -->
-			<div id="section3" class="account-widget-step account-widget-add-unlinked-account account-widget-step-with-help-box">
+			<div class="account-widget-step account-widget-add-unlinked-account account-widget-step-with-help-box" style="display: none">
 				<div class="account-widget-header">
 					<button aria-label="Back" title="Back" type="button">
 						<svg class="ynab-new-icon icon-back" width="16" height="16">
@@ -279,12 +279,24 @@
 		//Alterna entre secciones
 		document.addEventListener('DOMContentLoaded', function () {
 			const buttonUnlinked = document.querySelector('.select-linked-unlinked-box-unlinked');
+			const buttonType = document.querySelector('.account-type-select-button');
 
+			const sectionOne = document.querySelector('.account-widget-select-linked-unlinked');
+			const sectionTwo = document.querySelector('.account-widget-step:nth-of-type(2)');
+			const sectionThree = document.querySelector('.account-widget-step:nth-of-type(3)');
+
+			//Seccion 1 a 2
 			buttonUnlinked.addEventListener('click', () => {
-				alert('Back button clicked:');
-
-
+				sectionOne.style.display = "none";
+				sectionTwo.style.display = "";
 			});
+
+			//Seccion 2 a 3
+			buttonType.addEventListener('click', () => {
+				sectionTwo.style.display = "none";
+				sectionThree.style.display = "";
+			});
+
 		});
 
 
@@ -292,12 +304,24 @@
 		document.addEventListener('DOMContentLoaded', function () {
 			const backButtons = document.querySelectorAll('button[aria-label="Back"]');
 
+			const sectionOne = document.querySelector('.account-widget-select-linked-unlinked');
+			const sectionTwo = document.querySelector('.account-widget-step:nth-of-type(2)');
+			const sectionThree = document.querySelector('.account-widget-step:nth-of-type(3)');
+
 			backButtons.forEach(function (button) {
 				button.addEventListener('click', function () {
-					console.log('Back button clicked:');
-
+					if (sectionThree.style.display === "" || sectionThree.style.display === "") {
+						// De sección 3 a sección 2
+						sectionTwo.style.display = "";
+						sectionThree.style.display = "none";
+					} else if (sectionTwo.style.display === "" || sectionTwo.style.display === "") {
+						// De sección 2 a sección 1
+						sectionOne.style.display = "";
+						sectionTwo.style.display = "none";
+					}
 				});
 			});
+
 		});
 
 
@@ -305,10 +329,17 @@
 		document.addEventListener('DOMContentLoaded', function () {
 			const closeButtons = document.querySelectorAll('button[aria-label="Close"]');
 
+			const sectionOne = document.querySelector('.account-widget-select-linked-unlinked');
+			const sectionTwo = document.querySelector('.account-widget-step:nth-of-type(2)');
+			const sectionThree = document.querySelector('.account-widget-step:nth-of-type(3)');
+
 			closeButtons.forEach(function (button) {
 				button.addEventListener('click', function () {
 					const modalActive = document.getElementById('ember145');
 					modalActive.classList.remove('modal-overlay', 'active');
+					sectionOne.style.display = "";
+					sectionTwo.style.display = "none";
+					sectionThree.style.display = "none";
 
 				});
 			});
