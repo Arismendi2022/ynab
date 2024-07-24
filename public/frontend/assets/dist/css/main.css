@@ -2274,6 +2274,14 @@ select {
 
 
 /* Para controlar la visibilidad de las secciones */
+.account-widget-list-button .ynab-new-icon {
+	display: none; /* Ocultar el icono por defecto */
+}
+
+.account-widget-list-button.selected .ynab-new-icon {
+	display: inline; /* Mostrar el icono cuando el botón está seleccionado */
+}
+
 
 
 

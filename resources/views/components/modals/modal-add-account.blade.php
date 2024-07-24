@@ -93,7 +93,7 @@
 				</div>
 			</div>
 			<!-- Segunda sección -->
-			<div class="account-widget-step account-widget-add-unlinked-account account-widget-step-with-help-box" style="display: none">
+			<div class="account-widget-step account-widget-add-unlinked-account account-widget-step-with-help-box">
 				<div class="account-widget-header">
 					<button aria-label="Back" title="Back" type="button">
 						<svg class="ynab-new-icon icon-back" width="16" height="16">
@@ -162,7 +162,7 @@
 				</div>
 			</div>
 			<!-- Tercera sección -->
-			<div class="account-widget-step account-widget-add-unlinked-account account-widget-step-with-help-box" style="display: none">
+			<div class="account-widget-step account-widget-add-unlinked-account account-widget-step-with-help-box">
 				<div class="account-widget-header">
 					<button aria-label="Back" title="Back" type="button">
 						<svg class="ynab-new-icon icon-back" width="16" height="16">
@@ -200,10 +200,26 @@
 							<button class="account-widget-list-button" data-account-type="Checking" type="button">
 								Checking
 								<!---->
+								<svg class="ynab-new-icon" width="16" height="16">
+									<!---->
+									<use href="#icon_sprite_check">
+										<symbol xmlns="http://www.w3.org/2000/svg" id="icon_sprite_check" fill="none" viewBox="0 0 24 24">
+											<path fill="currentColor" d="m7.4 17.6-5-5a1.4 1.4 0 0 0-2 0 1.4 1.4 0 0 0 0 2l6 6a1.4 1.4 0 0 0 2 0L23.6 5.4a1.4 1.4 0 0 0 0-2 1.4 1.4 0 0 0-2 0z"></path>
+										</symbol>
+									</use>
+								</svg>
 							</button>
 							<button class="account-widget-list-button" data-account-type="Savings" type="button">
 								Savings
 								<!---->
+								<svg class="ynab-new-icon" width="16" height="16">
+									<!---->
+									<use href="#icon_sprite_check">
+										<symbol xmlns="http://www.w3.org/2000/svg" id="icon_sprite_check" fill="none" viewBox="0 0 24 24">
+											<path fill="currentColor" d="m7.4 17.6-5-5a1.4 1.4 0 0 0-2 0 1.4 1.4 0 0 0 0 2l6 6a1.4 1.4 0 0 0 2 0L23.6 5.4a1.4 1.4 0 0 0 0-2 1.4 1.4 0 0 0-2 0z"></path>
+										</symbol>
+									</use>
+								</svg>
 							</button>
 							<button class="account-widget-list-button" data-account-type="Cash" type="button">
 								Cash
@@ -220,10 +236,26 @@
 							<button class="account-widget-list-button" data-account-type="CreditCard" type="button">
 								Credit Card
 								<!----->
+								<svg class="ynab-new-icon" width="16" height="16">
+									<!---->
+									<use href="#icon_sprite_check">
+										<symbol xmlns="http://www.w3.org/2000/svg" id="icon_sprite_check" fill="none" viewBox="0 0 24 24">
+											<path fill="currentColor" d="m7.4 17.6-5-5a1.4 1.4 0 0 0-2 0 1.4 1.4 0 0 0 0 2l6 6a1.4 1.4 0 0 0 2 0L23.6 5.4a1.4 1.4 0 0 0 0-2 1.4 1.4 0 0 0-2 0z"></path>
+										</symbol>
+									</use>
+								</svg>
 							</button>
 							<button class="account-widget-list-button" data-account-type="LineOfCredit" type="button">
 								Line of Credit
 								<!---->
+								<svg class="ynab-new-icon" width="16" height="16">
+									<!---->
+									<use href="#icon_sprite_check">
+										<symbol xmlns="http://www.w3.org/2000/svg" id="icon_sprite_check" fill="none" viewBox="0 0 24 24">
+											<path fill="currentColor" d="m7.4 17.6-5-5a1.4 1.4 0 0 0-2 0 1.4 1.4 0 0 0 0 2l6 6a1.4 1.4 0 0 0 2 0L23.6 5.4a1.4 1.4 0 0 0 0-2 1.4 1.4 0 0 0-2 0z"></path>
+										</symbol>
+									</use>
+								</svg>
 							</button>
 						</div>
 						<div class="account-type-select-group">
@@ -232,26 +264,74 @@
 							<button class="account-widget-list-button" data-account-type="Mortgage" type="button">
 								Mortgage
 								<!---->
+								<svg class="ynab-new-icon" width="16" height="16">
+									<!---->
+									<use href="#icon_sprite_check">
+										<symbol xmlns="http://www.w3.org/2000/svg" id="icon_sprite_check" fill="none" viewBox="0 0 24 24">
+											<path fill="currentColor" d="m7.4 17.6-5-5a1.4 1.4 0 0 0-2 0 1.4 1.4 0 0 0 0 2l6 6a1.4 1.4 0 0 0 2 0L23.6 5.4a1.4 1.4 0 0 0 0-2 1.4 1.4 0 0 0-2 0z"></path>
+										</symbol>
+									</use>
+								</svg>
 							</button>
 							<button class="account-widget-list-button" data-account-type="AutoLoan" type="button">
 								Auto Loan
 								<!---->
+								<svg class="ynab-new-icon" width="16" height="16">
+									<!---->
+									<use href="#icon_sprite_check">
+										<symbol xmlns="http://www.w3.org/2000/svg" id="icon_sprite_check" fill="none" viewBox="0 0 24 24">
+											<path fill="currentColor" d="m7.4 17.6-5-5a1.4 1.4 0 0 0-2 0 1.4 1.4 0 0 0 0 2l6 6a1.4 1.4 0 0 0 2 0L23.6 5.4a1.4 1.4 0 0 0 0-2 1.4 1.4 0 0 0-2 0z"></path>
+										</symbol>
+									</use>
+								</svg>
 							</button>
 							<button class="account-widget-list-button" data-account-type="StudentLoan" type="button">
 								Student Loan
 								<!---->
+								<svg class="ynab-new-icon" width="16" height="16">
+									<!---->
+									<use href="#icon_sprite_check">
+										<symbol xmlns="http://www.w3.org/2000/svg" id="icon_sprite_check" fill="none" viewBox="0 0 24 24">
+											<path fill="currentColor" d="m7.4 17.6-5-5a1.4 1.4 0 0 0-2 0 1.4 1.4 0 0 0 0 2l6 6a1.4 1.4 0 0 0 2 0L23.6 5.4a1.4 1.4 0 0 0 0-2 1.4 1.4 0 0 0-2 0z"></path>
+										</symbol>
+									</use>
+								</svg>
 							</button>
 							<button class="account-widget-list-button" data-account-type="PersonalLoan" type="button">
 								Personal Loan
 								<!---->
+								<svg class="ynab-new-icon" width="16" height="16">
+									<!---->
+									<use href="#icon_sprite_check">
+										<symbol xmlns="http://www.w3.org/2000/svg" id="icon_sprite_check" fill="none" viewBox="0 0 24 24">
+											<path fill="currentColor" d="m7.4 17.6-5-5a1.4 1.4 0 0 0-2 0 1.4 1.4 0 0 0 0 2l6 6a1.4 1.4 0 0 0 2 0L23.6 5.4a1.4 1.4 0 0 0 0-2 1.4 1.4 0 0 0-2 0z"></path>
+										</symbol>
+									</use>
+								</svg>
 							</button>
 							<button class="account-widget-list-button" data-account-type="MedicalDebt" type="button">
 								Medical Debt
 								<!---->
+								<svg class="ynab-new-icon" width="16" height="16">
+									<!---->
+									<use href="#icon_sprite_check">
+										<symbol xmlns="http://www.w3.org/2000/svg" id="icon_sprite_check" fill="none" viewBox="0 0 24 24">
+											<path fill="currentColor" d="m7.4 17.6-5-5a1.4 1.4 0 0 0-2 0 1.4 1.4 0 0 0 0 2l6 6a1.4 1.4 0 0 0 2 0L23.6 5.4a1.4 1.4 0 0 0 0-2 1.4 1.4 0 0 0-2 0z"></path>
+										</symbol>
+									</use>
+								</svg>
 							</button>
 							<button class="account-widget-list-button" data-account-type="OtherDebt" type="button">
 								Other Debt
 								<!---->
+								<svg class="ynab-new-icon" width="16" height="16">
+									<!---->
+									<use href="#icon_sprite_check">
+										<symbol xmlns="http://www.w3.org/2000/svg" id="icon_sprite_check" fill="none" viewBox="0 0 24 24">
+											<path fill="currentColor" d="m7.4 17.6-5-5a1.4 1.4 0 0 0-2 0 1.4 1.4 0 0 0 0 2l6 6a1.4 1.4 0 0 0 2 0L23.6 5.4a1.4 1.4 0 0 0 0-2 1.4 1.4 0 0 0-2 0z"></path>
+										</symbol>
+									</use>
+								</svg>
 							</button>
 						</div>
 						<div class="account-type-select-group">
@@ -260,10 +340,26 @@
 							<button class="account-widget-list-button" data-account-type="OtherAsset" type="button">
 								Asset (e.g. Investment)
 								<!---->
+								<svg class="ynab-new-icon" width="16" height="16">
+									<!---->
+									<use href="#icon_sprite_check">
+										<symbol xmlns="http://www.w3.org/2000/svg" id="icon_sprite_check" fill="none" viewBox="0 0 24 24">
+											<path fill="currentColor" d="m7.4 17.6-5-5a1.4 1.4 0 0 0-2 0 1.4 1.4 0 0 0 0 2l6 6a1.4 1.4 0 0 0 2 0L23.6 5.4a1.4 1.4 0 0 0 0-2 1.4 1.4 0 0 0-2 0z"></path>
+										</symbol>
+									</use>
+								</svg>
 							</button>
 							<button class="account-widget-list-button" data-account-type="OtherLiability" type="button">
 								Liability
 								<!---->
+								<svg class="ynab-new-icon" width="16" height="16">
+									<!---->
+									<use href="#icon_sprite_check">
+										<symbol xmlns="http://www.w3.org/2000/svg" id="icon_sprite_check" fill="none" viewBox="0 0 24 24">
+											<path fill="currentColor" d="m7.4 17.6-5-5a1.4 1.4 0 0 0-2 0 1.4 1.4 0 0 0 0 2l6 6a1.4 1.4 0 0 0 2 0L23.6 5.4a1.4 1.4 0 0 0 0-2 1.4 1.4 0 0 0-2 0z"></path>
+										</symbol>
+									</use>
+								</svg>
 							</button>
 						</div>
 					</div>
@@ -281,22 +377,31 @@
 			const buttonUnlinked = document.querySelector('.select-linked-unlinked-box-unlinked');
 			const buttonType = document.querySelector('.account-type-select-button');
 
-			const sectionOne = document.querySelector('.account-widget-select-linked-unlinked');
-			const sectionTwo = document.querySelector('.account-widget-step:nth-of-type(2)');
-			const sectionThree = document.querySelector('.account-widget-step:nth-of-type(3)');
+			const sections = [
+				//document.querySelector('.account-widget-select-linked-unlinked'),
+				document.querySelector('.account-widget-step:nth-of-type(1)'),
+				document.querySelector('.account-widget-step:nth-of-type(2)'),
+				document.querySelector('.account-widget-step:nth-of-type(3)')
+			];
 
-			//Seccion 1 a 2
+			function showSection(indexToShow) {
+				sections.forEach((section, index) => {
+					section.style.display = (index === indexToShow) ? '' : 'none';
+				});
+			}
+
+			// Inicializa mostrando la sección 1
+			showSection(0);
+
+			// Sección 1 a 2
 			buttonUnlinked.addEventListener('click', () => {
-				sectionOne.style.display = "none";
-				sectionTwo.style.display = "";
+				showSection(1);
 			});
 
-			//Seccion 2 a 3
+			// Sección 2 a 3
 			buttonType.addEventListener('click', () => {
-				sectionTwo.style.display = "none";
-				sectionThree.style.display = "";
+				showSection(2);
 			});
-
 		});
 
 
@@ -324,24 +429,104 @@
 
 		});
 
+		//Select account type.
+		document.addEventListener('DOMContentLoaded', function () {
+			const accountTypeButtons = document.querySelectorAll('.account-widget-list-button');
+			const accountTypeSelectButton = document.querySelector('.account-type-select-button');
+			const nicknameInput = document.querySelector('.name-input');
+			const balanceInput = document.querySelector('.balance-input');
+			const nextButton = document.querySelector('.account-widget-footer .ynab-button');
+			const sectionTwo = document.querySelector('.account-widget-step:nth-of-type(2)');
+			const sectionThree = document.querySelector('.account-widget-step:nth-of-type(3)');
+			let selectedAccountType = '';
+
+			function checkInputs() {
+				const accountTypeText = accountTypeSelectButton.textContent.trim();
+				const isAccountTypeSelected = accountTypeText !== 'Select account type...';
+
+				if (nicknameInput.value.trim() !== '' &&
+					balanceInput.value.trim() !== '' &&
+					isAccountTypeSelected) {
+					nextButton.removeAttribute('disabled');
+				} else {
+					nextButton.setAttribute('disabled', 'true');
+				}
+			}
+
+			accountTypeButtons.forEach(button => {
+				button.addEventListener('click', function () {
+					selectedAccountType = this.getAttribute('data-account-type');
+
+					// Actualiza solo el texto del botón, manteniendo el SVG intacto
+					const svgHTML = accountTypeSelectButton.querySelector('svg').outerHTML;
+					accountTypeSelectButton.innerHTML = `${selectedAccountType.replace(/([A-Z])/g, ' $1').trim()} ${svgHTML}`;
+
+					// Manejar el clic en el botón de regresar de la sección 3 a la sección 2
+					sectionThree.style.display = 'none';
+					sectionTwo.style.display = '';
+
+					// Verifica el estado del botón "Next"
+					checkInputs();
+				});
+			});
+
+			// Agrega event listeners a los inputs para detectar cambios
+			nicknameInput.addEventListener('input', checkInputs);
+			balanceInput.addEventListener('input', checkInputs);
+		});
+
+		//Aplica indicador a botones
+		document.querySelectorAll('.account-widget-list-button').forEach(button => {
+			button.addEventListener('click', function () {
+				// Remover la clase 'selected' de todos los botones
+				document.querySelectorAll('.account-widget-list-button').forEach(btn => btn.classList.remove('selected'));
+
+				// Agregar la clase 'selected' al botón clickeado
+				this.classList.add('selected');
+
+				// Obtener el valor de data-account-type
+				const accountType = this.getAttribute('data-account-type');
+
+				// Aquí puedes manejar el valor de accountType según sea necesario
+				console.log('Selected account type:', accountType);
+			});
+		});
+
 
 		//Cierra el modal
 		document.addEventListener('DOMContentLoaded', function () {
 			const closeButtons = document.querySelectorAll('button[aria-label="Close"]');
+			const modalActive = document.getElementById('ember145');
 
-			const sectionOne = document.querySelector('.account-widget-select-linked-unlinked');
+			const sectionOne = document.querySelector('.account-widget-step:nth-of-type(1)');
 			const sectionTwo = document.querySelector('.account-widget-step:nth-of-type(2)');
 			const sectionThree = document.querySelector('.account-widget-step:nth-of-type(3)');
 
-			closeButtons.forEach(function (button) {
-				button.addEventListener('click', function () {
-					const modalActive = document.getElementById('ember145');
-					modalActive.classList.remove('modal-overlay', 'active');
-					sectionOne.style.display = "";
-					sectionTwo.style.display = "none";
-					sectionThree.style.display = "none";
+			const nicknameInput = document.querySelector('.name-input');
+			const balanceInput = document.querySelector('.balance-input');
+			const accountTypeSelectButton = document.querySelector('.account-type-select-button');
 
-				});
+			const closeModal = () => {
+				// Limpia los campos y el botón de selección
+				nicknameInput.value = '';
+				balanceInput.value = '';
+				accountTypeSelectButton.innerHTML = 'Select account type...';
+
+				// Opcional: Elimina el atributo disabled del botón "Next" si está presente
+				const nextButton = document.querySelector('.account-widget-footer .ynab-button');
+				if (nextButton.hasAttribute('disabled')) {
+					nextButton.removeAttribute('disabled');
+				}
+
+				// Resetea la visualización de las secciones
+				modalActive.classList.remove('modal-overlay', 'active');
+				sectionOne.style.display = "";
+				sectionTwo.style.display = "none";
+				sectionThree.style.display = "none";
+			};
+
+			closeButtons.forEach(function (button) {
+				button.addEventListener('click', closeModal);
 			});
 		});
 	
