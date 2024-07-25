@@ -135,7 +135,7 @@
 					<div class="y-form-field field-with-error ">
 						<label>What type of account are you adding?</label>
 						<button class="account-type-select-button" type="button">
-							Select account type...
+							<spa class="button-text">Select account type...</spa>
 							<svg class="ynab-new-icon" width="16" height="16">
 								<!---->
 								<use href="#icon_sprite_caret_right">
@@ -365,6 +365,50 @@
 					</div>
 				</div>
 			</div>
+			<!-- Sección Success -->
+			<div class="account-widget-step account-widget-success-screen">
+				<div class="account-widget-header">
+					<div class="hidden-header-button"></div>
+					<div class="account-widget-header-title">
+						<h1>Add Unlinked Account</h1>
+						<!---->
+					</div>
+					<button aria-label="Close" title="Close" type="button">
+						<svg class="ynab-new-icon icon-close" width="16" height="16">
+							<!---->
+							<use href="#icon_sprite_close">
+								<symbol xmlns="http://www.w3.org/2000/svg" id="icon_sprite_close" fill="none" viewBox="0 0 24 24">
+									<path fill="currentColor" fill-rule="evenodd"
+										d="M22.5 22.5a1.4 1.4 0 0 1-2 0L12 13.9l-8.6 8.6a1.4 1.4 0 0 1-1.9-2l8.6-8.5-8.6-8.5a1.4 1.4 0 0 1 2-2l8.5 8.6 8.5-8.6a1.4 1.4 0 1 1 2 2L13.9 12l8.6 8.6a1.4 1.4 0 0 1 0 1.9"
+										clip-rule="evenodd"></path>
+								</symbol>
+							</use>
+						</svg>
+					</button>
+				</div>
+				<div class="account-widget-body">
+					<svg class="ynab-new-icon icon-checkmark-circle" width="16" height="16">
+						<!---->
+						<use href="#icon_sprite_check_circle_fill">
+							<symbol xmlns="http://www.w3.org/2000/svg" id="icon_sprite_check_circle_fill" fill="none" viewBox="0 0 24 24">
+								<path fill="currentColor"
+									d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24M8.7 17.1l-4.3-4.3a1.2 1.2 0 0 1 0-1.7 1.2 1.2 0 0 1 1.7 0l3.5 3.5 8.3-8.3a1 1 0 0 1 1.6 0 1.2 1.2 0 0 1 0 1.7l-9 9.1a1.2 1.2 0 0 1-1.8 0"></path>
+							</symbol>
+						</use>
+					</svg>
+					<h3>Success!</h3>
+					<p>Add transactions on the web or in our mobile apps. You can also download a transaction file from your institution and use <a
+							href="#" onclick="return false;" rel="noopener noreferrer">File-Based Import</a>.</p>
+				</div>
+				<div class="account-widget-footer">
+					<button class="ynab-button secondary is-large  js-add-another-account-btn" type="button">
+						Add Another
+					</button>
+					<button class="ynab-button primary is-large " type="button">
+						Done
+					</button>
+				</div>
+			</div>
 		</div>
 		<!---->
 	</div>
@@ -404,7 +448,6 @@
 			});
 		});
 
-
 		//Manejo de botones "Back"
 		document.addEventListener('DOMContentLoaded', function () {
 			const backButtons = document.querySelectorAll('button[aria-label="Back"]');
@@ -412,6 +455,9 @@
 			const sectionOne = document.querySelector('.account-widget-select-linked-unlinked');
 			const sectionTwo = document.querySelector('.account-widget-step:nth-of-type(2)');
 			const sectionThree = document.querySelector('.account-widget-step:nth-of-type(3)');
+
+			const accountTypeSelectButton = document.querySelector('.account-type-select-button .button-text');
+			const accountTypeButtons = document.querySelectorAll('.account-widget-list-button');
 
 			backButtons.forEach(function (button) {
 				button.addEventListener('click', function () {
@@ -423,6 +469,11 @@
 						// De sección 2 a sección 1
 						sectionOne.style.display = "";
 						sectionTwo.style.display = "none";
+						accountTypeSelectButton.textContent = 'Select account type...';
+						// Elimina la clase de selección de todos los botones
+						accountTypeButtons.forEach(button => {
+							button.classList.remove('selected'); // Asegúrate de que 'selected' es la clase que usa para el ícono
+						});
 					}
 				});
 			});
@@ -432,17 +483,16 @@
 		//Select account type.
 		document.addEventListener('DOMContentLoaded', function () {
 			const accountTypeButtons = document.querySelectorAll('.account-widget-list-button');
-			const accountTypeSelectButton = document.querySelector('.account-type-select-button');
+			const accountTypeSelectButtonSpan = document.querySelector('.account-type-select-button .button-text');
 			const nicknameInput = document.querySelector('.name-input');
 			const balanceInput = document.querySelector('.balance-input');
 			const nextButton = document.querySelector('.account-widget-footer .ynab-button');
 			const sectionTwo = document.querySelector('.account-widget-step:nth-of-type(2)');
 			const sectionThree = document.querySelector('.account-widget-step:nth-of-type(3)');
-			let selectedAccountType = '';
 
 			function checkInputs() {
-				const accountTypeText = accountTypeSelectButton.textContent.trim();
-				const isAccountTypeSelected = accountTypeText !== 'Select account type...';
+				// Verifica si el span tiene la clase 'selected'
+				const isAccountTypeSelected = accountTypeSelectButtonSpan.classList.contains('selected');
 
 				if (nicknameInput.value.trim() !== '' &&
 					balanceInput.value.trim() !== '' &&
@@ -455,11 +505,14 @@
 
 			accountTypeButtons.forEach(button => {
 				button.addEventListener('click', function () {
-					selectedAccountType = this.getAttribute('data-account-type');
+					// Obtener el texto del botón clicado
+					const selectedAccountType = this.textContent.trim();
 
-					// Actualiza solo el texto del botón, manteniendo el SVG intacto
-					const svgHTML = accountTypeSelectButton.querySelector('svg').outerHTML;
-					accountTypeSelectButton.innerHTML = `${selectedAccountType.replace(/([A-Z])/g, ' $1').trim()} ${svgHTML}`;
+					// Actualiza el texto del span dentro del botón
+					accountTypeSelectButtonSpan.textContent = selectedAccountType;
+
+					// Agrega la clase 'selected' al span
+					accountTypeSelectButtonSpan.classList.add('selected');
 
 					// Manejar el clic en el botón de regresar de la sección 3 a la sección 2
 					sectionThree.style.display = 'none';
@@ -468,8 +521,11 @@
 					// Verifica el estado del botón "Next"
 					checkInputs();
 				});
-			});
 
+				// Agrega event listeners a los inputs para detectar cambios
+				nicknameInput.addEventListener('input', checkInputs);
+				balanceInput.addEventListener('input', checkInputs);
+			});
 			// Agrega event listeners a los inputs para detectar cambios
 			nicknameInput.addEventListener('input', checkInputs);
 			balanceInput.addEventListener('input', checkInputs);
@@ -492,7 +548,6 @@
 			});
 		});
 
-
 		//Cierra el modal
 		document.addEventListener('DOMContentLoaded', function () {
 			const closeButtons = document.querySelectorAll('button[aria-label="Close"]');
@@ -504,19 +559,24 @@
 
 			const nicknameInput = document.querySelector('.name-input');
 			const balanceInput = document.querySelector('.balance-input');
-			const accountTypeSelectButton = document.querySelector('.account-type-select-button');
+			const accountTypeSelectButton = document.querySelector('.account-type-select-button .button-text');
+			const accountTypeButtons = document.querySelectorAll('.account-widget-list-button');
 
 			const closeModal = () => {
 				// Limpia los campos y el botón de selección
 				nicknameInput.value = '';
 				balanceInput.value = '';
-				accountTypeSelectButton.innerHTML = 'Select account type...';
+				accountTypeSelectButton.textContent = 'Select account type...';
+
+				// Elimina la clase de selección de todos los botones
+				accountTypeButtons.forEach(button => {
+					button.classList.remove('selected'); // Asegúrate de que 'selected' es la clase que usa para el ícono
+				});
 
 				// Opcional: Elimina el atributo disabled del botón "Next" si está presente
 				const nextButton = document.querySelector('.account-widget-footer .ynab-button');
-				if (nextButton.hasAttribute('disabled')) {
-					nextButton.removeAttribute('disabled');
-				}
+				// Asegúrate de que el botón "Next" esté deshabilitado
+				nextButton.setAttribute('disabled', '');
 
 				// Resetea la visualización de las secciones
 				modalActive.classList.remove('modal-overlay', 'active');

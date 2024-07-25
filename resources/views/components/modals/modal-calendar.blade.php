@@ -35,16 +35,16 @@
 					</div>
 				</div>
 				<div class="month-picker-months">
-					<button class="ghost-button secondary type-body month-picker-months-item is-disabled" aria-label="Jan 2024" type="button">
+					<button class="ghost-button secondary type-body month-picker-months-item" aria-label="Jan 2024" type="button">
 						Jan
 					</button>
-					<button class="ghost-button secondary type-body month-picker-months-item is-disabled" aria-label="Feb 2024" type="button">
+					<button class="ghost-button secondary type-body month-picker-months-item" aria-label="Feb 2024" type="button">
 						Feb
 					</button>
-					<button class="ghost-button secondary type-body month-picker-months-item is-disabled" aria-label="Mar 2024" type="button">
+					<button class="ghost-button secondary type-body month-picker-months-item" aria-label="Mar 2024" type="button">
 						Mar
 					</button>
-					<button class="ghost-button secondary type-body month-picker-months-item is-disabled" aria-label="Apr 2024" type="button">
+					<button class="ghost-button secondary type-body month-picker-months-item" aria-label="Apr 2024" type="button">
 						Apr
 					</button>
 					<button class="ghost-button secondary type-body month-picker-months-item" aria-label="May 2024" type="button">
@@ -59,16 +59,16 @@
 					<button class="ghost-button secondary type-body month-picker-months-item" aria-label="Aug 2024" type="button">
 						Aug
 					</button>
-					<button class="ghost-button secondary type-body month-picker-months-item is-disabled" aria-label="Sep 2024" type="button">
+					<button class="ghost-button secondary type-body month-picker-months-item" aria-label="Sep 2024" type="button">
 						Sep
 					</button>
-					<button class="ghost-button secondary type-body month-picker-months-item is-disabled" aria-label="Oct 2024" type="button">
+					<button class="ghost-button secondary type-body month-picker-months-item" aria-label="Oct 2024" type="button">
 						Oct
 					</button>
-					<button class="ghost-button secondary type-body month-picker-months-item is-disabled" aria-label="Nov 2024" type="button">
+					<button class="ghost-button secondary type-body month-picker-months-item" aria-label="Nov 2024" type="button">
 						Nov
 					</button>
-					<button class="ghost-button secondary type-body month-picker-months-item is-disabled" aria-label="Dec 2024" type="button">
+					<button class="ghost-button secondary type-body month-picker-months-item" aria-label="Dec 2024" type="button">
 						Dec
 					</button>
 				</div>
@@ -81,5 +81,53 @@
 </div>
 
 @push('scripts')
+	<script>
+		/*document.addEventListener("DOMContentLoaded", function () {
+			const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+			const currentMonth = new Date().getMonth();
+			const monthButtons = document.querySelectorAll(".month-picker-months-item");
+
+			monthButtons.forEach(button => {
+				if (button.textContent.trim() === monthNames[currentMonth]) {
+					button.classList.add("is-selected");
+				} else {
+					button.classList.remove("is-selected");
+				}
+			});
+		});
+*/
+		document.addEventListener("DOMContentLoaded", function () {
+			const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+			const currentDate = new Date();
+			const currentMonth = currentDate.getMonth();
+			const currentYear = currentDate.getFullYear();
+			const monthButtons = document.querySelectorAll(".month-picker-months-item");
+
+			// Seleccionar el mes actual al cargar la página
+			monthButtons.forEach(button => {
+				if (button.textContent.trim() === monthNames[currentMonth]) {
+					button.classList.add("is-selected");
+				} else {
+					button.classList.remove("is-selected");
+				}
+			});
+
+			// Actualizar el texto del botón de la fecha actual
+			document.getElementById("current-date").textContent = monthNames[currentMonth] + " " + currentYear;
+
+			// Agregar evento de clic a cada botón de mes
+			monthButtons.forEach(button => {
+				button.addEventListener("click", function () {
+					// Remover la clase 'is-selected' de todos los botones
+					monthButtons.forEach(btn => btn.classList.remove("is-selected"));
+					// Agregar la clase 'is-selected' al botón clicado
+					this.classList.add("is-selected");
+					// Actualizar el texto del botón de la fecha actual
+					document.getElementById("current-date").textContent = this.textContent + " " + currentYear;
+				});
+			});
+		});
+	
+	</script>
 
 @endpush

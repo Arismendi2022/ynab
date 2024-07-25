@@ -2272,7 +2272,6 @@ select {
 	}
 }
 
-
 /* Para controlar la visibilidad de las secciones */
 .account-widget-list-button .ynab-new-icon {
 	display: none; /* Ocultar el icono por defecto */
@@ -2282,6 +2281,47 @@ select {
 	display: inline; /* Mostrar el icono cuando el botón está seleccionado */
 }
 
+/* || SUCCESS */
+.account-widget .account-widget-success-screen .account-widget-body {
+	margin: 0 auto;
+	max-width: 20rem;
+	text-align: center;
+}
+.account-widget .account-widget-success-screen .account-widget-body > .icon-checkmark-circle {
+	height: 3rem;
+	width: 3rem;
+	color: #4d9119;
+	color: var(--labelPositive);
+}
+.account-widget .account-widget-success-screen .account-widget-body > .ynab-new-icon {
+	clear: both;
+	margin-bottom: 1.5rem;
+	margin-top: 3rem;
+}
+.account-widget .account-widget-success-screen .account-widget-body h3 {
+	margin: 0 0 1rem;
+	padding: 0;
+}
+.account-widget .account-widget-success-screen .account-widget-body h3 {
+	font-size: 1.125rem;
+	font-weight: 600;
+	line-height: 1.2;
+}
+.account-widget .account-widget-success-screen .account-widget-body p {
+	margin: 0 0 1rem;
+	color: #405163;
+	color: var(--labelSecondary);
+}
+.account-widget .account-widget-success-screen .account-widget-body p {
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+.account-widget a, .modal-account-reconcile .modal a {
+	color: var(--actionPrimary);
+	text-decoration: none;
+}
 
 
 
