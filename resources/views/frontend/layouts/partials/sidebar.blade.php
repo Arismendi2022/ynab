@@ -505,6 +505,20 @@
 
 			});
 		});
+
+		//Edit Account
+		document.addEventListener('DOMContentLoaded', function () {
+			const editAccountButtons = document.querySelectorAll('.nav-account-icons-left');
+
+			editAccountButtons.forEach(button => {
+				button.addEventListener('click', function () {
+
+					const modalActive = document.getElementById('ember42');
+					modalActive.classList.add('modal-overlay', 'active');
+
+				});
+			});
+		});
 	
 	</script>
 @endpush

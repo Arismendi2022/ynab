@@ -2323,6 +2323,255 @@ select {
 	text-decoration: none;
 }
 
+/* || MODAL EDIT ACCOUNT */
+.modal-popup.account-modal, .modal-popup.unpair-confirm-modal {
+	z-index: 10011;
+}
+.modal-popup.account-modal .modal {
+	position: absolute;
+	width: 30rem;
+}
+.modal-popup.account-modal .modal-header-with-close {
+	display: flex;
+	justify-items: center;
+	padding: 1rem;
+}
+.modal-popup.account-modal .modal-header {
+	color: var(--labelPrimary);
+	border-bottom: .05rem solid var(--separatorSubdued);
+	text-align: left;
+}
+.modal-popup.account-modal .modal-header-with-close-title {
+	flex-grow: 1;
+	line-height: 1.5;
+}
+
+/* || MODAL CONTENT */
+
+.modal-popup.account-modal .modal-content {
+	border-bottom: .05rem solid var(--separatorSubdued);
+	max-height: 30rem;
+	overflow: auto;
+	padding: 1rem;
+}
+.modal-popup.account-modal .modal-content .fieldset:first-child {
+	border: 0;
+}
+.modal-popup.account-modal .modal-content .fieldset {
+	margin-bottom: .5em;
+	padding: 0;
+}
+.manage-payees h2, .modal-popup .fieldset, .modal-popup dd, .ynab-grid-spacer > div {
+	margin: 0;
+	padding: 0;
+}
+.modal-generic .modal-actions::after, .modal-popup dl::after, .modal-popup ul.modal-list::after, .modal-popup ul.submenu::after {
+	clear: both;
+}
+.modal-generic .modal-actions::after, .modal-generic .modal-actions::before, .modal-popup dl::after, .modal-popup dl::before, .modal-popup ul.modal-list::after, .modal-popup ul.modal-list::before, .modal-popup ul.submenu::after, .modal-popup ul.submenu::before {
+	content: "";
+	display: table;
+}
+.modal-popup.account-modal .modal-content dl:first-child {
+	margin-top: 0;
+}
+.modal-popup.account-modal .modal-content dl:last-child {
+	margin: 0;
+}
+.modal-generic .modal-content, .modal-generic dl, .modal-popup dl {
+	zoom: 1;
+}
+.modal-popup.account-modal .modal-content .fieldset .section-header {
+	font-size: 1rem;
+	margin-bottom: .3rem;
+}
+.modal-popup.account-modal .modal-content dt {
+	padding-top: 0;
+}
+.modal-popup.account-modal .modal-content dd, .modal-popup.account-modal .modal-content dt {
+	min-height: 1.5em;
+	text-align: left;
+	width: 100%;
+}
+.modal-popup dt {
+	float: left;
+	margin: 0;
+	padding-bottom: .25rem;
+}
+.modal-popup dt {
+	font-size: .875rem;
+	font-weight: 600;
+	line-height: 1.2;
+}
+.fieldset {
+	border: 0;
+	margin: 0 2px;
+	padding: .35em .625em .75em;
+}
+.modal-popup dd {
+	float: left;
+	width: 65%;
+}
+.modal-popup.account-modal .modal-content input {
+	border-color: var(--inputBorder);
+	background-color: var(--inputBackground);
+	text-align: left;
+	width: 100%;
+}
+.modal-popup input, .modal-popup textarea {
+	margin-bottom: .5rem;
+	padding: .25rem .5rem;
+	min-height: 2rem;
+}
+.modal-popup.account-modal .modal-content input:focus {
+	border-color: var(--inputBorderActive);
+}
+.modal-popup.account-modal .modal-content textarea {
+	border-color: var(--inputBorder);
+	outline: 0;
+	resize: vertical;
+	width: 100%;
+}
+textarea {
+	overflow: auto;
+}
+.modal-popup.account-modal .modal-content textarea:focus {
+	border-color: var(--actionPrimary);
+}
+
+/* || HR */
+.modal-popup.account-modal .modal-content hr {
+	margin: 1.5rem auto;
+}
+.modal-popup hr {
+	margin: .375rem auto;
+	padding: 0;
+}
+
+/* || WORKING BALANCE */
+.ynab-new-currency-input.legacy-currency-input.is-editing, .ynab-new-currency-input.legacy-currency-input:hover {
+	border: 0;
+}
+.ynab-new-currency-input.legacy-currency-input {
+	border: 0;
+	height: auto;
+}
+.ynab-new-currency-input.is-editing {
+	border: .0625rem solid var(--inputBorderActive);
+	background-color: var(--backgroundPrimary);
+}
+.ynab-new-currency-input {
+	border: .0625rem solid transparent;
+	display: flex;
+	justify-content: space-between;
+	border-radius: .25rem;
+	height: 1.5rem;
+	text-align: right;
+	width: 100%;
+}
+.ynab-new-currency-input .input-wrapper {
+	align-items: center;
+	display: flex;
+	flex: 1 1 auto;
+	width: calc(100% - 1.125rem);
+}
+.modal-popup.account-modal .modal-content .ynab-new-currency-input input {
+	height: 2rem;
+	min-height: 2rem;
+	text-align: left;
+}
+.field-with-error .ynab-new-currency-input.legacy-currency-input .ember-text-field {
+	border-width: .0625rem;
+}
+.ynab-new-currency-input.is-editing .input-wrapper input {
+	display: block;
+}
+.ynab-new-currency-input.legacy-currency-input input {
+	border-width: .0625rem !important;
+	padding: 0 .5rem !important;
+}
+.ynab-new-currency-input .input-wrapper input {
+	background: 0 0;
+	background-color: rgba(0, 0, 0, 0);
+	border-color: transparent;
+	border-radius: .25rem;
+	border-width: 0;
+	display: none;
+	font-weight: 500;
+	height: 100%;
+	margin: 0;
+	padding: 0 .1875rem;
+	text-align: right;
+	width: 100%;
+}
+.ynab-new-currency-input.is-editing .input-wrapper .currency {
+	display: none;
+}
+.modal-popup.account-modal .modal-content button {
+	vertical-align: inherit;
+}
+.ynab-new-currency-input .input-wrapper .currency {
+	display: block;
+	padding: .1875rem;
+}
+.ynab-new-currency-input .input-wrapper .currency {
+	font-size: .875rem;
+	font-weight: 500;
+	line-height: 1.2;
+}
+.ynab-new-currency-input .input-wrapper button {
+	padding: .1875rem;
+	text-align: right;
+	width: 100%;
+}
+.modal-popup.account-modal .modal-content .fieldset .space-top {
+	margin-top: .5rem;
+}
+.modal-popup.account-modal .modal-content .info {
+	color: var(--labelSecondary);
+	font-size: .75rem;
+}
+
+/* || FINANCIAL */
+.modal-popup.account-modal .modal-content .fieldset.edit-direct-import-toggle .info {
+	margin: .4rem 0 1rem;
+}
+
+/* || FOOTER */
+.modal-popup.account-modal .modal-actions {
+	display: flex;
+	justify-content: flex-end;
+	padding: 1rem;
+}
+.modal-popup .modal-actions {
+	align-items: center;
+	display: flex;
+	gap: .5rem;
+	justify-content: flex-end;
+	padding: .765em;
+}
+.modal-popup.account-modal .modal-actions button.destructive, .modal-popup.account-modal .modal-actions button:first-child {
+	margin-right: auto;
+}
+.ynab-button.destructive:not([disabled]) {
+	color: var(--buttonDestructiveLabel);
+	background-color: var(--buttonDestructiveBackground);
+	border: 0;
+}
+.ynab-button.destructive:not([disabled]):active, .ynab-button.destructive:not([disabled]):hover {
+	background-color: var(--buttonDestructiveBackgroundActive);
+	border-color: var(--buttonDestructiveBackgroundActive);
+	color: var(--labelDarkBackgroundPrimary);
+}
+
+
+
+
+
+
+
+
+
 
 
 

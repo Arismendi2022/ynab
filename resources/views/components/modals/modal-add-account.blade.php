@@ -401,10 +401,10 @@
 							href="#" onclick="return false;" rel="noopener noreferrer">File-Based Import</a>.</p>
 				</div>
 				<div class="account-widget-footer">
-					<button class="ynab-button secondary is-large  js-add-another-account-btn" type="button">
+					<button class="ynab-button secondary is-large js-add-another-account-btn" type="button">
 						Add Another
 					</button>
-					<button class="ynab-button primary is-large " type="button">
+					<button class="ynab-button primary is-large" type="button">
 						Done
 					</button>
 				</div>
@@ -548,6 +548,20 @@
 			});
 		});
 
+		//Activa success
+		document.addEventListener('DOMContentLoaded', function () {
+			const buttonNext = document.querySelector('.account-widget-footer');
+			const sectionTwo = document.querySelector('.account-widget-step:nth-of-type(2)');
+			const sectionSuccess = document.querySelector('.account-widget-success-screen');
+
+			buttonNext.addEventListener('click', () => {
+				sectionTwo.style.display = "none";
+				sectionSuccess.style.display = "";
+
+			});
+		});
+
+
 		//Cierra el modal
 		document.addEventListener('DOMContentLoaded', function () {
 			const closeButtons = document.querySelectorAll('button[aria-label="Close"]');
@@ -556,6 +570,7 @@
 			const sectionOne = document.querySelector('.account-widget-step:nth-of-type(1)');
 			const sectionTwo = document.querySelector('.account-widget-step:nth-of-type(2)');
 			const sectionThree = document.querySelector('.account-widget-step:nth-of-type(3)');
+			const sectionSuccess = document.querySelector('.account-widget-step:nth-of-type(4)');
 
 			const nicknameInput = document.querySelector('.name-input');
 			const balanceInput = document.querySelector('.balance-input');
@@ -583,10 +598,53 @@
 				sectionOne.style.display = "";
 				sectionTwo.style.display = "none";
 				sectionThree.style.display = "none";
+				sectionSuccess.style.display = "none";
 			};
 
+			// Añade el evento para los botones de cerrar
 			closeButtons.forEach(function (button) {
 				button.addEventListener('click', closeModal);
+			});
+
+			// Selecciona el botón "Done"
+			const doneButton = document.querySelector('.account-widget-success-screen .ynab-button.primary.is-large');
+
+			// Añade el evento de clic al botón "Done"
+			if (doneButton) {
+				doneButton.addEventListener('click', closeModal);
+			}
+		});
+
+		//Regresar a section one "Add Another Account"
+		document.addEventListener('DOMContentLoaded', function () {
+			const addAnother = document.querySelector('.js-add-another-account-btn');
+			const sectionOne = document.querySelector('.account-widget-step:nth-of-type(1)');
+			const sectionSuccess = document.querySelector('.account-widget-step:nth-of-type(4)');
+
+			const nicknameInput = document.querySelector('.name-input');
+			const balanceInput = document.querySelector('.balance-input');
+			const accountTypeSelectButton = document.querySelector('.account-type-select-button .button-text');
+			const accountTypeButtons = document.querySelectorAll('.account-widget-list-button');
+
+			addAnother.addEventListener('click', () => {
+				sectionOne.style.display = "";
+				sectionSuccess.style.display = "none";
+
+				// Limpia los campos y el botón de selección
+				nicknameInput.value = '';
+				balanceInput.value = '';
+				accountTypeSelectButton.textContent = 'Select account type...';
+
+				// Elimina la clase de selección de todos los botones
+				accountTypeButtons.forEach(button => {
+					button.classList.remove('selected'); // Asegúrate de que 'selected' es la clase que usa para el ícono
+				});
+
+				// Opcional: Elimina el atributo disabled del botón "Next" si está presente
+				const nextButton = document.querySelector('.account-widget-footer .ynab-button');
+				// Asegúrate de que el botón "Next" esté deshabilitado
+				nextButton.setAttribute('disabled', '');
+
 			});
 		});
 	
