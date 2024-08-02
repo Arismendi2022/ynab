@@ -32,7 +32,7 @@
 					<dd class="user-data">
 						<div class="field-with-error">
 							<div>
-								<input value="Cheque">
+								<input>
 							</div>
 							<!---->
 						</div>
@@ -58,7 +58,7 @@
 									<!---->
 									<div class="input-wrapper">
 										<input id="ember157" class="ember-text-field ember-view" placeholder="What is the balance of this account right now?" title="Working Balance"
-											aria-label="Working Balance" type="text" value="2,400,000.00">
+											aria-label="Working Balance" type="text">
 										<button class="user-data currency positive">
 											<bdi>$</bdi>
 											2,400,000.00

@@ -2271,12 +2271,49 @@ select {
 		background-color: var(--backgroundSecondaryElevated);
 	}
 }
+/* || SECCION TWO LOAN */
+.account-widget .account-widget-add-unlinked-account .add-unlinked-account-split-row {
+	display: flex;
+	justify-content: space-between;
+}
+.account-widget .account-widget-add-unlinked-account .add-unlinked-account-split-row .add-unlinked-account-current-balance {
+	width: 70%;
+}
+.account-widget .currency-input-group {
+	position: relative;
+	width: 100%;
+}
+/* || RATE */
+.account-widget .account-widget-add-unlinked-account .add-unlinked-account-split-row .add-unlinked-account-interest-rate {
+	width: 27%;
+}
+.account-widget .interest-input-group .input-icon {
+	align-items: center;
+	display: flex;
+	height: 3rem;
+	padding: 0 .5rem 0 0;
+	position: absolute;
+	right: 0;
+	width: auto;
+}
+.account-widget .interest-input-group input {
+	padding-right: 1.25rem;
+}
+/* || NOTE */
+.account-widget .y-form-note {
+	color: var(--labelSecondary);
+	display: block;
+	margin: -.125rem 0 1rem;
+}
+.account-widget em, .modal-import-choose-file em {
+	color: var(--labelSecondary);
+	font-style: normal;
+}
 
 /* Para controlar la visibilidad de las secciones */
 .account-widget-list-button .ynab-new-icon {
 	display: none; /* Ocultar el icono por defecto */
 }
-
 .account-widget-list-button.selected .ynab-new-icon {
 	display: inline; /* Mostrar el icono cuando el botón está seleccionado */
 }
@@ -2317,7 +2354,6 @@ select {
 	font-weight: 500;
 	line-height: 1.2;
 }
-
 .account-widget a, .modal-account-reconcile .modal a {
 	color: var(--actionPrimary);
 	text-decoration: none;

@@ -147,7 +147,7 @@
 						</button>
 						<!---->
 					</div>
-					<div class="y-form-field field-with-error  currency-input-group">
+					<div class="y-form-field field-with-error currency-input-group">
 						<label>
 							What is your current account balance?
 						</label>
@@ -156,12 +156,57 @@
 						<!---->
 					</div>
 					<!---->
+					<!-- Opciónes para Loan -->
+					<div class="account-loan" style="display: none">
+						<div class="add-unlinked-account-split-row">
+							<div class="add-unlinked-account-current-balance">
+								<div class="y-form-field field-with-error  currency-input-group">
+									<label>
+										Current account balance
+									</label>
+									<input id="ember161" class="ember-text-field ember-view y-input current-account-balance-input user-data" autocomplete="nope" autocorrect="off" spellcheck="false"
+										autocapitalize="none" inputmode="decimal" type="text">
+									<!---->
+								</div>
+							</div>
+							<div class="add-unlinked-account-interest-rate">
+								<div class="y-form-field field-with-error  currency-input-group interest-input-group">
+									<label>Interest rate</label>
+									<label class="input-icon">%</label>
+									<input id="ember162" class="ember-text-field ember-view y-input interest-rate-input user-data" autocomplete="nope" autocorrect="off" spellcheck="false"
+										autocapitalize="none" inputmode="decimal" type="text">
+									<!---->
+								</div>
+							</div>
+						</div>
+						<!---->
+						<div class="y-form-field field-with-error  currency-input-group">
+							<label>
+								Monthly payment required by your lender
+							</label>
+							<input id="ember163" class="ember-text-field ember-view y-input minimum-payment-input user-data" autocomplete="nope" autocorrect="off" spellcheck="false"
+								autocapitalize="none" inputmode="decimal" type="text">
+							<!---->
+						</div>
+						<!---->
+						<div class="y-form-note">
+							<div class="note-container">
+								<em>Enter the total amount you are required to pay your lender each month, including principal, interest, escrow, fees, etc.</em>
+							</div>
+						</div>
+						<div class="y-form-note">
+							<div class="note-container">
+								<em>You can add extra payments as a target in your budget later.</em>
+							</div>
+						</div>
+					</div>
+					<!---->
 				</div>
 				<div class="account-widget-footer">
 					<button class="ynab-button primary is-large " type="button" disabled="">Next</button>
 				</div>
 			</div>
-			<!-- Tercera sección -->
+			<!-- Tercera sección Account Type -->
 			<div class="account-widget-step account-widget-add-unlinked-account account-widget-step-with-help-box">
 				<div class="account-widget-header">
 					<button aria-label="Back" title="Back" type="button">
@@ -197,7 +242,7 @@
 						<div class="account-type-select-group">
 							<h3>Budget Accounts</h3>
 							<p>Accounts that you'll spend from in the near future (usually within the next year or two).</p>
-							<button class="account-widget-list-button" data-account-type="Checking" type="button">
+							<button class="account-widget-list-button" data-account-type="Checking" data-category="budget" type="button">
 								Checking
 								<!---->
 								<svg class="ynab-new-icon" width="16" height="16">
@@ -209,7 +254,7 @@
 									</use>
 								</svg>
 							</button>
-							<button class="account-widget-list-button" data-account-type="Savings" type="button">
+							<button class="account-widget-list-button" data-account-type="Savings" data-category="budget" type="button">
 								Savings
 								<!---->
 								<svg class="ynab-new-icon" width="16" height="16">
@@ -221,7 +266,7 @@
 									</use>
 								</svg>
 							</button>
-							<button class="account-widget-list-button" data-account-type="Cash" type="button">
+							<button class="account-widget-list-button" data-account-type="Cash" data-category="budget" type="button">
 								Cash
 								<!---->
 								<svg class="ynab-new-icon" width="16" height="16">
@@ -233,7 +278,7 @@
 									</use>
 								</svg>
 							</button>
-							<button class="account-widget-list-button" data-account-type="CreditCard" type="button">
+							<button class="account-widget-list-button" data-account-type="CreditCard" data-category="budget" type="button">
 								Credit Card
 								<!----->
 								<svg class="ynab-new-icon" width="16" height="16">
@@ -245,7 +290,7 @@
 									</use>
 								</svg>
 							</button>
-							<button class="account-widget-list-button" data-account-type="LineOfCredit" type="button">
+							<button class="account-widget-list-button" data-account-type="LineOfCredit" data-category="budget" type="button">
 								Line of Credit
 								<!---->
 								<svg class="ynab-new-icon" width="16" height="16">
@@ -261,7 +306,7 @@
 						<div class="account-type-select-group">
 							<h3>Mortgages and Loans</h3>
 							<p>Accounts that have an outstanding balance you're currently paying off, and aren't spending from.</p>
-							<button class="account-widget-list-button" data-account-type="Mortgage" type="button">
+							<button class="account-widget-list-button" data-account-type="Mortgage" data-category="loan" type="button">
 								Mortgage
 								<!---->
 								<svg class="ynab-new-icon" width="16" height="16">
@@ -273,7 +318,7 @@
 									</use>
 								</svg>
 							</button>
-							<button class="account-widget-list-button" data-account-type="AutoLoan" type="button">
+							<button class="account-widget-list-button" data-account-type="AutoLoan" data-category="loan" type="button">
 								Auto Loan
 								<!---->
 								<svg class="ynab-new-icon" width="16" height="16">
@@ -285,7 +330,7 @@
 									</use>
 								</svg>
 							</button>
-							<button class="account-widget-list-button" data-account-type="StudentLoan" type="button">
+							<button class="account-widget-list-button" data-account-type="StudentLoan" data-category="loan" type="button">
 								Student Loan
 								<!---->
 								<svg class="ynab-new-icon" width="16" height="16">
@@ -297,7 +342,7 @@
 									</use>
 								</svg>
 							</button>
-							<button class="account-widget-list-button" data-account-type="PersonalLoan" type="button">
+							<button class="account-widget-list-button" data-account-type="PersonalLoan" data-category="loan" type="button">
 								Personal Loan
 								<!---->
 								<svg class="ynab-new-icon" width="16" height="16">
@@ -309,7 +354,7 @@
 									</use>
 								</svg>
 							</button>
-							<button class="account-widget-list-button" data-account-type="MedicalDebt" type="button">
+							<button class="account-widget-list-button" data-account-type="MedicalDebt" data-category="loan" type="button">
 								Medical Debt
 								<!---->
 								<svg class="ynab-new-icon" width="16" height="16">
@@ -321,7 +366,7 @@
 									</use>
 								</svg>
 							</button>
-							<button class="account-widget-list-button" data-account-type="OtherDebt" type="button">
+							<button class="account-widget-list-button" data-account-type="OtherDebt" data-category="loan" type="button">
 								Other Debt
 								<!---->
 								<svg class="ynab-new-icon" width="16" height="16">
@@ -337,7 +382,7 @@
 						<div class="account-type-select-group">
 							<h3>Tracking Accounts</h3>
 							<p>Accounts that hold money you don't plan to spend soon, such as investments or loans.</p>
-							<button class="account-widget-list-button" data-account-type="OtherAsset" type="button">
+							<button class="account-widget-list-button" data-account-type="OtherAsset" data-category="budget" type="button">
 								Asset (e.g. Investment)
 								<!---->
 								<svg class="ynab-new-icon" width="16" height="16">
@@ -349,7 +394,7 @@
 									</use>
 								</svg>
 							</button>
-							<button class="account-widget-list-button" data-account-type="OtherLiability" type="button">
+							<button class="account-widget-list-button" budgetdata-account-type="OtherLiability" data-category="budget" type="button">
 								Liability
 								<!---->
 								<svg class="ynab-new-icon" width="16" height="16">
@@ -365,6 +410,8 @@
 					</div>
 				</div>
 			</div>
+			<!-- Cuarta seccion -->
+			
 			<!-- Sección Success -->
 			<div class="account-widget-step account-widget-success-screen">
 				<div class="account-widget-header">
@@ -451,6 +498,7 @@
 		//Manejo de botones "Back"
 		document.addEventListener('DOMContentLoaded', function () {
 			const backButtons = document.querySelectorAll('button[aria-label="Back"]');
+			const modalActive = document.getElementById('ember145');
 
 			const sectionOne = document.querySelector('.account-widget-select-linked-unlinked');
 			const sectionTwo = document.querySelector('.account-widget-step:nth-of-type(2)');
@@ -458,6 +506,8 @@
 
 			const accountTypeSelectButton = document.querySelector('.account-type-select-button .button-text');
 			const accountTypeButtons = document.querySelectorAll('.account-widget-list-button');
+			const accountLoan = document.querySelector('.account-loan');
+			const accountBudget = document.querySelector('.currency-input-group');
 
 			backButtons.forEach(function (button) {
 				button.addEventListener('click', function () {
@@ -469,6 +519,14 @@
 						// De sección 2 a sección 1
 						sectionOne.style.display = "";
 						sectionTwo.style.display = "none";
+						accountLoan.style.display = "none";
+						accountBudget.style.display = "";
+						// Limpiar todos los inputs y botones dentro del modal
+						const inputs = modalActive.querySelectorAll('input');
+						inputs.forEach(input => {
+							input.value = '';
+						});
+
 						accountTypeSelectButton.textContent = 'Select account type...';
 						// Elimina la clase de selección de todos los botones
 						accountTypeButtons.forEach(button => {
@@ -480,7 +538,7 @@
 
 		});
 
-		//Select account type.
+		//Seccion para verificar campos input y boton y activar boton Next
 		document.addEventListener('DOMContentLoaded', function () {
 			const accountTypeButtons = document.querySelectorAll('.account-widget-list-button');
 			const accountTypeSelectButtonSpan = document.querySelector('.account-type-select-button .button-text');
@@ -490,13 +548,45 @@
 			const sectionTwo = document.querySelector('.account-widget-step:nth-of-type(2)');
 			const sectionThree = document.querySelector('.account-widget-step:nth-of-type(3)');
 
-			function checkInputs() {
-				// Verifica si el span tiene la clase 'selected'
-				const isAccountTypeSelected = accountTypeSelectButtonSpan.classList.contains('selected');
+			const accountLoan = document.querySelector('.account-loan');
+			const accountBudget = document.querySelector('.currency-input-group');
 
-				if (nicknameInput.value.trim() !== '' &&
-					balanceInput.value.trim() !== '' &&
-					isAccountTypeSelected) {
+			// Inputs adicionales para loan
+			const currentAccountBalanceInput = document.querySelector('.current-account-balance-input');
+			const interestRateInput = document.querySelector('.interest-rate-input');
+			const minimumPaymentInput = document.querySelector('.minimum-payment-input');
+
+			// Map de campos requeridos por categoría
+			const requiredFields = {
+				budget: [nicknameInput, balanceInput],
+				loan: [nicknameInput, currentAccountBalanceInput, interestRateInput, minimumPaymentInput]
+			};
+
+			function updateVisibility(category) {
+				if (category === 'loan') {
+					accountLoan.style.display = '';
+					accountBudget.style.display = 'none';
+				} else {
+					accountLoan.style.display = 'none';
+					accountBudget.style.display = '';
+				}
+			}
+
+			function updateButtonText(selectedAccountType) {
+				accountTypeSelectButtonSpan.textContent = selectedAccountType;
+				accountTypeSelectButtonSpan.classList.add('selected');
+			}
+
+			function checkInputs() {
+				const isAccountTypeSelected = accountTypeSelectButtonSpan.classList.contains('selected');
+				const fields = requiredFields[selectedCategory] || [];
+				const allFieldsFilled = fields.every(field => field.value.trim() !== '');
+
+				console.log('Selected Category:', selectedCategory);
+				console.log('All Fields Filled:', allFieldsFilled);
+				console.log('Is Account Type Selected:', isAccountTypeSelected);
+
+				if (allFieldsFilled && isAccountTypeSelected) {
 					nextButton.removeAttribute('disabled');
 				} else {
 					nextButton.setAttribute('disabled', 'true');
@@ -505,31 +595,27 @@
 
 			accountTypeButtons.forEach(button => {
 				button.addEventListener('click', function () {
-					// Obtener el texto del botón clicado
+					selectedCategory = this.getAttribute('data-category');
 					const selectedAccountType = this.textContent.trim();
 
-					// Actualiza el texto del span dentro del botón
-					accountTypeSelectButtonSpan.textContent = selectedAccountType;
+					updateVisibility(selectedCategory);
+					updateButtonText(selectedAccountType);
 
-					// Agrega la clase 'selected' al span
-					accountTypeSelectButtonSpan.classList.add('selected');
-
-					// Manejar el clic en el botón de regresar de la sección 3 a la sección 2
+					// Manejar la visibilidad de las secciones
 					sectionThree.style.display = 'none';
 					sectionTwo.style.display = '';
 
 					// Verifica el estado del botón "Next"
 					checkInputs();
 				});
-
-				// Agrega event listeners a los inputs para detectar cambios
-				nicknameInput.addEventListener('input', checkInputs);
-				balanceInput.addEventListener('input', checkInputs);
 			});
-			// Agrega event listeners a los inputs para detectar cambios
-			nicknameInput.addEventListener('input', checkInputs);
-			balanceInput.addEventListener('input', checkInputs);
+
+			// Asegúrate de que la función checkInputs se llame cuando cambien los inputs
+			[nicknameInput, balanceInput, currentAccountBalanceInput, interestRateInput, minimumPaymentInput].forEach(input => {
+				input.addEventListener('input', checkInputs);
+			});
 		});
+
 
 		//Aplica indicador a botones
 		document.querySelectorAll('.account-widget-list-button').forEach(button => {
@@ -543,14 +629,12 @@
 				// Obtener el valor de data-account-type
 				const accountType = this.getAttribute('data-account-type');
 
-				// Aquí puedes manejar el valor de accountType según sea necesario
-				console.log('Selected account type:', accountType);
 			});
 		});
 
 		//Activa success
 		document.addEventListener('DOMContentLoaded', function () {
-			const buttonNext = document.querySelector('.account-widget-footer');
+			const buttonNext = document.querySelector('.account-widget-footer .is-large');
 			const sectionTwo = document.querySelector('.account-widget-step:nth-of-type(2)');
 			const sectionSuccess = document.querySelector('.account-widget-success-screen');
 
@@ -561,61 +645,59 @@
 			});
 		});
 
-
 		//Cierra el modal
 		document.addEventListener('DOMContentLoaded', function () {
 			const closeButtons = document.querySelectorAll('button[aria-label="Close"]');
 			const modalActive = document.getElementById('ember145');
-
 			const sectionOne = document.querySelector('.account-widget-step:nth-of-type(1)');
 			const sectionTwo = document.querySelector('.account-widget-step:nth-of-type(2)');
 			const sectionThree = document.querySelector('.account-widget-step:nth-of-type(3)');
 			const sectionSuccess = document.querySelector('.account-widget-step:nth-of-type(4)');
-
-			const nicknameInput = document.querySelector('.name-input');
-			const balanceInput = document.querySelector('.balance-input');
+			const accountLoan = document.querySelector('.account-loan');
+			const accountBudget = document.querySelector('.currency-input-group');
 			const accountTypeSelectButton = document.querySelector('.account-type-select-button .button-text');
 			const accountTypeButtons = document.querySelectorAll('.account-widget-list-button');
-
-			const closeModal = () => {
-				// Limpia los campos y el botón de selección
-				nicknameInput.value = '';
-				balanceInput.value = '';
-				accountTypeSelectButton.textContent = 'Select account type...';
-
-				// Elimina la clase de selección de todos los botones
-				accountTypeButtons.forEach(button => {
-					button.classList.remove('selected'); // Asegúrate de que 'selected' es la clase que usa para el ícono
-				});
-
-				// Opcional: Elimina el atributo disabled del botón "Next" si está presente
-				const nextButton = document.querySelector('.account-widget-footer .ynab-button');
-				// Asegúrate de que el botón "Next" esté deshabilitado
-				nextButton.setAttribute('disabled', '');
-
-				// Resetea la visualización de las secciones
-				modalActive.classList.remove('modal-overlay', 'active');
-				sectionOne.style.display = "";
-				sectionTwo.style.display = "none";
-				sectionThree.style.display = "none";
-				sectionSuccess.style.display = "none";
-			};
-
-			// Añade el evento para los botones de cerrar
-			closeButtons.forEach(function (button) {
-				button.addEventListener('click', closeModal);
-			});
-
-			// Selecciona el botón "Done"
+			const nextButton = document.querySelector('.account-widget-footer .ynab-button');
 			const doneButton = document.querySelector('.account-widget-success-screen .ynab-button.primary.is-large');
 
-			// Añade el evento de clic al botón "Done"
-			if (doneButton) {
-				doneButton.addEventListener('click', closeModal);
-			}
+			const resetInputs = () => {
+				modalActive.querySelectorAll('input').forEach(input => input.value = '');
+			};
+
+			const resetAccountType = () => {
+				accountTypeSelectButton.textContent = 'Select account type...';
+				accountTypeButtons.forEach(button => button.classList.remove('selected'));
+			};
+
+			const disableNextButton = () => {
+				if (nextButton) nextButton.setAttribute('disabled', '');
+			};
+
+			const showSection = (section) => {
+				[sectionOne, sectionTwo, sectionThree, sectionSuccess].forEach(sec => sec.style.display = 'none');
+				section.style.display = '';
+			};
+
+			const closeModal = () => {
+				resetInputs();
+				resetAccountType();
+				disableNextButton();
+				modalActive.classList.remove('modal-overlay', 'active');
+				showSection(sectionOne);
+				accountLoan.style.display = 'none';
+				accountBudget.style.display = '';
+
+				// Restablece el scroll a la parte superior
+
+			};
+
+			closeButtons.forEach(button => button.addEventListener('click', closeModal));
+			if (doneButton) doneButton.addEventListener('click', closeModal);
+			// Restablece el scroll a la parte superior
+
 		});
 
-		//Regresar a section one "Add Another Account"
+		//Regresar a section "Add Another Account"
 		document.addEventListener('DOMContentLoaded', function () {
 			const addAnother = document.querySelector('.js-add-another-account-btn');
 			const sectionOne = document.querySelector('.account-widget-step:nth-of-type(1)');
