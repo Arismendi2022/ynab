@@ -463,82 +463,69 @@
 
 @push('scripts')
 	<script>
-		//Alterna entre secciones
-		document.addEventListener('DOMContentLoaded', function () {
+
+		// 1. Alterna entre secciones
+		document.addEventListener('DOMContentLoaded', () => {
 			const buttonUnlinked = document.querySelector('.select-linked-unlinked-box-unlinked');
 			const buttonType = document.querySelector('.account-type-select-button');
 
-			const sections = [
-				//document.querySelector('.account-widget-select-linked-unlinked'),
-				document.querySelector('.account-widget-step:nth-of-type(1)'),
-				document.querySelector('.account-widget-step:nth-of-type(2)'),
-				document.querySelector('.account-widget-step:nth-of-type(3)')
-			];
+			const sections = Array.from(document.querySelectorAll('.account-widget-step'));
 
-			function showSection(indexToShow) {
+			const showSection = (indexToShow) => {
 				sections.forEach((section, index) => {
 					section.style.display = (index === indexToShow) ? '' : 'none';
 				});
-			}
+			};
 
 			// Inicializa mostrando la sección 1
 			showSection(0);
 
-			// Sección 1 a 2
-			buttonUnlinked.addEventListener('click', () => {
-				showSection(1);
-			});
-
-			// Sección 2 a 3
-			buttonType.addEventListener('click', () => {
-				showSection(2);
-			});
+			// Manejo de eventos
+			buttonUnlinked.addEventListener('click', () => showSection(1));
+			buttonType.addEventListener('click', () => showSection(2));
 		});
 
-		//Manejo de botones "Back"
-		document.addEventListener('DOMContentLoaded', function () {
+		// 2. Manejo de botones "Back"
+		document.addEventListener('DOMContentLoaded', () => {
 			const backButtons = document.querySelectorAll('button[aria-label="Back"]');
 			const modalActive = document.getElementById('ember145');
-
 			const sectionOne = document.querySelector('.account-widget-select-linked-unlinked');
 			const sectionTwo = document.querySelector('.account-widget-step:nth-of-type(2)');
 			const sectionThree = document.querySelector('.account-widget-step:nth-of-type(3)');
-
 			const accountTypeSelectButton = document.querySelector('.account-type-select-button .button-text');
 			const accountTypeButtons = document.querySelectorAll('.account-widget-list-button');
 			const accountLoan = document.querySelector('.account-loan');
 			const accountBudget = document.querySelector('.currency-input-group');
 
-			backButtons.forEach(function (button) {
-				button.addEventListener('click', function () {
-					if (sectionThree.style.display === "" || sectionThree.style.display === "") {
-						// De sección 3 a sección 2
-						sectionTwo.style.display = "";
-						sectionThree.style.display = "none";
-					} else if (sectionTwo.style.display === "" || sectionTwo.style.display === "") {
-						// De sección 2 a sección 1
-						sectionOne.style.display = "";
-						sectionTwo.style.display = "none";
-						accountLoan.style.display = "none";
-						accountBudget.style.display = "";
-						// Limpiar todos los inputs y botones dentro del modal
-						const inputs = modalActive.querySelectorAll('input');
-						inputs.forEach(input => {
-							input.value = '';
-						});
+			const resetFields = () => {
+				modalActive.querySelectorAll('input').forEach(input => input.value = '');
+				accountTypeSelectButton.textContent = 'Select account type...';
+				accountTypeButtons.forEach(button => button.classList.remove('selected'));
+			};
 
-						accountTypeSelectButton.textContent = 'Select account type...';
-						// Elimina la clase de selección de todos los botones
-						accountTypeButtons.forEach(button => {
-							button.classList.remove('selected'); // Asegúrate de que 'selected' es la clase que usa para el ícono
-						});
+			const showSection = (sectionToShow) => {
+				[sectionOne, sectionTwo, sectionThree].forEach(section => {
+					section.style.display = section === sectionToShow ? '' : 'none';
+				});
+			};
+
+			backButtons.forEach(button => {
+				button.addEventListener('click', () => {
+					if (sectionThree.style.display === '' || sectionThree.style.display === 'block') {
+						// De sección 3 a sección 2
+						showSection(sectionTwo);
+					} else if (sectionTwo.style.display === '' || sectionTwo.style.display === 'block') {
+						// De sección 2 a sección 1
+						showSection(sectionOne);
+						accountLoan.style.display = 'none';
+						accountBudget.style.display = '';
+						resetFields();
 					}
 				});
 			});
-
 		});
 
-		//Seccion para verificar campos input y boton y activar boton Next
+		// 3. Seccion para verificar campos input y boton y activar boton Next
 		document.addEventListener('DOMContentLoaded', function () {
 			const accountTypeButtons = document.querySelectorAll('.account-widget-list-button');
 			const accountTypeSelectButtonSpan = document.querySelector('.account-type-select-button .button-text');
@@ -582,10 +569,6 @@
 				const fields = requiredFields[selectedCategory] || [];
 				const allFieldsFilled = fields.every(field => field.value.trim() !== '');
 
-				console.log('Selected Category:', selectedCategory);
-				console.log('All Fields Filled:', allFieldsFilled);
-				console.log('Is Account Type Selected:', isAccountTypeSelected);
-
 				if (allFieldsFilled && isAccountTypeSelected) {
 					nextButton.removeAttribute('disabled');
 				} else {
@@ -616,8 +599,7 @@
 			});
 		});
 
-
-		//Aplica indicador a botones
+		// 4. Aplica indicador a botones
 		document.querySelectorAll('.account-widget-list-button').forEach(button => {
 			button.addEventListener('click', function () {
 				// Remover la clase 'selected' de todos los botones
@@ -632,7 +614,7 @@
 			});
 		});
 
-		//Activa success
+		// 5. Activa success
 		document.addEventListener('DOMContentLoaded', function () {
 			const buttonNext = document.querySelector('.account-widget-footer .is-large');
 			const sectionTwo = document.querySelector('.account-widget-step:nth-of-type(2)');
@@ -645,7 +627,7 @@
 			});
 		});
 
-		//Cierra el modal
+		// 6. Cierra el modal
 		document.addEventListener('DOMContentLoaded', function () {
 			const closeButtons = document.querySelectorAll('button[aria-label="Close"]');
 			const modalActive = document.getElementById('ember145');
@@ -660,6 +642,8 @@
 			const nextButton = document.querySelector('.account-widget-footer .ynab-button');
 			const doneButton = document.querySelector('.account-widget-success-screen .ynab-button.primary.is-large');
 
+			const scrollContainer = document.querySelector('.account-widget-body .account-type-select'); // Selecciona el contenedor del modal con scroll
+
 			const resetInputs = () => {
 				modalActive.querySelectorAll('input').forEach(input => input.value = '');
 			};
@@ -667,6 +651,8 @@
 			const resetAccountType = () => {
 				accountTypeSelectButton.textContent = 'Select account type...';
 				accountTypeButtons.forEach(button => button.classList.remove('selected'));
+				// Restablece el scroll a la parte superior
+
 			};
 
 			const disableNextButton = () => {
@@ -687,46 +673,40 @@
 				accountLoan.style.display = 'none';
 				accountBudget.style.display = '';
 
-				// Restablece el scroll a la parte superior
-
 			};
 
 			closeButtons.forEach(button => button.addEventListener('click', closeModal));
 			if (doneButton) doneButton.addEventListener('click', closeModal);
-			// Restablece el scroll a la parte superior
 
 		});
 
-		//Regresar a section "Add Another Account"
-		document.addEventListener('DOMContentLoaded', function () {
-			const addAnother = document.querySelector('.js-add-another-account-btn');
+		// 7. Regresar a "Add Account" en Success
+		document.addEventListener('DOMContentLoaded', () => {
+			const addAnotherButton = document.querySelector('.js-add-another-account-btn');
 			const sectionOne = document.querySelector('.account-widget-step:nth-of-type(1)');
 			const sectionSuccess = document.querySelector('.account-widget-step:nth-of-type(4)');
-
 			const nicknameInput = document.querySelector('.name-input');
 			const balanceInput = document.querySelector('.balance-input');
 			const accountTypeSelectButton = document.querySelector('.account-type-select-button .button-text');
 			const accountTypeButtons = document.querySelectorAll('.account-widget-list-button');
+			const nextButton = document.querySelector('.account-widget-footer .ynab-button');
 
-			addAnother.addEventListener('click', () => {
-				sectionOne.style.display = "";
-				sectionSuccess.style.display = "none";
-
-				// Limpia los campos y el botón de selección
+			const resetFields = () => {
 				nicknameInput.value = '';
 				balanceInput.value = '';
 				accountTypeSelectButton.textContent = 'Select account type...';
+				accountTypeButtons.forEach(button => button.classList.remove('selected')); // Elimina la clase de selección
+			};
 
-				// Elimina la clase de selección de todos los botones
-				accountTypeButtons.forEach(button => {
-					button.classList.remove('selected'); // Asegúrate de que 'selected' es la clase que usa para el ícono
-				});
-
-				// Opcional: Elimina el atributo disabled del botón "Next" si está presente
-				const nextButton = document.querySelector('.account-widget-footer .ynab-button');
-				// Asegúrate de que el botón "Next" esté deshabilitado
+			const resetNextButton = () => {
 				nextButton.setAttribute('disabled', '');
+			};
 
+			addAnotherButton.addEventListener('click', () => {
+				sectionOne.style.display = "";
+				sectionSuccess.style.display = "none";
+				resetFields();
+				resetNextButton();
 			});
 		});
 	
