@@ -410,8 +410,500 @@
 					</div>
 				</div>
 			</div>
-			<!-- Cuarta seccion -->
-			
+			<!-- Cuarta seccion cc-step -->
+			<div class="account-widget-step account-widget-budget-balance account-widget-cc-step">
+				<div class="account-widget-header">
+					<button aria-label="Back" title="Back" type="button">
+						<svg class="ynab-new-icon icon-back" width="16" height="16">
+							<!---->
+							<use href="#icon_sprite_chevron_left"></use>
+						</svg>
+					</button>
+					<div class="account-widget-header-title">
+						<h1>Add Unlinked Account</h1>
+						<!---->
+					</div>
+					<button aria-label="Close" title="Close" type="button">
+						<svg class="ynab-new-icon icon-close" width="16" height="16">
+							<!---->
+							<use href="#icon_sprite_close"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="account-widget-body">
+					<h3>Your credit card has an existing balance:</h3>
+					<button class="account-widget-account-list-item account-widget-account-card" disabled="" type="button">
+						<div class="account-widget-account-list-item-name-and-amount">
+							<div class="account-widget-account-list-item-name">MasterCard</div>
+							<div class="account-widget-account-list-item-amount account-widget-negative">−
+								<bdi>$</bdi>
+								1,400,000.00
+							</div>
+						</div>
+						<div class="account-widget-account-list-item-type-and-mask">
+							<div class="account-widget-account-list-item-type">
+								<svg class="ynab-new-icon y-icon-account-type" width="16" height="16">
+									<!---->
+									<use href="#icon_sprite_credit_card"></use>
+								</svg>
+								Credit Card
+							</div>
+							<div class="account-widget-account-list-item-mask">
+							
+							</div>
+						</div>
+					</button>
+					<h3>How do you plan to pay off this balance?</h3>
+					<div class="account-widget-radio-button-list">
+						<label class="radio">
+							<input name="howToBudget" type="radio" value="overTime">
+							<span>Pay it off over time</span>
+						</label>
+						<label class="radio">
+							<input name="howToBudget" type="radio" value="entireBalance">
+							<span>Pay it all at once</span>
+						</label>
+					</div>
+					<p><em>Just like you set aside money for groceries, you need to set aside money for your credit card bill.</em></p>
+					<p><em>We'll use your answer to help you figure out exactly how much you need. Don't worry—you can easily change it later!</em></p>
+				</div>
+				<div class="account-widget-footer">
+					<button class="ynab-button primary is-large" type="button">
+						Next
+					</button>
+				</div>
+			</div>
+			<!-- Quinta seccion cc-goal -->
+			<div class="account-widget-step account-widget-set-cc-goal account-widget-cc-step">
+				<div class="account-widget-header">
+					<button aria-label="Back" title="Back" type="button">
+						<svg class="ynab-new-icon icon-back" width="16" height="16">
+							<!---->
+							<use href="#icon_sprite_chevron_left"></use>
+						</svg>
+					</button>
+					<div class="account-widget-header-title">
+						<h1>Add Unlinked Account</h1>
+						<!---->
+					</div>
+					<button aria-label="Close" title="Close" type="button">
+						<svg class="ynab-new-icon icon-close" width="16" height="16">
+							<!---->
+							<use href="#icon_sprite_close"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="account-widget-body">
+					<h3>Paying off the balance over time:</h3>
+					<button class="account-widget-account-list-item account-widget-account-card" disabled="" type="button">
+						<div class="account-widget-account-list-item-name-and-amount">
+							<div class="account-widget-account-list-item-name">MasterCard</div>
+							<div class="account-widget-account-list-item-amount account-widget-negative">−
+								<bdi>$</bdi>
+								1,400,000.00
+							</div>
+						</div>
+						<div class="account-widget-account-list-item-type-and-mask">
+							<div class="account-widget-account-list-item-type">
+								
+								<svg class="ynab-new-icon y-icon-account-type" width="16" height="16">
+									<!---->
+									<use href="#icon_sprite_credit_card"></use>
+								</svg>
+								Credit Card
+							</div>
+							<div class="account-widget-account-list-item-mask"></div>
+						</div>
+					</button>
+					<h3>
+						How would you like to pay this off over time?
+					</h3>
+					<div class="account-widget-radio-button-list">
+						<label class="radio">
+							<input name="howToBudget" type="radio" value="byDate" checked>
+							<span>Pay off your balance by a specific date.</span>
+						</label>
+						<label class="radio">
+							<input name="howToBudget" type="radio" value="byAmount">
+							<span>Pay a specific amount every month until your balance is paid off.</span>
+						</label>
+					</div>
+					<hr>
+					 <h3>When do you want it paid off by?</h3>
+					<div class="account-widget-goal-target-month">
+						<label>Month</label>
+						<div class="x-select-container  ">
+							<select class="js-x-select">
+								<option value="" disabled="" selected="">Select Month</option>
+								<option value="0">
+									January
+								</option>
+								<option value="1">
+									February
+								</option>
+								<option value="2">
+									March
+								</option>
+								<option value="3">
+									April
+								</option>
+								<option value="4">
+									May
+								</option>
+								<option value="5">
+									June
+								</option>
+								<option value="6">
+									July
+								</option>
+								<option value="7">
+									August
+								</option>
+								<option value="8">
+									September
+								</option>
+								<option value="9">
+									October
+								</option>
+								<option value="10">
+									November
+								</option>
+								<option value="11">
+									December
+								</option>
+							</select>
+						</div>
+					</div>
+					<div class="account-widget-goal-target-year">
+						<label>Year</label>
+						<div class="x-select-container  ">
+							<select class="js-x-select">
+								<option value="" disabled="" selected="">Select Year</option>
+								<option value="2024">
+									2024
+								</option>
+								<option value="2025">
+									2025
+								</option>
+								<option value="2026">
+									2026
+								</option>
+								<option value="2027">
+									2027
+								</option>
+								<option value="2028">
+									2028
+								</option>
+								<option value="2029">
+									2029
+								</option>
+								<option value="2030">
+									2030
+								</option>
+								<option value="2031">
+									2031
+								</option>
+								<option value="2032">
+									2032
+								</option>
+								<option value="2033">
+									2033
+								</option>
+								<option value="2034">
+									2034
+								</option>
+								<option value="2035">
+									2035
+								</option>
+								<option value="2036">
+									2036
+								</option>
+								<option value="2037">
+									2037
+								</option>
+								<option value="2038">
+									2038
+								</option>
+								<option value="2039">
+									2039
+								</option>
+								<option value="2040">
+									2040
+								</option>
+								<option value="2041">
+									2041
+								</option>
+								<option value="2042">
+									2042
+								</option>
+								<option value="2043">
+									2043
+								</option>
+								<option value="2044">
+									2044
+								</option>
+								<option value="2045">
+									2045
+								</option>
+								<option value="2046">
+									2046
+								</option>
+								<option value="2047">
+									2047
+								</option>
+								<option value="2048">
+									2048
+								</option>
+								<option value="2049">
+									2049
+								</option>
+								<option value="2050">
+									2050
+								</option>
+								<option value="2051">
+									2051
+								</option>
+								<option value="2052">
+									2052
+								</option>
+								<option value="2053">
+									2053
+								</option>
+								<option value="2054">
+									2054
+								</option>
+								<option value="2055">
+									2055
+								</option>
+								<option value="2056">
+									2056
+								</option>
+								<option value="2057">
+									2057
+								</option>
+								<option value="2058">
+									2058
+								</option>
+								<option value="2059">
+									2059
+								</option>
+								<option value="2060">
+									2060
+								</option>
+								<option value="2061">
+									2061
+								</option>
+								<option value="2062">
+									2062
+								</option>
+								<option value="2063">
+									2063
+								</option>
+								<option value="2064">
+									2064
+								</option>
+								<option value="2065">
+									2065
+								</option>
+								<option value="2066">
+									2066
+								</option>
+								<option value="2067">
+									2067
+								</option>
+								<option value="2068">
+									2068
+								</option>
+								<option value="2069">
+									2069
+								</option>
+								<option value="2070">
+									2070
+								</option>
+								<option value="2071">
+									2071
+								</option>
+								<option value="2072">
+									2072
+								</option>
+								<option value="2073">
+									2073
+								</option>
+							</select>
+						</div>
+					</div>
+					<p><em>
+							You'll need to set aside<bdi>$</bdi>175,000.00 a month to reach this target.
+					</em></p>
+					<!---->
+					{{-- <h3>How much do you want to pay each month?</h3>
+					<div class="y-form-field field-with-error  currency-input-group">
+						<input id="ember199" class="ember-text-field ember-view y-input balance-input user-data" autocomplete="nope" autocorrect="off" spellcheck="false" autocapitalize="none"
+							inputmode="decimal" type="text">
+					</div>
+					<p><em>
+							With monthly payments of <bdi>$</bdi>30,000,000.00, it will take 1 months to pay off your balance.
+					</em></p> --}}
+					<!---->
+				</div>
+				
+				<div class="account-widget-footer">
+					<button disabled="" class="ynab-button primary is-large " type="button">
+						Next
+					</button>
+				</div>
+			</div>
+			<!-- sexta seccion cc-save -->
+			<div class="account-widget-step account-widget-save-cc account-widget-cc-step">
+				<div class="account-widget-header">
+					<button aria-label="Back" title="Back" type="button">
+						<svg class="ynab-new-icon icon-back" width="16" height="16">
+							<!---->
+							<use href="#icon_sprite_chevron_left"></use>
+						</svg>
+					</button>
+					<div class="account-widget-header-title">
+						<h1>Add Unlinked Account</h1>
+						<!---->
+					</div>
+					<button aria-label="Close" title="Close" type="button">
+						<svg class="ynab-new-icon icon-close" width="16" height="16">
+							<!---->
+							<use href="#icon_sprite_close"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="account-widget-body">
+					<h3>
+						A category for your credit card payment will be created in your budget.
+					</h3>
+					<h3>It will look like this:</h3>
+					<div class="ynab-table">
+						<div class="ynab-table-head account-widget-cc-header cc-payment user-data">
+							<div class="ynab-table-col">CREDIT CARD PAYMENTS</div>
+							<div class="ynab-table-col"></div>
+						</div>
+						<div class="ynab-table-body">
+							<div class="ynab-table-row user-data">
+								<div class="ynab-table-col cc-payment-name">Master</div>
+								<div class="ynab-table-col">
+									<span class="cc-payment-amount"><bdi>$</bdi>0.00</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br>
+					<p>
+						Once you have set aside
+						<bdi>$</bdi>
+						200,000.00 it will turn green to let you know that you're on track to pay off your existing balance! Great work!
+					</p>
+				</div>
+				<div class="account-widget-footer">
+					<button class="ynab-button primary is-large " type="button">
+						Next
+					</button>
+				</div>
+			</div>
+			<!-- Septima seccion loan-category -->
+			<div class="account-widget-step account-widget-loan-category">
+				<div class="account-widget-header">
+					<button aria-label="Back" title="Back" type="button">
+						<svg class="ynab-new-icon icon-back" width="16" height="16">
+							<!---->
+							<use href="#icon_sprite_chevron_left"></use>
+						</svg>
+					</button>
+					<div class="account-widget-header-title">
+						<h1>Optional: Pair a Category</h1>
+						<!---->
+					</div>
+					<button aria-label="Close" title="Close" type="button">
+						<svg class="ynab-new-icon icon-close" width="16" height="16">
+							<!---->
+							<use href="#icon_sprite_close"></use>
+						</svg>
+					</button>
+				</div>
+				
+				<div class="account-widget-body">
+					<label>Pair your loan with a budget category</label>
+					<p class="pairing-your-account-paragraph">Pairing with a budget category helps better show how your payments will affect your debt. Pairing works best when there is a
+						one-to-one relationship between your loan account and a budget category.</p>
+					<label>Which category do you want to pair your loan with?</label>
+					<div class="account-widget-radio-button-list">
+						<label class="radio">
+							<input name="categoryToPair" aria-label="Select an existing category" type="radio" value="existing">
+							<span>
+								<div class="account-widget-loan-category-radio-description">
+									<div class="account-widget-loan-category-radio-description-title">Select an existing category</div>
+									<div class="account-widget-loan-category-radio-description-subtitle">Pair with a category already in your budget</div>
+								</div>
+      				</span>
+						</label>
+						<label class="radio">
+							<input name="categoryToPair" aria-label="Create a new category" type="radio" value="new">
+							<span>
+								<div class="account-widget-loan-category-radio-description">
+									<div class="account-widget-loan-category-radio-description-title">Create a new category</div>
+									<div class="account-widget-loan-category-radio-description-subtitle">Pair with a brand new category</div>
+								</div>
+      				</span>
+						</label>
+					</div>
+					
+					<div class="y-form-field field-with-error ">
+						<label>Select a category</label>
+						<div class="category-select">
+							<div class="x-select-container  ">
+								<select class="js-x-select type-input account-widget-loan-category-existing-subcategory">
+									<!----><!---->
+									<option value=""></option>
+									<!---->
+									<optgroup label="Bills">
+										<option value="c8b1c0dc-6e44-4ff3-b330-a0e2ce91d498" disabled="">Ipad</option>
+										<option value="b8ec1e41-1ef9-4b2b-a132-e615daf31fa1">🍳️ Gas/Heating</option>
+										<option value="618fbc20-fd9d-4991-8933-2e1af8204b90">⚡️ Electricity</option>
+										<option value="61d334bd-e95b-4658-9ba3-35bc9457f5fa">🗑️ Garbage</option>
+										<option value="8b5e96ae-0e23-4057-ac94-3359a17ad2d9">💧 Water</option>
+										<option value="b9593ebd-df1b-4b9e-8b85-6e4b6f01b5cf">📱 Phone</option>
+										<option value="dbd5d942-f4f7-494a-b5a8-ac4fbef580c8">💻 Internet</option>
+										<option value="5b6f6cf5-f2a3-4da5-9813-b615e5a04217">📺 TV streaming</option>
+									</optgroup>
+									<optgroup label="Needs">
+										<option value="9d23d567-48b3-4372-acc5-5ee829b2013a">🛒 Groceries</option>
+										<option value="2d6b1de9-52bb-4fd9-9284-104faf64359e">🚈 Train/Bus fare</option>
+										<option value="4298fbee-7a13-4627-b153-ff288de63449">👖 Clothing</option>
+										<option value="53f2ba3b-1ebc-427b-bb23-7be54a45b24f">💆 Personal Care</option>
+										<option value="f1999a65-9aad-41ef-b472-8a5e18fa27b2">🛠️ Home maintenance</option>
+										<option value="59fc4083-5b2d-43cc-b8e1-bc1c6e905171">😌 Emergency fund</option>
+										<option value="84ada95f-40fa-4825-93ca-74ca79008a54">💰 Retirement</option>
+										<option value="2ef63ce0-2cfc-4820-a5ac-8985dd285dcf">📈 Investments</option>
+									</optgroup>
+									<optgroup label="Wants">
+										<option value="24c64b87-02b8-4b76-a9fa-10461a359383">🍽️ Dining out</option>
+										<option value="83fbede7-f1c6-4e2f-a8ba-1b6074073fa2">🍿 Entertainment</option>
+										<option value="665cb729-1e61-438c-82e6-9030ca0b9a52">🏝️ Vacation</option>
+										<option value="a7c8d974-ff61-452f-bd83-51ea24208710">🪴 Hobbies</option>
+										<option value="cbd57fb0-14ba-4c40-85eb-9d0ea3392959">🎁 Gifts</option>
+									</optgroup>
+								
+								</select>
+							</div>
+						</div>
+						<!---->
+					</div>
+					<!---->
+				</div>
+				<div class="account-widget-footer">
+					<button class="ynab-button secondary is-large  skip-pairing" type="button">
+						Skip
+					</button>
+					<button disabled="" class="ynab-button primary is-large " type="button">
+						Next
+					</button>
+				</div>
+			</div>
 			<!-- Sección Success -->
 			<div class="account-widget-step account-widget-success-screen">
 				<div class="account-widget-header">
@@ -492,6 +984,8 @@
 			const sectionOne = document.querySelector('.account-widget-select-linked-unlinked');
 			const sectionTwo = document.querySelector('.account-widget-step:nth-of-type(2)');
 			const sectionThree = document.querySelector('.account-widget-step:nth-of-type(3)');
+			const sectionFour = document.querySelector('.account-widget-step:nth-of-type(4)');
+			const sectionFive = document.querySelector('.account-widget-step:nth-of-type(5)');
 			const accountTypeSelectButton = document.querySelector('.account-type-select-button .button-text');
 			const accountTypeButtons = document.querySelectorAll('.account-widget-list-button');
 			const accountLoan = document.querySelector('.account-loan');
@@ -520,6 +1014,14 @@
 						accountLoan.style.display = 'none';
 						accountBudget.style.display = '';
 						resetFields();
+					} else if (sectionFour.style.display === '' || sectionFour.style.display === 'block') {
+						// CreditCar a accountBudget
+						showSection(sectionTwo);
+						accountBudget.style.display = '';
+					} else if (sectionFive.style.display === '' || sectionFive.style.display === 'block') {
+						// set-cc-goal a Cbudget-balance
+						sectionFour.style.display = '';
+						selectFirstRadioButton(sectionFour);
 					}
 				});
 			});
@@ -599,6 +1101,7 @@
 			});
 		});
 
+
 		// 4. Aplica indicador a botones
 		document.querySelectorAll('.account-widget-list-button').forEach(button => {
 			button.addEventListener('click', function () {
@@ -614,19 +1117,45 @@
 			});
 		});
 
-		// 5. Activa success
+		// 5. Manejo botno Next opciones varias (Activa success
 		document.addEventListener('DOMContentLoaded', function () {
 			const buttonNext = document.querySelector('.account-widget-footer .is-large');
 			const sectionTwo = document.querySelector('.account-widget-step:nth-of-type(2)');
 			const sectionSuccess = document.querySelector('.account-widget-success-screen');
+			const sectionCreditCard = document.querySelector('.account-widget-budget-balance');
+			const accountTypeButtons = document.querySelectorAll('.account-widget-list-button');
+			const sectionLoanCategory = document.querySelector('.account-widget-loan-category');
+
+			// Variable para almacenar el tipo de cuenta seleccionado
+			let selectedAccountType = '';
+			let selectedCategory = '';
+
+			// Establece el tipo de cuenta seleccionado cuando se hace clic en un botón de tipo de cuenta
+			accountTypeButtons.forEach(button => {
+				button.addEventListener('click', function () {
+					selectedAccountType = this.getAttribute('data-account-type');
+					selectedCategory = this.getAttribute('data-category');
+				});
+			});
 
 			buttonNext.addEventListener('click', () => {
-				sectionTwo.style.display = "none";
-				sectionSuccess.style.display = "";
-
+				// Controla la visibilidad de las secciones basado en el tipo de cuenta
+				if (selectedCategory === "loan") {
+					sectionTwo.style.display = 'none';
+					sectionLoanCategory.style.display = "";
+					selectFirstRadioButton(sectionLoanCategory);
+				} else if (selectedAccountType === "CreditCard") {
+					sectionTwo.style.display = "none";
+					sectionCreditCard.style.display = "";
+					selectFirstRadioButton(sectionCreditCard);
+				} else {
+					sectionTwo.style.display = "none";
+					sectionSuccess.style.display = ""; // Muestra la sección de éxito
+				}
 			});
+			
 		});
-
+		
 		// 6. Cierra el modal
 		document.addEventListener('DOMContentLoaded', function () {
 			const closeButtons = document.querySelectorAll('button[aria-label="Close"]');
@@ -709,6 +1238,29 @@
 				resetNextButton();
 			});
 		});
+
+		// Credit Card Bonto Next
+		document.addEventListener('DOMContentLoaded', () => {
+			const buttonNext = document.querySelector('.account-widget-cc-step .account-widget-footer');
+			const sectionFour = document.querySelector('.account-widget-budget-balance');
+			const sectionFive = document.querySelector('.account-widget-set-cc-goal');
+
+			buttonNext.addEventListener('click', () => {
+				sectionFour.style.display = "none";
+				sectionFive.style.display = "";
+				selectFirstRadioButton(sectionFive);
+			});
+			
+		});
+
+		function selectFirstRadioButton(section) {
+			const firstRadioButton = section.querySelector('.account-widget-radio-button-list input[type="radio"]');
+			if (firstRadioButton) {
+				firstRadioButton.checked = true;
+				// Dispara un evento change para asegurar que cualquier cambio relacionado se actualice
+				firstRadioButton.dispatchEvent(new Event('change'));
+			}
+		}
 	
 	</script>
 
