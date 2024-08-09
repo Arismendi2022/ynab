@@ -1294,10 +1294,6 @@ h1 {
 	white-space: nowrap;
 	transition: background-color .3s ease;
 }
-button {
-	font-size: 100%;
-	margin: 0;
-}
 ul.budget-view-buttons li .view-button-all.selected:hover {
 	background-color: var(--viewsNeutralBackgroundSelectedHover);
 }
@@ -1719,14 +1715,6 @@ button {
 	border: 0;
 	padding: 0;
 }
-button, html input[type="button"], input[type="reset"], input[type="submit"] {
-	-webkit-appearance: button;
-	cursor: pointer;
-	*overflow: visible;
-}
-button, select {
-	text-transform: none;
-}
 .modal-budget-settings .ynab4-migration .button .ynab-new-icon {
 	color: var(--labelSecondary);
 }
@@ -1737,10 +1725,6 @@ button, select {
 	position: relative;
 	margin-right: .3rem;
 	overflow: visible;
-}
-.ynab-new-icon {
-	fill: currentColor;
-	stroke: none;
 }
 .modal-fresh .modal-fresh-body {
 	line-height: 1.5;
@@ -1779,26 +1763,8 @@ form {
 	width: 100%;
 	border-radius: .25rem;
 }
-input {
-	background-color: var(--inputBackground);
-}
-
-input {
-	color: var(--labelPrimary);
-}
-
-input {
-	line-height: normal;
-}
-input {
-	font-size: 100%;
-}
-button, input, select {
-	vertical-align: baseline; /*  */
-}
-.x-select-container select:focus,
-input:focus {
-	border: .0625rem solid var(--inputBorderActive) !important;
+.x-select-container select:focus, input:focus {
+	border: .0625rem solid var(--inputBorderActive);
 	outline: 0;
 }
 .modal-budget-settings .modal-budget-settings-currency-fields {
@@ -1856,10 +1822,6 @@ select {
 	font-size: .875rem;
 	font-weight: 500;
 	line-height: 1.2;
-}
-button,
-select {
-	text-transform: none;
 }
 .modal-fresh .modal-fresh-footer {
 	align-items: center;
@@ -2062,6 +2024,7 @@ select {
 .account-widget .ynab-new-icon {
 	color: var(--actionPrimary);
 }
+/* || ACCOUNT WIDGET BODY */
 .account-widget .account-widget-step .account-widget-body {
 	flex: 1 1 auto;
 	overflow: auto;
@@ -2071,6 +2034,83 @@ select {
 	display: flex;
 	flex-direction: column;
 }
+.account-widget p {
+	margin: .3rem 0 1rem;
+	color: var(--labelPrimary);
+}
+.account-widget .account-widget-add-unlinked-account .header-strong {
+	font-weight: 600;
+}
+
+/* || FORM-LABEL */
+.account-widget .y-form-field label:first-of-type {
+	margin-bottom: .25rem;
+}
+.modal-generic label {
+	display: block;
+	padding: .2625rem 0 .0875rem;
+	width: 100%;
+}
+.modal-generic label {
+	font-size: .875rem;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+/* || INPUT */
+.account-widget input[type="text"] {
+	border-color: var(--actionSecondaryBorder);
+	border-radius: .5rem;
+	height: 3rem;
+}
+.account-widget .account-widget-edit-linked-account .account-list-section, .account-widget .account-widget-edit-linked-account .account-list-section label, .account-widget .account-widget-edit-linked-account .y-form-field, .account-widget input {
+	margin-bottom: .25rem !important;
+}
+.modal-generic input, .modal-generic select, .modal-generic textarea, .modal-popup input, .modal-popup textarea {
+	border: .0625rem solid #d2d8de;
+	border: .0625rem solid var(--inputBorder);
+	width: 100%;
+	border-radius: .25rem;
+}
+.modal-generic input {
+	background-color: var(--inputBackground);
+	height: 2rem;
+	margin-bottom: .39375rem;
+	padding: .25rem .5rem;
+}
+.account-widget input:focus-visible {
+	border: .0625rem solid #3b5eda;
+	border: .0625rem solid var(--actionPrimary);
+}
+.x-select-container select:focus, input:focus {
+	border: .0625rem solid #3b5eda;
+	border: .0625rem solid var(--inputBorderActive);
+	outline: 0;
+}
+
+
+/* || BUTTON */
+.account-widget .account-type-select-button {
+	border: .0625rem solid var(--actionSecondaryBorder);
+	background-color: var(--inputBackground);
+	align-items: center;
+	border-radius: .5em;
+	display: flex;
+	height: 3rem;
+	justify-content: space-between;
+	margin-bottom: .25rem;
+	padding: 0 .5em;
+	width: 100%;
+}
+/* || APAN */
+.account-widget .account-type-select-button svg {
+	padding: .2rem;
+}
+
+
+
+
+/* =============================================================================== */
 .account-widget .account-widget-select-linked-unlinked .select-linked-unlinked-box {
 	background: var(--buttonSecondaryBackground);
 	border-radius: .25rem;
@@ -2099,10 +2139,7 @@ select {
 	color: var(--labelPrimary);
 	margin-bottom: 0;
 }
-.account-widget p {
-	margin: .3rem 0 1rem;
-	color: var(--labelPrimary);
-}
+
 .account-widget .separator-text {
 	border-bottom: 1px solid rgba(0, 0, 0, .1);
 	border-bottom: 1px solid var(--separatorSubdued);
@@ -2140,60 +2177,6 @@ select {
 	background: var(--buttonSecondaryBackgroundActive);
 }
 
-/* || ACCOUNT WIDGET BODY */
-.account-widget .account-widget-add-unlinked-account .header-strong {
-	font-weight: 600;
-}
-.account-widget .y-form-field label:first-of-type {
-	margin-bottom: .25rem;
-}
-.modal-generic label {
-	display: block;
-	padding: .2625rem 0 .0875rem;
-	width: 100%;
-}
-.modal-generic label {
-	font-size: .875rem;
-	font-weight: 600;
-	line-height: 1.2;
-}
-.account-widget input[type="text"] {
-	border-color: var(--actionSecondaryBorder);
-	border-radius: .5rem;
-	height: 3rem;
-}
-.account-widget input {
-	margin-bottom: .25rem !important;
-}
-.modal-generic input, .modal-generic select, .modal-generic textarea, .modal-popup input, .modal-popup textarea {
-	border: .0625rem solid var(--inputBorder);
-	width: 100%;
-	border-radius: .25rem;
-}
-.modal-generic input {
-	background-color: var(--inputBackground);
-	height: 2rem;
-	margin-bottom: .39375rem;
-	padding: .25rem .5rem !important;
-}
-.account-widget input:focus-visible {
-	border: .0625rem solid var(--actionPrimary);
-}
-.account-widget .account-type-select-button {
-	border: .0625rem solid var(--actionSecondaryBorder);
-	background-color: var(--inputBackground);
-	align-items: center;
-	border-radius: .5em;
-	display: flex;
-	height: 3rem;
-	justify-content: space-between;
-	margin-bottom: .25rem;
-	padding: 0 .5em;
-	width: 100%;
-}
-.account-widget .account-type-select-button svg {
-	padding: .2rem;
-}
 
 /* || FOOTER */
 .account-widget .account-widget-step .account-widget-footer {
@@ -2676,7 +2659,7 @@ input[type="checkbox"], input[type="radio"] {
 	border: .125rem solid;
 	border-color: var(--actionPrimary);
 	border-radius: .25rem;
-	content: '';
+	content: "";
 	display: block;
 	height: 1.375rem;
 	left: -.1875rem;
@@ -2686,7 +2669,7 @@ input[type="checkbox"], input[type="radio"] {
 .radio input[type="radio"] + span::before {
 	border-radius: .5rem;
 	box-sizing: border-box;
-	content: '';
+	content: "";
 	display: block;
 	height: .75rem;
 	left: .25rem;
@@ -2746,7 +2729,7 @@ input[type="checkbox"], input[type="radio"] {
 	padding: 0 .5em;
 }
 .account-widget .x-select-container::after {
-	content: '';
+	content: "";
 	height: 0;
 	pointer-events: none;
 	position: absolute;
