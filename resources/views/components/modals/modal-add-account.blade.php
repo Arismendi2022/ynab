@@ -130,7 +130,8 @@
 					</p>
 					<div class="y-form-field field-with-error ">
 						<label>Give it a nickname</label>
-						<input id="ember146" class="ember-text-field ember-view y-input name-input user-data" autocomplete="nope" autocorrect="off" autocapitalize="words" type="text">
+						<input id="ember146" class="ember-text-field ember-view y-input name-input user-data" autocomplete="nope" autocorrect="off" spellcheck="false"
+							autocapitalize="words" type="text">
 					</div>
 					<div class="y-form-field field-with-error ">
 						<label>What type of account are you adding?</label>
@@ -986,6 +987,7 @@
 			const sectionThree = document.querySelector('.account-widget-step:nth-of-type(3)');
 			const sectionFour = document.querySelector('.account-widget-step:nth-of-type(4)');
 			const sectionFive = document.querySelector('.account-widget-step:nth-of-type(5)');
+			const sectionSix = document.querySelector('.account-widget-step:nth-of-type(6)');
 			const accountTypeSelectButton = document.querySelector('.account-type-select-button .button-text');
 			const accountTypeButtons = document.querySelectorAll('.account-widget-list-button');
 			const accountLoan = document.querySelector('.account-loan');
@@ -1022,6 +1024,10 @@
 						// set-cc-goal a Cbudget-balance
 						sectionFour.style.display = '';
 						selectFirstRadioButton(sectionFour);
+					} else if (sectionSix.style.display === '' || sectionSix.style.display === 'block') {
+						// Save a Cbudget-balance 
+						sectionFive.style.display = '';
+						selectFirstRadioButton(sectionFive);
 					}
 				});
 			});
@@ -1239,7 +1245,7 @@
 			});
 		});
 
-		// 8. SEccion Credit Card budget-balance, cc-goal, save-cc, success
+		// 8. Seccion Credit Card budget-balance, cc-goal, save-cc, success
 		document.addEventListener('DOMContentLoaded', () => {
 			const steps = [
 				{ current: '.account-widget-cc-step .account-widget-footer', next: '.account-widget-set-cc-goal' },
@@ -1265,16 +1271,33 @@
 						// Acciones específicas para la segunda sección
 						if (nextSection.classList.contains('account-widget-set-cc-goal')) {
 							selectFirstRadioButton(nextSection);
+							// Selecciona los elementos necesarios
+							const monthSelect = nextSection.querySelector('.account-widget-goal-target-month .js-x-select');
+							const yearSelect = nextSection.querySelector('.account-widget-goal-target-year .js-x-select');
 							const nextButton = nextSection.querySelector('.ynab-button');
-							if (nextButton) {
-								nextButton.removeAttribute('disabled');
-							}
+
+							// Función para actualizar el estado del botón 'Next'
+							const updateNextButtonState = () => {
+								if (monthSelect.value && yearSelect.value) {
+									nextButton.removeAttribute('disabled');
+								} else {
+									nextButton.setAttribute('disabled', 'disabled');
+								}
+							};
+
+							// Añade eventos de cambio a ambos selects
+							monthSelect.addEventListener('change', updateNextButtonState);
+							yearSelect.addEventListener('change', updateNextButtonState);
+
+							// Inicializa el estado del botón en caso de que ya haya valores seleccionados al cargar
+							updateNextButtonState();
 						}
 					});
 				}
 			});
 		});
-		
+
+
 		<!---->
 	 	<!---->
 		//Funcion para activar radio buttons

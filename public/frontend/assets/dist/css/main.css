@@ -1798,7 +1798,7 @@ button, input, select {
 }
 .x-select-container select:focus,
 input:focus {
-	border: .0625rem solid var(--inputBorderActive);
+	border: .0625rem solid var(--inputBorderActive) !important;
 	outline: 0;
 }
 .modal-budget-settings .modal-budget-settings-currency-fields {
@@ -2194,6 +2194,7 @@ select {
 .account-widget .account-type-select-button svg {
 	padding: .2rem;
 }
+
 /* || FOOTER */
 .account-widget .account-widget-step .account-widget-footer {
 	border-top: 1px solid var(--separatorSubdued);
@@ -2671,9 +2672,6 @@ input[type="checkbox"], input[type="radio"] {
 	*width: 13px;
 }
 /* || PSEUDO-ELEMENT */
-.radio input[type="radio"]:checked + span::before {
-	background: var(--actionPrimary) !important;
-}
 .radio input[type="radio"] + span::after {
 	border: .125rem solid;
 	border-color: var(--actionPrimary);
@@ -2700,6 +2698,10 @@ input[type="checkbox"], input[type="radio"] {
 	top: .225rem;
 	width: .75rem;
 }
+.radio input[type="radio"]:checked + span::before {
+	background: var(--actionPrimary);
+}
+
 /*  || SPAN */
 .radio input[type="radio"] + span {
 	display: inline-block;
