@@ -1239,20 +1239,45 @@
 			});
 		});
 
-		// Credit Card Bonto Next
+		// 8. SEccion Credit Card budget-balance, cc-goal, save-cc, success
 		document.addEventListener('DOMContentLoaded', () => {
-			const buttonNext = document.querySelector('.account-widget-cc-step .account-widget-footer');
-			const sectionFour = document.querySelector('.account-widget-budget-balance');
-			const sectionFive = document.querySelector('.account-widget-set-cc-goal');
+			const steps = [
+				{ current: '.account-widget-cc-step .account-widget-footer', next: '.account-widget-set-cc-goal' },
+				{ current: '.account-widget-set-cc-goal .ynab-button', next: '.account-widget-save-cc' },
+				{ current: '.account-widget-save-cc .ynab-button', next: '.account-widget-success-screen' }
+			];
 
-			buttonNext.addEventListener('click', () => {
-				sectionFour.style.display = "none";
-				sectionFive.style.display = "";
-				selectFirstRadioButton(sectionFive);
+			steps.forEach(step => {
+				const buttonNext = document.querySelector(step.current);
+				const nextSection = document.querySelector(step.next);
+
+				if (buttonNext && nextSection) {
+					buttonNext.addEventListener('click', () => {
+						// Oculta la sección actual
+						const currentSection = buttonNext.closest('.account-widget-step');
+						if (currentSection) {
+							currentSection.style.display = "none";
+						}
+
+						// Muestra la siguiente sección
+						nextSection.style.display = "";
+
+						// Acciones específicas para la segunda sección
+						if (nextSection.classList.contains('account-widget-set-cc-goal')) {
+							selectFirstRadioButton(nextSection);
+							const nextButton = nextSection.querySelector('.ynab-button');
+							if (nextButton) {
+								nextButton.removeAttribute('disabled');
+							}
+						}
+					});
+				}
 			});
-			
 		});
-
+		
+		<!---->
+	 	<!---->
+		//Funcion para activar radio buttons
 		function selectFirstRadioButton(section) {
 			const firstRadioButton = section.querySelector('.account-widget-radio-button-list input[type="radio"]');
 			if (firstRadioButton) {
