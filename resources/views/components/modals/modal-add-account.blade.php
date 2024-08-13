@@ -128,10 +128,17 @@
 						<span class="header-strong">Let's go!</span>
 						And don’t worry—if you change your mind, you can link your account at any time.
 					</p>
-					<div class="y-form-field field-with-error ">
+					 <div class="y-form-field field-with-error ">
 						<label>Give it a nickname</label>
 						<input id="ember146" class="ember-text-field ember-view y-input name-input user-data" autocomplete="nope" autocorrect="off" spellcheck="false"
 							autocapitalize="words" type="text">
+					</div>
+					<div class="y-form-field field-with-error has-errors" style="display: none">
+						<label>Give it a nickname</label>
+						<input id="ember162" class="ember-text-field ember-view y-input name-input user-data" autocomplete="nope" autocorrect="off" spellcheck="false" autocapitalize="words" type="text">
+						<ul class="errors">
+							<li>This account name already exists.</li>
+						</ul>
 					</div>
 					<div class="y-form-field field-with-error ">
 						<label>What type of account are you adding?</label>
@@ -749,7 +756,6 @@
 					</em></p> --}}
 					<!---->
 				</div>
-				
 				<div class="account-widget-footer">
 					<button disabled="" class="ynab-button primary is-large " type="button">
 						Next
@@ -828,7 +834,6 @@
 						</svg>
 					</button>
 				</div>
-				
 				<div class="account-widget-body">
 					<label>Pair your loan with a budget category</label>
 					<p class="pairing-your-account-paragraph">Pairing with a budget category helps better show how your payments will affect your debt. Pairing works best when there is a
@@ -854,7 +859,6 @@
       				</span>
 						</label>
 					</div>
-					
 					<div class="y-form-field field-with-error ">
 						<label>Select a category</label>
 						<div class="category-select">
@@ -1099,11 +1103,12 @@
 
 				if (allFieldsFilled && isAccountTypeSelected) {
 					nextButton.removeAttribute('disabled');
+					
 				} else {
 					nextButton.setAttribute('disabled', 'true');
 				}
 			}
-
+			
 			accountTypeButtons.forEach(button => {
 				button.addEventListener('click', function () {
 					selectedCategory = this.getAttribute('data-category');
@@ -1142,7 +1147,7 @@
 			});
 		});
 
-		// 5. Manejo boton Next opciones varias (Activa success
+		// 5. Manejo boton Next opciones varias (Activa success)
 		document.addEventListener('DOMContentLoaded', function () {
 			const buttonNext = document.querySelector('.account-widget-footer .ynab-button.primary.is-large');
 			const buttonLoanNext = document.querySelector('.account-widget-loan-category .ynab-button.primary.is-large');
@@ -1168,6 +1173,7 @@
 			// Manejar clic para el botón Next
 			buttonNext.addEventListener('click', () => {
 				handleNextButtonClick();
+				
 			});
 
 			// Manejar clic para el botón Next en la categoría de préstamos
