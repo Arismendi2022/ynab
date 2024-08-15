@@ -128,15 +128,14 @@
 						<span class="header-strong">Let's go!</span>
 						And don’t worry—if you change your mind, you can link your account at any time.
 					</p>
-					<div class="y-form-field field-with-error ">
+					 <div class="y-form-field field-with-error ">
 						<label>Give it a nickname</label>
-						<input id="ember162" class="ember-text-field ember-view y-input name-input user-data" autocomplete="nope" autocorrect="off" spellcheck="false"
+						<input id="ember146" class="ember-text-field ember-view y-input name-input user-data" autocomplete="nope" autocorrect="off" spellcheck="false"
 							autocapitalize="words" type="text">
 					</div>
 					<div class="y-form-field field-with-error has-errors" style="display: none">
 						<label>Give it a nickname</label>
-						<input id="ember163" class="ember-text-field ember-view y-input name-input user-data" autocomplete="nope" autocorrect="off" spellcheck="false" autocapitalize="words"
-							type="text">
+						<input id="ember162" class="ember-text-field ember-view y-input name-input user-data" autocomplete="nope" autocorrect="off" spellcheck="false" autocapitalize="words" type="text">
 						<ul class="errors">
 							<li>This account name already exists.</li>
 						</ul>
@@ -160,7 +159,7 @@
 						<label>
 							What is your current account balance?
 						</label>
-						<input id="ember164" class="ember-text-field ember-view y-input balance-input user-data" autocomplete="nope" autocorrect="off" spellcheck="false" autocapitalize="none"
+						<input id="ember147" class="ember-text-field ember-view y-input balance-input user-data" autocomplete="nope" autocorrect="off" spellcheck="false" autocapitalize="none"
 							inputmode="decimal" type="text">
 						<!---->
 					</div>
@@ -173,7 +172,7 @@
 									<label>
 										Current account balance
 									</label>
-									<input id="ember165" class="ember-text-field ember-view y-input current-account-balance-input user-data" autocomplete="nope" autocorrect="off" spellcheck="false"
+									<input id="ember161" class="ember-text-field ember-view y-input current-account-balance-input user-data" autocomplete="nope" autocorrect="off" spellcheck="false"
 										autocapitalize="none" inputmode="decimal" type="text">
 									<!---->
 								</div>
@@ -182,7 +181,7 @@
 								<div class="y-form-field field-with-error  currency-input-group interest-input-group">
 									<label>Interest rate</label>
 									<label class="input-icon">%</label>
-									<input id="ember166" class="ember-text-field ember-view y-input interest-rate-input user-data" autocomplete="nope" autocorrect="off" spellcheck="false"
+									<input id="ember162" class="ember-text-field ember-view y-input interest-rate-input user-data" autocomplete="nope" autocorrect="off" spellcheck="false"
 										autocapitalize="none" inputmode="decimal" type="text">
 									<!---->
 								</div>
@@ -193,7 +192,7 @@
 							<label>
 								Monthly payment required by your lender
 							</label>
-							<input id="ember167" class="ember-text-field ember-view y-input minimum-payment-input user-data" autocomplete="nope" autocorrect="off" spellcheck="false"
+							<input id="ember163" class="ember-text-field ember-view y-input minimum-payment-input user-data" autocomplete="nope" autocorrect="off" spellcheck="false"
 								autocapitalize="none" inputmode="decimal" type="text">
 							<!---->
 						</div>
@@ -1076,8 +1075,6 @@
 			const interestRateInput = document.querySelector('.interest-rate-input');
 			const minimumPaymentInput = document.querySelector('.minimum-payment-input');
 
-			let selectedCategory = "";
-
 			// Map de campos requeridos por categoría
 			const requiredFields = {
 				budget: [nicknameInput, balanceInput],
@@ -1088,11 +1085,9 @@
 				if (category === 'loan') {
 					accountLoan.style.display = '';
 					accountBudget.style.display = 'none';
-					//processBudgetAccount();
 				} else {
 					accountLoan.style.display = 'none';
 					accountBudget.style.display = '';
-					//processLoanAccount();
 				}
 			}
 
@@ -1108,12 +1103,12 @@
 
 				if (allFieldsFilled && isAccountTypeSelected) {
 					nextButton.removeAttribute('disabled');
-
+					
 				} else {
 					nextButton.setAttribute('disabled', 'true');
 				}
 			}
-
+			
 			accountTypeButtons.forEach(button => {
 				button.addEventListener('click', function () {
 					selectedCategory = this.getAttribute('data-category');
@@ -1136,7 +1131,7 @@
 				input.addEventListener('input', checkInputs);
 			});
 		});
-
+		
 		// 4. Aplica indicador a botones
 		document.querySelectorAll('.account-widget-list-button').forEach(button => {
 			button.addEventListener('click', function () {
@@ -1178,10 +1173,10 @@
 			// Manejar clic para el botón Next
 			buttonNext.addEventListener('click', () => {
 				handleNextButtonClick();
-
+				
 			});
 
-			// Manejar click para el botón Next en la categoría de préstamos
+			// Manejar clic para el botón Next en la categoría de préstamos
 			buttonLoanNext.addEventListener('click', () => {
 				sections.sectionLoanCategory.style.display = 'none';
 				sections.sectionSuccess.style.display = ''; // Mostrar la sección de éxito
@@ -1199,7 +1194,6 @@
 				enableNextButton();
 			}
 
-			// funcion para budget
 			function handleNextButtonClick() {
 				sections.sectionTwo.style.display = 'none';
 
@@ -1207,10 +1201,9 @@
 					sections.sectionLoanCategory.style.display = '';
 					selectFirstRadioButton(sections.sectionLoanCategory);
 				} else if (selectedAccountType === "CreditCard") {
-					sections.sectionCreditCard.style.display = ''; // segundo paso tarjeta credito
+					sections.sectionCreditCard.style.display = '';
 					selectFirstRadioButton(sections.sectionCreditCard);
 				} else {
-					saveBudget();
 					sections.sectionSuccess.style.display = ''; // Mostrar la sección de éxito
 				}
 			}
@@ -1282,7 +1275,7 @@
 				resetNextButton();
 			});
 		});
-
+		
 		// 8. Seccion Credit Card budget-balance, cc-goal, save-cc, success
 		document.addEventListener('DOMContentLoaded', () => {
 			const steps = [
@@ -1344,35 +1337,6 @@
 				// Dispara un evento change para asegurar que cualquier cambio relacionado se actualice
 				firstRadioButton.dispatchEvent(new Event('change'));
 			}
-		}
-
-		function saveBudget() {
-			//SAVE ACCOUNT BUDGET
-			const nicknameInput = document.querySelector('.name-input');
-			const currentBalanceInput = document.querySelector('.balance-input');
-			const selectedButton = document.querySelector('.account-widget-list-button.selected');
-
-			// Captura los valores de los inputs
-			const nickname = nicknameInput.value;
-			const balance = currentBalanceInput.value;
-			const accountType = selectedButton.dataset.accountType;
-			const category = selectedButton.dataset.category;
-
-			// Muestra los valores en la consola
-			console.log(`Nickname: ${nickname}`);
-			console.log('Tipo de cuenta seleccionada:', accountType);
-			console.log('Categoría seleccionada:', category);
-			console.log(`Current Balance: ${balance}`);
-		}
-
-		function saveCreditCard() {
-			//SAVE CREDIT CARD
-
-		}
-
-		function saveLoan() {
-			//SAVE LOAN
-
 		}
 	
 	</script>
