@@ -3,6 +3,8 @@
 	use App\Http\Controllers\UserController;
 	use App\Http\Controllers\MainController;
 	use Illuminate\Support\Facades\Route;
+	use App\Http\Controllers\AccountController;
+	
 	
 	Route::get('/', function () {
 		return redirect()->route('users.sign_in');
@@ -47,4 +49,17 @@
 		});
 		
 	});
+	
+	//Grupo Add Account
+	Route::prefix('account')->name('account.')->group(function() {
+		Route::controller(AccountController::class)->group(function(){
+			Route::get('/add',[AccountController::class,'addAccount'])->name('add-account');
+			Route::post('/create',[AccountController::class,'createAccount'])->name('create-account'); // la otra opcion es agregar en el grupo main.
+			
+		});
+	});
+	
+	
+	
+	
 	

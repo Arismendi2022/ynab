@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 						$table->string('name')->unique();
 						$table->string('account_type');
-	          $table->string('data_category');
+	                    $table->string('account_category');
 						$table->decimal('balance',10,2);
 						$table->decimal('interest',10,2)->nullable();
 						$table->decimal('payment',10,2)->nullable();

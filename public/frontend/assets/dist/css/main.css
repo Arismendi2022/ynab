@@ -2901,6 +2901,17 @@ input[type="checkbox"], input[type="radio"] {
 	color: var(--labelSecondary);
 }
 
+.text-danger {
+  color: var(--labelNegative, #C72C1E);
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.007em;
+  margin-top: 0.4rem;
+  text-align: center;
+  width: 100%;
+}
 
 
 
@@ -2918,7 +2929,8 @@ input[type="checkbox"], input[type="radio"] {
 
 
 
-                   
+
+
 
 
 
