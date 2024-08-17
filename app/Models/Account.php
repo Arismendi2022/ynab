@@ -10,12 +10,13 @@ class Account extends Model
     use HasFactory;
 
 	protected $fillable = [
-		'name',
+		'nickname',
 		'account_type',
 		'account_category',
 		'balance',
 		'interest',
 		'payment',
+    'payoff_date',
 		'month',
 		'year',
 	];

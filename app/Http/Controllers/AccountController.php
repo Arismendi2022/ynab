@@ -11,7 +11,7 @@
     public function createAccount(Request $request){
       //Validate
       $request->validate([
-        'nickname' => 'unique:accounts,name',
+        'nickname' => 'unique:accounts,nickname',
         'balance'  => ['required',new ValidateNumber],
       ],[
         'nickname.unique'  => 'This account name already exists.',
@@ -20,18 +20,21 @@
       ]);
 
       //Save Account
-      $account                   = new Account();
-      $account->name             = $request->nickname;
-      $account->account_type     = $request->accountType;
-      $account->account_category = $request->accountCategory;
-      $account->balance          = $request->balance;
-      $saved                     = $account->save();
+      $empData = [
+        'nickname'         => $request->nickname,
+        'account_type'     => $request->accountType,
+        'account_category' => $request->accountCategory,
+        'balance'          => $request->balance,
+      ];
+
+      $account = Account::create($empData);
 
       return response()->json([
         'success' => true,
         'account' => $account,
       ],201);
 
-
     } //End Method
+
+
   }

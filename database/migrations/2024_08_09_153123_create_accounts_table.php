@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
-						$table->string('name')->unique();
+						$table->string('nickname')->unique();
 						$table->string('account_type');
-	                    $table->string('account_category');
+            $table->string('account_category');
 						$table->decimal('balance',10,2);
 						$table->decimal('interest',10,2)->nullable();
 						$table->decimal('payment',10,2)->nullable();
+            $table->date('payoff_date')->nullable();
 						$table->string('month')->nullable();
 						$table->string('year')->nullable();
             $table->timestamps();

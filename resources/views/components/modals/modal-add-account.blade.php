@@ -1014,6 +1014,10 @@
       const backButtons = document.querySelectorAll('button[aria-label="Back"]');
       const modalActive = document.getElementById('ember145');
       const sections = Array.from(document.querySelectorAll('.account-widget-step'));
+      const normalDiv = document.querySelector('.y-form-field:not(.has-errors)');
+      const errorDiv = document.querySelector('.y-form-field.has-errors');
+      const errores = document.querySelectorAll('.error-text');
+
       const sectionMap = {
         1: document.querySelector('.account-widget-select-linked-unlinked'),
         2: sections[1],
@@ -1032,6 +1036,12 @@
         modalActive.querySelectorAll('input').forEach(input => input.value = '');
         accountTypeSelectButton.textContent = 'Select account type...';
         accountTypeButtons.forEach(button => button.classList.remove('selected'));
+        if (normalDiv) normalDiv.style.display = '';
+        if (errorDiv) errorDiv.style.display = 'none';
+        // Limpia el contenido de cada elemento de error
+        errores.forEach(function (error) {
+          error.textContent = '';
+        });
       };
 
       const showSection = (sectionId) => {
@@ -1250,6 +1260,9 @@
       const accountLoan = document.querySelector('.account-loan');
       const accountBudget = document.querySelector('.currency-input-group');
       const scrollContainer = document.querySelector('.account-widget-body .account-type-select');
+      const normalDiv = document.querySelector('.y-form-field:not(.has-errors)');
+      const errorDiv = document.querySelector('.y-form-field.has-errors');
+      const errores = document.querySelectorAll('.error-text');
 
       const resetModal = () => {
         modalActive.querySelectorAll('input').forEach(input => input.value = '');
@@ -1259,8 +1272,16 @@
         document.querySelector('.account-widget-footer .ynab-button').setAttribute('disabled', '');
         accountLoan.style.display = 'none';
         accountBudget.style.display = '';
+        if (normalDiv) normalDiv.style.display = '';
+        if (errorDiv) errorDiv.style.display = 'none';
         if (scrollContainer) scrollContainer.scrollTop = 0;
+
+        // Limpia el contenido de cada elemento de error
+        errores.forEach(function (error) {
+          error.textContent = '';
+        });
       };
+
 
       const closeModal = () => {
         resetModal();
@@ -1359,7 +1380,7 @@
       const balanceInput = document.querySelector('.balance-input');
 
       // Agrega un evento `input` al campo de entrada
-      balanceInput.addEventListener('input', function() {
+      balanceInput.addEventListener('input', function () {
         const errorElement = document.querySelector('.balance_error'); // Selecciona el elemento de error correspondiente
 
         // Limpia el mensaje de error cuando el usuario escribe en el campo
@@ -1372,8 +1393,7 @@
     <!---->
     <!---->
 
-
-    //Funcion para activar radio buttons
+    // 10. Funcion para activar radio buttons
     function selectFirstRadioButton(section) {
       const firstRadioButton = section.querySelector('.account-widget-radio-button-list input[type="radio"]');
       if (firstRadioButton) {
@@ -1425,6 +1445,25 @@
             // Muestra los nuevos errores
             $.each(xhr.responseJSON.errors, function (field, errors) {
               $('.' + field + '_error').text(errors[0]);
+
+              // Si el error es sobre el campo 'nickname', oculta el div normal y muestra el de error
+              if (field === 'nickname') {
+                const normalDiv = document.querySelector('.y-form-field:not(.has-errors)');
+                const errorDiv = document.querySelector('.y-form-field.has-errors');
+                const normalInput = normalDiv.querySelector('input');
+                const errorInput = errorDiv.querySelector('input');
+
+                // Copia el valor del input normal al input de error
+                if (normalInput && errorInput) {
+                  errorInput.value = normalInput.value;
+                }
+
+                // Oculta el div normal y muestra el de error
+                if (normalDiv) normalDiv.style.display = 'none';
+                if (errorDiv) errorDiv.style.display = '';
+
+              }
+
             });
           }
         }
@@ -1442,8 +1481,6 @@
       //SAVE LOAN
 
     }
-
-
 
   </script>
 
