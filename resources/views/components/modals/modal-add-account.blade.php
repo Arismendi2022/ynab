@@ -1391,7 +1391,6 @@
     });
 
     <!---->
-    <!---->
 
     // 10. Funcion para activar radio buttons
     function selectFirstRadioButton(section) {
@@ -1405,12 +1404,6 @@
 
     function saveBudget() {
       //SAVE ACCOUNT BUDGET
-      $.ajaxSetup({
-        headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-      });
-
       const selectedButton = document.querySelector('.account-widget-list-button.selected');
       const sectionTwo = document.querySelector('.account-widget-step:nth-of-type(2)');
       const sectionSuccess = document.querySelector('.account-widget-success-screen');
@@ -1426,8 +1419,11 @@
 
       $.ajax({
         url: "{{ route('account.create-account') }}",
-        type: 'POST',
+        method: 'POST',
         data: formData,
+        headers: {
+          'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+        },
         success: function (response) {
           sectionTwo.style.display = 'none';
           sectionSuccess.style.display = ''; // Mostrar la sección de éxito
@@ -1463,14 +1459,11 @@
                 if (errorDiv) errorDiv.style.display = '';
 
               }
-
             });
           }
         }
-
       });
-
-    }
+    } //End saveBudget
 
     function saveCreditCard() {
       //SAVE CREDIT CARD
